@@ -1,0 +1,17 @@
+# If set to 'on', Readline performs filename matching and completion in a
+# case-insensitive fashion. The default value is 'off'.
+set completion-ignore-case On
+
+# The editing-mode variable controls which default set of key bindings is
+# used. By default, Readline starts up in Emacs editing mode, where the
+# keystrokes are most similar to Emacs. This variable can be set to either
+# 'emacs' or 'vi'.
+set editing-mode vi
+
+# Sets Readline's idea of the current keymap for key binding commands.
+# Acceptable `keymap' names are `emacs', `emacs-standard', `emacs-meta',
+# `emacs-ctlx', `vi', `vi-command', and `vi-insert'. `vi' is equivalent to
+# `vi-command'; `emacs' is equivalent to `emacs-standard'.  The default
+# value is `emacs'.  The value of the `editing-mode' variable also affects
+# the default keymap.
+set keymap vi
