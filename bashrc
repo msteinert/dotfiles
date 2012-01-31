@@ -101,18 +101,14 @@ else
     alias cgrep="coccigrep"
 fi
 
-# Add an "alert" alias for long running commands. Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 # Alias definitions
 if [ -f ~/.bash-aliases ]; then
     . ~/.bash-aliases
 fi
 
 # Enable programmable completion features
-if [ -f /etc/bash-completion ] && ! shopt -oq posix; then
-    . /etc/bash-completion
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    . /etc/bash_completion
 fi
 
 export CSCOPE_EDITOR="vim"
