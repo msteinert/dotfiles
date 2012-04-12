@@ -1,31 +1,73 @@
-" General setup
+" Use Vim settings, rather than Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
 set nocompatible
-set backspace=indent,eol,start
-set nowrap
-set cindent
-set tabstop=8
-set wildignore=*.o,*.lo
-set showmode
-set smartcase
-set encoding=utf-8
-set nobackup
-set hlsearch
-set history=50
-set title
-set ruler
 
-" Syntax highlighting
-syntax on
-set background=dark
-colorscheme solarized
-let g:load_doxygen_syntax=1
-let g:js_indent_log=0
+" Allow backspacing over everything in insert mode.
+set backspace=indent,eol,start
+
+" Don't autocomplete these file extensions.
+set wildignore=*.o,*.lo
+
+" Don't use Ex mode, use Q for formatting
+map Q gq
+
+set history=50		" keep 50 lines of command line history
+set ruler		" show the cursor position all the time
+set showcmd		" display incomplete commands
+set incsearch		" do incremental searching
+set nowrap		" don't wrap long lines
+set encoding=utf-8	" set the encoding
+set nobackup		" don't create backups
+set title		" set the terminal title
+
+" Only do this part when compiled with support for autocommands.
+if has("autocmd")
+	" Enable file type detection.
+	" Use the default filetype settings, so that mail gets 'tw' set to 72,
+	" 'cindent' is on in C files, etc.
+	" Also load indent files, to automatically do language-dependent
+	" indenting.
+	filetype plugin indent on
+
+	" Put these in an autocmd group, so that we can delete them easily.
+	augroup vimrcEx
+	au!
+
+	" For all text files set 'textwidth' to 78 characters.
+	autocmd FileType text setlocal textwidth=78
+
+	" When editing a file, always jump to the last known cursor position.
+	" Don't do it when the position is invalid or when inside an event
+	" handler (happens when dropping a file on gvim). Also don't do it
+	" when the mark is in the first line, that is the default position
+	" when opening a file.
+	autocmd BufReadPost *
+	\ if line("'\"") > 1 && line("'\"") <= line("$") |
+	\ 	exe "normal! g`\"" |
+	\ endif
+	setlocal cinoptions=:0
+	augroup END
+else
+	" always set autoindenting on
+	set autoindent
+endif " has("autocmd")
+
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if &t_Co > 2 || has("gui_running")
+	syntax on
+	set hlsearch
+	let g:load_doxygen_syntax=1
+	let g:js_indent_log=0
+	" Solarized color scheme settings
+	colorscheme solarized
+	set background=dark
+endif
 
 " Buffer navigation
 map <F5> :bprevious!<CR>
 map <F6> :bnext!<CR>
 map <F7> :bdelete!<CR>
-map <F9> :make<CR>
 
 " Errormarker
 let &errorformat="%f:%l:%c: %t%*[^:]:%m,%f:%l: %t%*[^:]:%m," . &errorformat
@@ -38,10 +80,6 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
-" Ctags
-set tags=/home/steimic1/Documents/tags/include.tags
-set tags+=/home/steimic1/Documents/tags/local.include.tags
-
-" Gvim
-set guifont=Consolas\ 14
+" Gvim settings
+set guifont=Consolas\ 15
 set guicursor=a:blinkon0
