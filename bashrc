@@ -115,10 +115,16 @@ export CSCOPE_EDITOR="vim"
 
 export INPUTRC="$HOME/.inputrc"
 
-export PATH="$HOME/.local/bin:$PATH:/opt/local/bin"
+export MANPATH="$HOME/.local/man:$MANPATH"
+
+export PATH="$HOME/.local/bin:/opt/local/bin:$PATH"
+
+export PKG_CONFIG_PATH="$HOME/.local/lib/pkgconfig:/opt/local/lib/pkgconfig:/usr/local/lib/pkgconfig:/usr/lib/pkgconfig"
 
 export PYTHONPATH="$HOME/.local/lib/python"
 
 unset command_not_found_handle
+
+ulimit -c unlimited
 
 # vim: et:sw=4:ts=4
