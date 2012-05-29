@@ -17,4 +17,4 @@ all:
 install: $(DOTFILES)
 
 $(HOME)/.%: %
-	cp -r $< $(dir $@)
+	cp -r $< $@
