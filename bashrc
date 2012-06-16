@@ -67,7 +67,6 @@ PS1_HOSTNAME="$yellow\h$reset"
 
 # Git prompt setup (set branch name & status)
 if [ -f $HOME/.bash.d/bash-git ]; then
-    . $HOME/.bash.d/bash-git
     PS1_GIT='$(__git_ps1 :%s)'
     export GIT_PS1_SHOWDIRTYSTATE=1
     export GIT_PS1_SHOWSTASHSTATE=1
