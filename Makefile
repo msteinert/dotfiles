@@ -1,20 +1,16 @@
-SOURCES += bashrc
+SOURCES += bash-aliases
 SOURCES += bash-git
 SOURCES += bashrc
+SOURCES += cvsignore
 SOURCES += dircolors
-SOURCES += gconf
 SOURCES += gitconfig
-SOURCES += gitignore
 SOURCES += inputrc
 SOURCES += vim
 SOURCES += vimrc
 SOURCES += Xresources
 
-DOTFILES = $(SOURCES:%=$(HOME)/.%)
-
 all:
-
-install: $(DOTFILES)
-
-$(HOME)/.%: %
-	cp -r $< $@
+	$(foreach file,$(SOURCES),\
+		$(info INSTALL .$(file))\
+		$(shell rm -f $(HOME)/.$(file))\
+		$(shell ln -fs $(CURDIR)/$(file) $(HOME)/.$(file)))
