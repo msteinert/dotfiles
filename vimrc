@@ -27,9 +27,6 @@ set lazyredraw		" don't redraw while replaying macros
 set hidden		" hide buffer on change (allows undo)
 set cf			" enable error files and error jumping
 
-" backspace behavior in insert mode
-set backspace=indent,eol,start
-
 " add backspace and cursor keys to wrap
 set whichwrap+=<,>,h,l
 
