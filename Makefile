@@ -1,6 +1,6 @@
-SOURCES += bash-aliases
-SOURCES += bash-git
 SOURCES += bashrc
+SOURCES += bash.d/bash-aliases
+SOURCES += bash.d/bash-git
 SOURCES += cvsignore
 SOURCES += dircolors
 SOURCES += gitconfig
@@ -9,8 +9,18 @@ SOURCES += vim
 SOURCES += vimrc
 SOURCES += Xresources
 
+ifeq ($(ECHOSTAR),y)
+SOURCES += bash.d/bash-clearcase
+SOURCES += bash.d/bash-echostar
+endif
+
+DIRS += bash.d
+
 all:
+	$(foreach d,$(DIRS),\
+		$(info INSTALL .$(d))\
+		$(shell mkdir -p $(HOME)/.$(d)))
 	$(foreach file,$(SOURCES),\
 		$(info INSTALL .$(file))\
-		$(shell rm -f $(HOME)/.$(file))\
+		$(shell rm -rf $(HOME)/.$(file))\
 		$(shell ln -fs $(CURDIR)/$(file) $(HOME)/.$(file)))

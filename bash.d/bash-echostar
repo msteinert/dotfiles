@@ -1,0 +1,27 @@
+#!bash
+
+# Graphical code review function
+function code_review() {
+    /ccshare/linux/cc_tools/cr_review /ccshare/linux/c_spec/*cr$1*;
+    ./cr_sh
+}
+
+# Code review function
+function code_review_pr() {
+    /ccshare/linux/cc_tools/cr_review /ccshare/linux/c_spec/*cr$1*;
+    sed -e 's/-gra//g' cr_sh > cr_sh1
+    chmod 777 ./cr_sh1
+    ./cr_sh1
+}
+
+# ClearCase prompt setup (strip ${USER}_ from $CLEARCASE_ROOT)
+if [ -n "$CLEARCASE_ROOT" ]; then
+    PS1_CLEARCASE=[$red$(echo $CLEARCASE_ROOT | awk -F_ '{ print $NF }')$reset]
+    umask 002
+fi
+
+# Hostname prompt setup (strip "linux-pc-" from hostname)
+PS1_HOSTNAME=$yellow$(hostname -s | awk -F- '{ print $NF }')$reset
+
+# Update prompt
+PS1="${PS1_USER}@${PS1_HOSTNAME}${PS1_CLEARCASE}${PS1_GIT}> "

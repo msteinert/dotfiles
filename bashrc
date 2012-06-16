@@ -66,8 +66,8 @@ PS1_USER="$green\u$reset"
 PS1_HOSTNAME="$yellow\h$reset"
 
 # Git prompt setup (set branch name & status)
-if [ -f $HOME/.bash-git ]; then
-    . $HOME/.bash-git
+if [ -f $HOME/.bash.d/bash-git ]; then
+    . $HOME/.bash.d/bash-git
     PS1_GIT='$(__git_ps1 :%s)'
     export GIT_PS1_SHOWDIRTYSTATE=1
     export GIT_PS1_SHOWSTASHSTATE=1
@@ -75,9 +75,6 @@ if [ -f $HOME/.bash-git ]; then
 fi
 
 PS1="${PS1_USER}@${PS1_HOSTNAME}${PS1_GIT}> "
-
-unset intensity black red green yellow blue magenta cyan white reset
-unset color_prompt force_color_prompt
 
 # If this is an xterm set the title
 case "$TERM" in
@@ -101,15 +98,23 @@ else
     alias cgrep="coccigrep"
 fi
 
-# Alias definitions
-if [ -f ~/.bash-aliases ]; then
-    . ~/.bash-aliases
-fi
-
 # Enable programmable completion features
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+# Source definitions
+if [ -d $HOME/.bash.d ]; then
+    for i in $HOME/.bash.d/bash-*; do
+        if [ -r $i ]; then
+            . $i
+        fi
+    done
+    unset i
+fi
+
+unset intensity black red green yellow blue magenta cyan white reset
+unset color_prompt force_color_prompt
 
 export CSCOPE_EDITOR="vim"
 
@@ -128,5 +133,3 @@ export PYTHONPATH="$HOME/.local/lib/python"
 unset command_not_found_handle
 
 ulimit -c unlimited
-
-# vim: et:sw=4:ts=4

@@ -15,5 +15,3 @@ jobs=$(expr `cat /proc/cpuinfo | grep processor | wc -l` \* 2)
 alias make="make -j$jobs"
 alias scons="scons -j$jobs"
 unset jobs
-
-# vim: et:sw=4:ts=4
