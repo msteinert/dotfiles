@@ -1,1 +1,1 @@
-au BufRead,BufNewFile Kconfig*	set filetype=kconfig
+autocmd BufNewFile,BufRead Kconfig* set ft=kconfig

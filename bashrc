@@ -113,6 +113,8 @@ fi
 
 export CSCOPE_EDITOR="vim"
 
+export EDITOR="vim"
+
 export INPUTRC="$HOME/.inputrc"
 
 export MANPATH="$HOME/.local/man:$MANPATH"

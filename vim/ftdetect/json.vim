@@ -1,1 +1,1 @@
-au BufRead,BufNewFile *.json	set filetype=json
+autocmd BufNewFile,BufRead *.json set ft=javascript
