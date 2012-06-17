@@ -21,43 +21,17 @@ elif [ -x /usr/bin/lesspipe.sh ]; then
     eval "$(SHELL=/bin/sh lesspipe.sh)"
 fi
 
-# Force color terminal
-TERM=xterm-256color
-
-# Set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-    xterm-*color) color_prompt=yes;;
-esac
-
-# Uncomment for a colored prompt, if the terminal has the capability; turned
-# off by default to not distract the user: the focus in a terminal window
-# should be on the output of commands, not on the prompt
-#force_color_prompt=yes
-
-if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-        # We have color support; assume it's compliant with Ecma-48
-        # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-        # a case would tend to support setf rather than setaf.)
-        color_prompt=yes
-    else
-        color_prompt=
-    fi
-fi
-
 # Set color escape codes
-if [ "$color_prompt" = yes ]; then
-    intensity=00 # 00: normal, 01: bold, 02: faint
-    black="\[\033[$intensity;30m\]"
-    red="\[\033[$intensity;31m\]"
-    green="\[\033[$intensity;32m\]"
-    yellow="\[\033[$intensity;33m\]"
-    blue="\[\033[$intensity;34m\]"
-    magenta="\[\033[$intensity;35m\]"
-    cyan="\[\033[$intensity;36m\]"
-    white="\[\033[$intensity;37m\]"
-    reset="\[\033[00m\]"
-fi
+intensity=00 # 00: normal, 01: bold, 02: faint
+black="\[\033[$intensity;30m\]"
+red="\[\033[$intensity;31m\]"
+green="\[\033[$intensity;32m\]"
+yellow="\[\033[$intensity;33m\]"
+blue="\[\033[$intensity;34m\]"
+magenta="\[\033[$intensity;35m\]"
+cyan="\[\033[$intensity;36m\]"
+white="\[\033[$intensity;37m\]"
+reset="\[\033[00m\]"
 
 # Username prompt setup
 PS1_USER="$green\u$reset"
@@ -113,7 +87,6 @@ if [ -d $HOME/.bash.d ]; then
 fi
 
 unset intensity black red green yellow blue magenta cyan white reset
-unset color_prompt force_color_prompt
 
 export CSCOPE_EDITOR="vim"
 

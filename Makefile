@@ -5,6 +5,7 @@ SOURCES += cvsignore
 SOURCES += dircolors
 SOURCES += gitconfig
 SOURCES += inputrc
+SOURCES += tmux.conf
 SOURCES += vim
 SOURCES += vimrc
 SOURCES += Xresources

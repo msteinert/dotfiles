@@ -37,8 +37,9 @@
 #define S_green         #859900
 
 *background:            S_base03
+URxvt*background:       [95]S_base03
 *foreground:            S_base00
-*fading:                40
+*fading:                10
 *fadeColor:             S_base03
 *cursorColor:           S_base1
 *pointerColorBackground:S_base01
@@ -76,16 +77,18 @@
 *color7:                S_base2
 *color15:               S_base3
 
-!! XTerm settings
-XTerm*faceName: Consolas
-XTerm*faceSize: 15
-XTerm*saveLines: 10000
-XTerm*scrollBar: false
-XTerm*visualBell: false
+!! font settings
+URxvt*font: xft:Consolas:style=regular:size=16:antialias=true:hinting=true
+URxvt*boldFont: xft:Consolas:style=bold:size=16:antialias=true:hinting=true
+URxvt*italicFont: xft:Consolas:style=italic:size=16:antialias=true:hinting=true
+URxvt*boldItalicFont: xft:Consolas:style=bolditalic:size=16:antialias=true:hinting=true
+URxvt*lineSpace: 0
+URxvt*depth: 32
+*faceName: Consolas
+*faceSize: 16
 
-!! UXTerm settings
-UXTerm*faceName: Consolas
-UXTerm*faceSize: 15
-UXTerm*saveLines: 10000
-UXTerm*scrollBar: false
-UXTerm*visualBell: false
+!! other setup
+*geometry: 80x24
+*saveLines: 10000
+*scrollBar: false
+*visualBell: false

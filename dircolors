@@ -22,12 +22,14 @@ TERM dtterm
 TERM putty
 TERM xterm
 TERM xterm-color
-term xterm-256color
+TERM xterm-256color
 TERM xterm-debian
 TERM rxvt
+TERM rxvt-unicode
 TERM screen
 TERM screen-bce
 TERM screen-w
+TERM screen-256color
 TERM vt100
 TERM Eterm
 # Below are the color init strings for the basic file types. A color init
