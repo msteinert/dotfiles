@@ -78,10 +78,10 @@ URxvt*background:       [95]S_base03
 *color15:               S_base3
 
 !! font settings
-URxvt*font: xft:Consolas:style=regular:size=16:antialias=true:hinting=true
-URxvt*boldFont: xft:Consolas:style=bold:size=16:antialias=true:hinting=true
-URxvt*italicFont: xft:Consolas:style=italic:size=16:antialias=true:hinting=true
-URxvt*boldItalicFont: xft:Consolas:style=bolditalic:size=16:antialias=true:hinting=true
+URxvt*font: xft:Consolas:style=regular:size=14:antialias=true:hinting=true
+URxvt*boldFont: xft:Consolas:style=bold:size=14:antialias=true:hinting=true
+URxvt*italicFont: xft:Consolas:style=italic:size=14:antialias=true:hinting=true
+URxvt*boldItalicFont: xft:Consolas:style=bolditalic:size=14:antialias=true:hinting=true
 URxvt*lineSpace: 0
 URxvt*depth: 32
 *faceName: Consolas
