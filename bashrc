@@ -53,15 +53,6 @@ fi
 
 PS1="${PS1_USER}@${PS1_HOSTNAME}${PS1_GIT}> "
 
-# If this is an xterm set the title
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;\w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
-
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -102,6 +93,15 @@ if [ -d $HOME/.bash.d ]; then
     done
     unset i
 fi
+
+# If this is an xterm set the title
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;\w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
 
 unset intensity black red green yellow blue magenta cyan white reset
 

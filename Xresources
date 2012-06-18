@@ -37,7 +37,6 @@
 #define S_green         #859900
 
 *background:            S_base03
-URxvt*background:       [95]S_base03
 *foreground:            S_base00
 *fading:                10
 *fadeColor:             S_base03
@@ -77,18 +76,21 @@ URxvt*background:       [95]S_base03
 *color7:                S_base2
 *color15:               S_base3
 
+!! URxvt settings
+URxvt*background:       [95]S_base03
+URxvt*font:             xft:Consolas:style=regular:size=14:antialias=true:hinting=true
+URxvt*boldFont:         xft:Consolas:style=bold:size=14:antialias=true:hinting=true
+URxvt*italicFont:       xft:Consolas:style=italic:size=14:antialias=true:hinting=true
+URxvt*boldItalicFont:   xft:Consolas:style=bolditalic:size=14:antialias=true:hinting=true
+URxvt*buffered:         false
+URxvt*depth:            32
+
 !! font settings
-URxvt*font: xft:Consolas:style=regular:size=14:antialias=true:hinting=true
-URxvt*boldFont: xft:Consolas:style=bold:size=14:antialias=true:hinting=true
-URxvt*italicFont: xft:Consolas:style=italic:size=14:antialias=true:hinting=true
-URxvt*boldItalicFont: xft:Consolas:style=bolditalic:size=14:antialias=true:hinting=true
-URxvt*lineSpace: 0
-URxvt*depth: 32
-*faceName: Consolas
-*faceSize: 16
+*faceName:              Consolas
+*faceSize:              14
 
 !! other setup
-*geometry: 80x24
-*saveLines: 10000
-*scrollBar: false
-*visualBell: false
+*geometry:              80x24
+*saveLines:             10000
+*scrollBar:             false
+*visualBell:            false
