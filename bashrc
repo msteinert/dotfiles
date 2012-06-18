@@ -76,6 +76,19 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# Setup paths
+PATH="$HOME/.local/bin:/opt/local/bin:$PATH"
+MANPATH="$HOME/.local/man:$MANPATH"
+
+# Setup variables
+CSCOPE_EDITOR="vim"
+EDITOR="vim"
+INPUTRC="$HOME/.inputrc"
+PKG_CONFIG_PATH="$HOME/.local/lib/pkgconfig:/opt/local/lib/pkgconfig:/usr/local/lib/pkgconfig:/usr/lib/pkgconfig"
+PYTHONPATH="$HOME/.local/lib/python"
+
+export CSCOPE_EDITOR EDITOR INPUTRC PKG_CONFIG_PATH PYTHONPATH
+
 # Source definitions
 if [ -d $HOME/.bash.d ]; then
     for i in $HOME/.bash.d/bash-*; do
@@ -87,20 +100,6 @@ if [ -d $HOME/.bash.d ]; then
 fi
 
 unset intensity black red green yellow blue magenta cyan white reset
-
-export CSCOPE_EDITOR="vim"
-
-export EDITOR="vim"
-
-export INPUTRC="$HOME/.inputrc"
-
-export MANPATH="$HOME/.local/man:$MANPATH"
-
-export PATH="$HOME/.local/bin:/opt/local/bin:$PATH"
-
-export PKG_CONFIG_PATH="$HOME/.local/lib/pkgconfig:/opt/local/lib/pkgconfig:/usr/local/lib/pkgconfig:/usr/lib/pkgconfig"
-
-export PYTHONPATH="$HOME/.local/lib/python"
 
 unset command_not_found_handle
 
