@@ -21,6 +21,10 @@ elif [ -x /usr/bin/lesspipe.sh ]; then
     eval "$(SHELL=/bin/sh lesspipe.sh)"
 fi
 
+if [ "$TERM" = "xterm" ]; then
+    TERM=xterm-256color
+fi
+
 # Set color escape codes
 intensity=00 # 00: normal, 01: bold, 02: faint
 black="\[\033[$intensity;30m\]"
