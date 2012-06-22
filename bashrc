@@ -21,7 +21,9 @@ elif [ -x /usr/bin/lesspipe.sh ]; then
     eval "$(SHELL=/bin/sh lesspipe.sh)"
 fi
 
-TERM=xterm-256color
+if [ "$TERM" = "xterm" ]; then
+    TERM=xterm-256color
+fi
 
 # Set color escape codes
 intensity=00 # 00: normal, 01: bold, 02: faint
@@ -94,7 +96,7 @@ fi
 
 # If this is an xterm set the title
 case "$TERM" in
-xterm*|rxvt*)
+xterm*|rxvt*|screen*)
     PS1="\[\e]0;\w\a\]$PS1"
     ;;
 *)

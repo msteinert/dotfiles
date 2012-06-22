@@ -29,7 +29,3 @@ PS1="${PS1_USER}@${PS1_HOSTNAME}${PS1_CLEARCASE}${PS1_GIT}> "
 # Update paths
 PATH="$HOME/bin:/opt/java/$JAVA/bin:/opt/scala/$SCALA/bin:/opt/maven/$MAVEN/bin:/opt/ant/$ANT/bin:/usr/kerberos/bin:/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin:/opt/rational/clearcase/bin:/sbin:/usr/sbin:$PLAN9/bin:$HOME/.local/bin:$HOME/.local/bin/heroku-client:/opt/qt-4.8.0/bin"
 PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig:/opt/qt-4.8.0/lib/pkgconfig"
-
-# Update locale
-LANG=en_US.UTF-8
-LC_ALL=en_US.UTF-8
