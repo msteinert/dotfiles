@@ -93,3 +93,6 @@
 	path = vim/bundle/vim-errormarker
 	url = git://github.com/vim-scripts/errormarker.vim.git
 	ignore = dirty
+[submodule "vim/bundle/vim-mustache"]
+	path = vim/bundle/vim-mustache
+	url = git://github.com/juvenn/mustache.vim.git
