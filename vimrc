@@ -101,6 +101,9 @@ nmap <silent> <C-l> :wincmd l<CR>
 map <leader>n :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
+" JSHint
+map <leader>js :JSHint<CR>
+
 " Errormarker
 let &errorformat="%f:%l:%c: %t%*[^:]:%m,%f:%l: %t%*[^:]:%m," . &errorformat
 

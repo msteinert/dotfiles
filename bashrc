@@ -72,7 +72,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # Setup paths
-PATH="$HOME/.local/bin:/opt/local/bin:$PATH"
+PATH="$HOME/.local/bin:/opt/local/bin:/opt/clang/bin:$PATH"
 MANPATH="$HOME/.local/man:$MANPATH"
 
 # Setup variables
