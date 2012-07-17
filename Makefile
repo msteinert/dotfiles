@@ -1,6 +1,7 @@
 SOURCES += bashrc
 SOURCES += bash.d/bash-aliases
 SOURCES += bash.d/bash-git
+SOURCES += bash.d/bash-git-prompt
 SOURCES += cvsignore
 SOURCES += dircolors
 SOURCES += gitconfig
