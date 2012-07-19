@@ -4,7 +4,7 @@
 	ignore = dirty
 [submodule "vim/bundle/vim-ragel"]
 	path = vim/bundle/vim-ragel
-	url = git@github.com:msteinert/vim-ragel.git
+	url = git://github.com:msteinert/vim-ragel.git
 [submodule "vim/bundle/vim-ragtag"]
 	path = vim/bundle/vim-ragtag
 	url = git://github.com/tpope/vim-ragtag.git
