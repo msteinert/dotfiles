@@ -103,6 +103,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 " JSHint
 map <leader>js :JSHint<CR>
+map <leader>cs :CoffeeLint<CR>
 
 " Errormarker
 let &errorformat="%f:%l:%c: %t%*[^:]:%m,%f:%l: %t%*[^:]:%m," . &errorformat
