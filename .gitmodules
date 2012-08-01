@@ -96,3 +96,6 @@
 [submodule "vim/bundle/vim-mustache"]
 	path = vim/bundle/vim-mustache
 	url = git://github.com/juvenn/mustache.vim.git
+[submodule "vim/bundle/vim-io"]
+	path = vim/bundle/vim-io
+	url = git://github.com/xhr/vim-io.git
