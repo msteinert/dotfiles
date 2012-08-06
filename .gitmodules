@@ -102,3 +102,6 @@
 [submodule "vim/bundle/vim-prolog"]
 	path = vim/bundle/vim-prolog
 	url = git://github.com/msteinert/vim-prolog.git
+[submodule "vim/bundle/vim-scala"]
+	path = vim/bundle/vim-scala
+	url = git://github.com/derekwyatt/vim-scala.git
