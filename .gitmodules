@@ -108,3 +108,6 @@
 [submodule "vim/bundle/vim-erlang"]
 	path = vim/bundle/vim-erlang
 	url = git://github.com/oscarh/vimerl.git
+[submodule "vim/bundle/vim-haskell"]
+	path = vim/bundle/vim-haskell
+	url = git://github.com/wlangstroth/vim-haskell.git
