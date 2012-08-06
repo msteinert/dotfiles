@@ -99,3 +99,6 @@
 [submodule "vim/bundle/vim-io"]
 	path = vim/bundle/vim-io
 	url = git://github.com/xhr/vim-io.git
+[submodule "vim/bundle/vim-prolog"]
+	path = vim/bundle/vim-prolog
+	url = git://github.com/msteinert/vim-prolog.git
