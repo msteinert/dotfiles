@@ -105,3 +105,6 @@
 [submodule "vim/bundle/vim-scala"]
 	path = vim/bundle/vim-scala
 	url = git://github.com/derekwyatt/vim-scala.git
+[submodule "vim/bundle/vim-erlang"]
+	path = vim/bundle/vim-erlang
+	url = git://github.com/oscarh/vimerl.git
