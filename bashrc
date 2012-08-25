@@ -87,9 +87,7 @@ export CSCOPE_EDITOR EDITOR INPUTRC PKG_CONFIG_PATH PYTHONPATH
 # Source definitions
 if [ -d $HOME/.bash.d ]; then
     for i in $HOME/.bash.d/bash-*; do
-        if [ -r $i ]; then
-            . $i
-        fi
+        test -r $i && . $i
     done
     unset i
 fi
@@ -113,3 +111,12 @@ unset intensity black red green yellow blue magenta cyan white reset
 unset command_not_found_handle
 
 ulimit -c unlimited
+
+# {{{
+# Node Completion - Auto-generated, do not touch.
+shopt -s progcomp
+for f in $(command ls ~/.node-completion); do
+  f="$HOME/.node-completion/$f"
+  test -f "$f" && . "$f"
+done
+# }}}
