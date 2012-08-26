@@ -92,6 +92,14 @@ if [ -d $HOME/.bash.d ]; then
     unset i
 fi
 
+# Node Completion
+if [ -d $HOME/.node-completion ]; then
+    for i in $HOME/.node-completion/*; do
+        test -r $i && . $i
+    done
+    unset i
+fi
+
 # Add RVM
 if [ -f $HOME/.rvm/scripts/rvm ]; then
     . $HOME/.rvm/scripts/rvm
@@ -111,12 +119,3 @@ unset intensity black red green yellow blue magenta cyan white reset
 unset command_not_found_handle
 
 ulimit -c unlimited
-
-# {{{
-# Node Completion - Auto-generated, do not touch.
-shopt -s progcomp
-for f in $(command ls ~/.node-completion); do
-  f="$HOME/.node-completion/$f"
-  test -f "$f" && . "$f"
-done
-# }}}
