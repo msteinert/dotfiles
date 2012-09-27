@@ -120,6 +120,9 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
+" Kill trailing whitespace
+map <leader>kw :%s/\s\+$//<CR>
+
 " Gvim settings
 if has("gui_running")
 	set guifont=Consolas\ 15
