@@ -36,7 +36,7 @@ autoload -U colors && colors
 PS1_USER="%{$fg[green]%}%n%{$reset_color%}"
 
 # Hostname prompt setup (strip "linux-pc-" from hostname)
-PS1_HOSTNAME="%{$fg[yellow]%}$(hostname -s | awk -F- '{ print $NF }')%{$reset_color%}"
+PS1_HOSTNAME="%{$fg[yellow]%}%m%{$reset_color%}"
 
 # ClearCase prompt setup (strip ${USER}_ from $CLEARCASE_ROOT)
 if [ -n "$CLEARCASE_ROOT" ]; then
@@ -46,6 +46,13 @@ fi
 
 # Git prompt setup (set branch name & status)
 source $HOME/.zsh/git-prompt/zshrc.sh
+ZSH_THEME_GIT_PROMPT_PREFIX=":"
+ZSH_THEME_GIT_PROMPT_SUFFIX=""
+ZSH_THEME_GIT_PROMPT_SEPARATOR=" "
+ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[blue]%}•"
+ZSH_THEME_GIT_PROMPT_CONFLICTS="%{$fg[red]%}⋆"
+ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[red]%}⌁"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}✓"
 PS1_GIT='$(git_super_status)'
 
 PS1="${PS1_USER}@${PS1_HOSTNAME}${PS1_CLEARCASE}${PS1_GIT}> "
