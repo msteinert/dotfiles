@@ -131,6 +131,4 @@ if has("gui_running")
 	set guioptions-=T
 	set guioptions-=r
 	set guioptions-=L
-else
-	let g:NERDTreeDirArrows=0
 endif

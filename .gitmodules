@@ -111,3 +111,6 @@
 [submodule "vim/bundle/vim-haskell"]
 	path = vim/bundle/vim-haskell
 	url = git://github.com/wlangstroth/vim-haskell.git
+[submodule "zsh/git-prompt"]
+	path = zsh/git-prompt
+	url = git://github.com/olivierverdier/zsh-git-prompt.git

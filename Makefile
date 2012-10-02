@@ -10,6 +10,8 @@ SOURCES += tmux.conf
 SOURCES += vim
 SOURCES += vimrc
 SOURCES += Xresources
+SOURCES += zshrc
+SOURCES += zsh
 
 ifeq ($(ECHOSTAR),y)
 SOURCES += bash.d/bash-clearcase
