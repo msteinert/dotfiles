@@ -20,14 +20,14 @@ autoload -Uz compinit
 compinit
 
 # Make less more friendly for non-text input files
-if [ -x /usr/bin/lesspipe ]; then
+if [[ -x /usr/bin/lesspipe ]]; then
     eval "$(SHELL=/bin/sh lesspipe)"
-elif [ -x /usr/bin/lesspipe.sh ]; then
+elif [[ -x /usr/bin/lesspipe.sh ]]; then
     eval "$(SHELL=/bin/sh lesspipe.sh)"
 fi
 
 # Force color terminal
-if [ "$TERM" = "xterm" ]; then
+if [[ "$TERM" == "xterm" ]]; then
     TERM=xterm-256color
 fi
 autoload -U colors && colors
@@ -59,7 +59,7 @@ setopt prompt_subst
 PS1='%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}${vcs_info_msg_0_}%{$reset_color%}> '
 
 # Enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
+if [[ -x /usr/bin/dircolors ]]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls="ls --color=auto -F"
     alias grep="grep --color=auto"
@@ -84,20 +84,16 @@ PYTHONPATH="$HOME/.local/lib/python"
 
 export CSCOPE_EDITOR EDITOR INPUTRC PKG_CONFIG_PATH PYTHONPATH
 
-# Common aliases
-alias c="clear"
-alias ct="cleartool"
-alias h="history"
-alias where="which -a"
-
-# Parallel build aliases
-jobs=$(expr `cat /proc/cpuinfo | grep processor | wc -l` \* 2)
-alias make="make -j$jobs"
-alias scons="scons -j$jobs"
-unset jobs
+# Source definitions
+if [[ -d $HOME/.zsh.d ]]; then
+    for i in $HOME/.zsh.d/zsh-*; do
+        test -r $i && . $i
+    done
+    unset i
+fi
 
 # Node Completion
-if [ -d $HOME/.node-completion ]; then
+if [[ -d $HOME/.node-completion ]]; then
     for i in $HOME/.node-completion/*; do
         test -r $i && . $i
     done
@@ -105,7 +101,7 @@ if [ -d $HOME/.node-completion ]; then
 fi
 
 # Add RVM
-if [ -f $HOME/.rvm/scripts/rvm ]; then
+if [[ -f $HOME/.rvm/scripts/rvm ]]; then
     . $HOME/.rvm/scripts/rvm
 fi
 

@@ -1,0 +1,31 @@
+#!zsh
+
+# Graphical code review function
+code_review () {
+    /ccshare/linux/cc_tools/cr_review /ccshare/linux/c_spec/*cr$1*;
+    ./cr_sh
+}
+
+# Code review function
+code_review_pr () {
+    /ccshare/linux/cc_tools/cr_review /ccshare/linux/c_spec/*cr$1*;
+    sed -e 's/-gra//g' cr_sh > cr_sh1
+    chmod 777 ./cr_sh1
+    ./cr_sh1
+}
+
+# ClearCase prompt setup (strip ${USER}_ from $CLEARCASE_ROOT)
+if [[ -n "$CLEARCASE_ROOT" ]]; then
+    PS1_CLEARCASE="[%{$fg[red]%}$(echo $CLEARCASE_ROOT | awk -F_ '{ print $NF }')%{$reset_color%}]"
+    umask 002
+fi
+
+# Hostname prompt setup (strip "linux-pc-" from hostname)
+PS1_HOSTNAME="%{$fg[yellow]%}$(hostname -s | awk -F- '{ print $NF }')%{$reset_color%}"
+
+# Update prompt
+PS1='%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}${PS1_HOSTNAME}%{$reset_color%}${PS1_CLEARCASE}${vcs_info_msg_0_}%{$reset_color%}> '
+
+# Update paths
+PATH="$HOME/bin:/opt/java/$JAVA/bin:/opt/scala/$SCALA/bin:/opt/maven/$MAVEN/bin:/opt/ant/$ANT/bin:/usr/kerberos/bin:/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin:/opt/rational/clearcase/bin:/sbin:/usr/sbin:$PLAN9/bin:$HOME/.local/bin:$HOME/.local/bin/heroku-client:/opt/qt-4.8.0/bin"
+PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig:/opt/qt-4.8.0/lib/pkgconfig"

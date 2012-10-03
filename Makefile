@@ -11,14 +11,17 @@ SOURCES += vim
 SOURCES += vimrc
 SOURCES += Xresources
 SOURCES += zshrc
-SOURCES += zsh
+SOURCES += zsh.d/zsh-aliases
 
 ifeq ($(ECHOSTAR),y)
 SOURCES += bash.d/bash-clearcase
 SOURCES += bash.d/bash-echostar
+SOURCES += zsh.d/zsh-clearcase
+SOURCES += zsh.d/zsh-echostar
 endif
 
 DIRS += bash.d
+DIRS += zsh.d
 
 all:
 	$(foreach d,$(DIRS),\
