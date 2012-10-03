@@ -8,7 +8,7 @@ SAVEHIST=2000
 
 setopt appendhistory extendedglob nomatch no_case_glob
 
-# case insensitive completion for cd etc *N*
+# Case insensitive completion for cd etc *N*
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 unsetopt beep
@@ -32,33 +32,33 @@ if [ "$TERM" = "xterm" ]; then
 fi
 autoload -U colors && colors
 
-# Username prompt setup
-PS1_USER="%{$fg[green]%}%n%{$reset_color%}"
+# Configure VCS Info
+typeset -ga precmd_functions
+autoload -Uz vcs_info
+precmd_functions+='vcs_info'
 
-# Hostname prompt setup (strip "linux-pc-" from hostname)
-PS1_HOSTNAME="%{$fg[yellow]%}%m%{$reset_color%}"
+# Set VCS style
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' stagedstr "%{$fg[blue]%}•"
+zstyle ':vcs_info:*' unstagedstr "%{$fg[red]%}•"
+zstyle ':vcs_info:*' formats ":%b%c%u"
+zstyle ':vcs_info:*' actionformats ":%b|%a%c%u"
 
-# ClearCase prompt setup (strip ${USER}_ from $CLEARCASE_ROOT)
-if [ -n "$CLEARCASE_ROOT" ]; then
-    PS1_CLEARCASE="[%{$fg[red]%}$(echo $CLEARCASE_ROOT | awk -F_ '{ print $NF }')%{$reset_color%}]"
-    umask 002
-fi
+# Display the existence of files not yet known to VCS
+## git: Show marker if there are untracked files in repository
+zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
++vi-git-untracked(){
+    if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
+        git status --porcelain | grep '??' &> /dev/null ; then
+        hook_com[staged]+="%{$fg[yellow]%}•"
+    fi
+}
 
-# Git prompt setup (set branch name & status)
-source $HOME/.zsh/git-prompt/zshrc.sh
-ZSH_THEME_GIT_PROMPT_PREFIX=":"
-ZSH_THEME_GIT_PROMPT_SUFFIX=
-ZSH_THEME_GIT_PROMPT_SEPARATOR=
-ZSH_THEME_GIT_PROMPT_BRANCH=
-ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[blue]%}•"
-ZSH_THEME_GIT_PROMPT_CONFLICTS="%{$fg[red]%}⋆"
-ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[red]%}⌁"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%}✓"
-PS1_GIT='$(git_super_status)'
+# Configure the prompt
+setopt prompt_subst
+PS1='%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}${vcs_info_msg_0_}%{$reset_color%}> '
 
-PS1="${PS1_USER}@${PS1_HOSTNAME}${PS1_CLEARCASE}${PS1_GIT}> "
-
-# enable color support of ls and also add handy aliases
+# Enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls="ls --color=auto -F"
@@ -95,6 +95,14 @@ jobs=$(expr `cat /proc/cpuinfo | grep processor | wc -l` \* 2)
 alias make="make -j$jobs"
 alias scons="scons -j$jobs"
 unset jobs
+
+# Node Completion
+if [ -d $HOME/.node-completion ]; then
+    for i in $HOME/.node-completion/*; do
+        test -r $i && . $i
+    done
+    unset i
+fi
 
 # Add RVM
 if [ -f $HOME/.rvm/scripts/rvm ]; then
