@@ -44,13 +44,17 @@ zstyle ':vcs_info:*' unstagedstr "%{$fg[red]%}•"
 zstyle ':vcs_info:*' formats ":%b%c%u"
 zstyle ':vcs_info:*' actionformats ":%b|%a%c%u"
 
-# Display the existence of files not yet known to VCS
-## git: Show marker if there are untracked files in repository
-zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
-+vi-git-untracked(){
-    if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
-        git status --porcelain | grep '??' &> /dev/null ; then
-        hook_com[staged]+="%{$fg[yellow]%}•"
+# git: Show marker if there are stashed changes
+# git: Show marker if there are untracked files in repository
+zstyle ':vcs_info:git*+set-message:*' hooks git-hook
++vi-git-hook () {
+    if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]]; then
+        if [[ -n $(git rev-parse --verify refs/stash 2> /dev/null) ]]; then
+            hook_com[staged]+="%{$fg[magenta]%}⋆"
+        fi
+        if [[ -n $(git status --porcelain | grep '??' 2> /dev/null) ]]; then
+            hook_com[staged]+="%{$fg[yellow]%}•"
+        fi
     fi
 }
 
