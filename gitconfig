@@ -2,23 +2,20 @@
 	name = Michael Steinert
 	email = mike.steinert@gmail.com
 	signingkey = BDAD7D8E
-
 [alias]
 	co = checkout
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
-
 [color]
 	diff = auto
 	status = auto
 	branch = auto
-
 [core]
 	excludesfile = ~/.cvsignore
-
 [diff]
 	tool = meld
-
 [gui]
 	fontui = -family Ubuntu -size 11 -weight normal -slant roman -underline 0 -overstrike 0
 	fontdiff = -family Consolas -size 12 -weight normal -slant roman -underline 0 -overstrike 0
+[push]
+	default = simple
