@@ -114,6 +114,14 @@ let &errorformat="%f:%l:%c: %t%*[^:]:%m,%f:%l: %t%*[^:]:%m," . &errorformat
 
 " Powerline
 set laststatus=2
+let g:Powerline_theme="steinert"
+let g:Powerline_colorscheme="skwp"
+let g:Powerline_symbols="fancy"
+let g:Powerline_mode_n = 'N'
+let g:Powerline_mode_i = 'I'
+let g:Powerline_mode_R = 'R'
+let g:Powerline_mode_v = 'V'
+let g:Powerline_mode_s = 'S'
 
 " Highlight trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
