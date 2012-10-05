@@ -7,17 +7,30 @@ HISTSIZE=1000
 SAVEHIST=2000
 
 setopt appendhistory extendedglob nomatch no_case_glob
+unsetopt beep
 
 # Case insensitive completion for cd etc *N*
+zstyle ':completion:*' completer _expand _complete _match
+zstyle ':completion:*' completions 0
+zstyle ':completion:*' glob 0
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-
-unsetopt beep
-bindkey -v
-
+zstyle ':completion:*' max-errors 1 numeric
+zstyle ':completion:*' substitute 0
 zstyle :compinstall filename "$HOME/.zshrc"
-
 autoload -Uz compinit
 compinit
+
+# Vi command line editing
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey -v
+vi-cmd-mode() {
+    zle -K vicmd
+}
+zle -N vi-cmd-mode
+bindkey -M vicmd 'v' edit-command-line
 
 # Make less more friendly for non-text input files
 if [[ -x /usr/bin/lesspipe ]]; then
