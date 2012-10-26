@@ -1,8 +1,8 @@
-# Prefer Zsh
-[ -f /bin/zsh ] && exec /bin/zsh
-
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
+
+# Prefer Zsh
+[ -f /bin/zsh ] && exec /bin/zsh
 
 # Don't put duplicate lines in the history
 HISTCONTROL=ignoredups:ignorespace
