@@ -84,12 +84,16 @@ if [[ -x /usr/bin/dircolors ]]; then
     alias egrep="egrep --color=auto"
     alias cgrep="coccigrep --color"
 else
-    alias ls="ls -F"
+    # Assume BSD (good enough for now)
+    alias ls="ls -FG"
+    alias grep="grep --color=auto"
+    alias fgrep="fgrep --color=auto"
+    alias egrep="egrep --color=auto"
     alias cgrep="coccigrep"
 fi
 
 # Setup paths
-PATH="$HOME/.local/bin:/opt/local/bin:/opt/clang/bin:$PATH"
+PATH="$HOME/.local/bin:/opt/local/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 MANPATH="$HOME/.local/man:$MANPATH"
 
 # Setup variables
