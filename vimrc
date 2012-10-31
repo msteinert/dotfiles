@@ -97,8 +97,8 @@ nmap <silent> <C-j> :wincmd j<CR>
 nmap <silent> <C-k> :wincmd k<CR>
 nmap <silent> <C-l> :wincmd l<CR>
 if bufwinnr(1)
-	map <C-Up> :resize +1<CR>
-	map <C-Down> :resize -1<CR>
+	map <S-Up> :resize +1<CR>
+	map <S-Down> :resize -1<CR>
 endif
 
 " NERD Tree
