@@ -112,6 +112,9 @@ map <leader>cs :CoffeeLint<CR>
 " Errormarker
 let &errorformat="%f:%l:%c: %t%*[^:]:%m,%f:%l: %t%*[^:]:%m," . &errorformat
 
+" Tagbar
+nmap <F8> :TagbarToggle<CR>
+
 " Powerline
 set laststatus=2
 let g:Powerline_theme="steinert"
