@@ -83,7 +83,7 @@ CSCOPE_EDITOR="vim"
 EDITOR="vim"
 INPUTRC="$HOME/.inputrc"
 PKG_CONFIG_PATH="$HOME/.local/lib/pkgconfig:/opt/local/lib/pkgconfig:/usr/local/lib/pkgconfig:/usr/lib/pkgconfig"
-PYTHONPATH="$HOME/.local/lib/python"
+PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
 
 export CSCOPE_EDITOR EDITOR INPUTRC PKG_CONFIG_PATH PYTHONPATH
 
