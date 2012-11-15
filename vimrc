@@ -117,8 +117,6 @@ nmap <F8> :TagbarToggle<CR>
 
 " Powerline
 set laststatus=2
-let g:Powerline_theme="steinert"
-let g:Powerline_colorscheme="skwp"
 let g:Powerline_symbols="fancy"
 let g:Powerline_mode_n = 'N'
 let g:Powerline_mode_i = 'I'
