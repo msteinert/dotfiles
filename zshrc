@@ -93,7 +93,7 @@ else
 fi
 
 # Setup paths
-PATH="$HOME/.local/bin:/opt/local/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+PATH="$HOME/.local/bin:/opt/local/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:$PATH"
 MANPATH="$HOME/.local/man:$MANPATH"
 
 # Setup variables

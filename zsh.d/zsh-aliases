@@ -18,4 +18,5 @@ fi
 
 if [[ $(uname -s) = "Darwin" ]]; then
     alias display="qlmanage -t"
+    alias top="top -s1 -o cpu -R -F"
 fi
