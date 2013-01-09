@@ -6,8 +6,8 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=2000
 
-setopt appendhistory extendedglob nomatch no_case_glob
-unsetopt beep
+setopt appendhistory extendedglob no_case_glob
+unsetopt beep nomatch
 
 # Case insensitive completion for cd etc *N*
 zstyle ':completion:*' completer _expand _complete _match
