@@ -5,10 +5,7 @@ let g:Powerline#Themes#steinert#theme = Pl#Theme#Create(
 		\ , 'fugitive:branch'
 		\ , 'hgrev:branch'
 		\ , 'syntastic:errors'
-		\ , Pl#Segment#Truncate()
-		\ , 'tagbar:currenttag'
 		\ , Pl#Segment#Split()
-		\ , 'rvm:string'
 		\ , 'virtualenv:statusline'
 		\ , 'filetype'
 		\ , 'scrollpercent'
