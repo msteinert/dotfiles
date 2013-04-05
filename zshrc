@@ -126,6 +126,11 @@ if [[ -f $HOME/.rvm/scripts/rvm ]]; then
     . $HOME/.rvm/scripts/rvm
 fi
 
+# Add Virtualenv
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/src
+source /usr/local/bin/virtualenvwrapper.sh
+
 # If this is an xterm set the title
 case "$TERM" in
 xterm*|rxvt*|screen*)
