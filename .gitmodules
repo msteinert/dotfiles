@@ -21,10 +21,6 @@
 	path = vim/bundle/vim-ruby
 	url = git://github.com/vim-ruby/vim-ruby.git
 	ignore = dirty
-[submodule "vim/bundle/vim-snipmate"]
-	path = vim/bundle/vim-snipmate
-	url = git://github.com/garbas/vim-snipmate.git
-	ignore = dirty
 [submodule "vim/bundle/vim-surround"]
 	path = vim/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
@@ -72,10 +68,6 @@
 [submodule "vim/bundle/vim-supertab"]
 	path = vim/bundle/vim-supertab
 	url = git://github.com/ervandew/supertab.git
-	ignore = dirty
-[submodule "vim/bundle/vim-snipmate-snippets"]
-	path = vim/bundle/vim-snipmate-snippets
-	url = git://github.com/honza/snipmate-snippets.git
 	ignore = dirty
 [submodule "vim/bundle/vim-nerdtree"]
 	path = vim/bundle/vim-nerdtree
