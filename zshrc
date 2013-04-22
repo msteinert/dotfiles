@@ -26,6 +26,8 @@ compinit
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey -v
+bindkey '\e[3~' delete-char
+bindkey '^r' history-incremental-search-backward
 vi-cmd-mode() {
     zle -K vicmd
 }
