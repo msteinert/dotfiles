@@ -1,4 +1,6 @@
 *.swo
 *.swp
 .tup
+_build
+cscope.out
 tags

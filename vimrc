@@ -26,6 +26,7 @@ set title		" set the terminal title
 set lazyredraw		" don't redraw while replaying macros
 set hidden		" hide buffer on change (allows undo)
 set cf			" enable error files and error jumping
+set tags=./tags;$HOME	" search for tag files up to $HOME
 
 " add backspace and cursor keys to wrap
 set whichwrap+=<,>,h,l
@@ -104,6 +105,7 @@ endif
 " NERD Tree
 map <leader>n :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+let NERDTreeIgnore=['\.o$', '\.lo$', '\.la$', '\~$', '\.cache$']
 
 " JSHint
 map <leader>js :JSHint<CR>
