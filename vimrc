@@ -28,6 +28,12 @@ set hidden		" hide buffer on change (allows undo)
 set cf			" enable error files and error jumping
 set tags=./tags;$HOME	" search for tag files up to $HOME
 
+augroup vimrc
+  au BufReadPre * setlocal foldmethod=syntax
+  au BufWinEnter * if &fdm == 'syntax' | setlocal foldmethod=manual | endif
+  au BufWinEnter * normal zR
+augroup END
+
 " add backspace and cursor keys to wrap
 set whichwrap+=<,>,h,l
 

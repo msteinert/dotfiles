@@ -4,6 +4,7 @@ let g:Powerline#Themes#steinert#theme = Pl#Theme#Create(
 		\ , 'mode_indicator'
 		\ , 'fugitive:branch'
 		\ , 'hgrev:branch'
+		\ , 'filename'
 		\ , 'syntastic:errors'
 		\ , Pl#Segment#Split()
 		\ , 'virtualenv:statusline'
