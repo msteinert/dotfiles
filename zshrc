@@ -100,12 +100,14 @@ MANPATH="$HOME/.local/man:$MANPATH"
 
 # Setup variables
 CSCOPE_EDITOR="vim"
+DYLD_FALLBACK_LIBRARY_PATH="$HOME/.local/lib"
 EDITOR="vim"
 INPUTRC="$HOME/.inputrc"
 PKG_CONFIG_PATH="$HOME/.local/lib/pkgconfig:/opt/local/lib/pkgconfig:/usr/local/lib/pkgconfig:/usr/lib/pkgconfig"
 PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
 
-export CSCOPE_EDITOR EDITOR INPUTRC PKG_CONFIG_PATH PYTHONPATH
+export CSCOPE_EDITOR DYLD_FALLBACK_LIBRARY_PATH EDITOR INPUTRC \
+       PKG_CONFIG_PATH PYTHONPATH
 
 # Source definitions
 if [[ -d $HOME/.zsh.d ]]; then
