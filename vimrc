@@ -27,6 +27,8 @@ set lazyredraw		" don't redraw while replaying macros
 set hidden		" hide buffer on change (allows undo)
 set cf			" enable error files and error jumping
 set tags=./tags;$HOME	" search for tag files up to $HOME
+set exrc		" enable per-directory .vimrc files
+set secure		" disable unsafe commands in local .vimrc files
 
 augroup vimrc
   au BufReadPre * setlocal foldmethod=syntax
