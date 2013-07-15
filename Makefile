@@ -12,6 +12,7 @@ SOURCES += vimrc
 SOURCES += Xresources
 SOURCES += zshrc
 SOURCES += zsh.d/zsh-aliases
+SOURCES += zsh.d/zsh-ssh
 
 ifeq ($(ECHOSTAR),y)
 SOURCES += bash.d/bash-clearcase
