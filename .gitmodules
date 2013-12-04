@@ -109,3 +109,6 @@
 [submodule "vim/bundle/vim-go"]
 	path = vim/bundle/vim-go
 	url = git://github.com/fsouza/go.vim.git
+[submodule "vim/bundle/vim-qml"]
+	path = vim/bundle/vim-qml
+	url = git@github.com:peterhoeg/vim-qml.git
