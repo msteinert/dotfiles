@@ -112,3 +112,6 @@
 [submodule "vim/bundle/vim-qml"]
 	path = vim/bundle/vim-qml
 	url = git@github.com:peterhoeg/vim-qml.git
+[submodule "vim/bundle/vim-togglelist"]
+	path = vim/bundle/vim-togglelist
+	url = https://github.com/milkypostman/vim-togglelist.git

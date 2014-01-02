@@ -12,6 +12,7 @@
 	branch = auto
 [core]
 	excludesfile = ~/.cvsignore
+	pager = less -r
 [diff]
 	tool = meld
 [gui]

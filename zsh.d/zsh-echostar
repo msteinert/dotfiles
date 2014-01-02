@@ -27,8 +27,8 @@ PS1_HOSTNAME="%{$fg[yellow]%}$(hostname -s | awk -F- '{ print $NF }')"
 PS1='%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}${PS1_HOSTNAME}${PS1_CLEARCASE}%{$reset_color%}${vcs_info_msg_0_}%{$reset_color%}> '
 
 # Update paths
-PATH="$HOME/bin:/opt/java/$JAVA/bin:/opt/scala/$SCALA/bin:/opt/maven/$MAVEN/bin:/opt/ant/$ANT/bin:/usr/kerberos/bin:/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin:/opt/rational/clearcase/bin:/sbin:/usr/sbin:$PLAN9/bin:$HOME/.local/bin:$HOME/.local/bin/heroku-client:/opt/qt-4.8.0/bin"
-PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig:/opt/qt-4.8.0/lib/pkgconfig"
+PATH="$HOME/.local/bin:$HOME/.local/gnome-3.10/bin:$HOME/.local/qt-5.2.0/bin:$HOME/.local/llvm-3.3/bin:$PATH:/usr/sbin"
+PKG_CONFIG_PATH="$HOME/.local/lib/pkgconfig:$HOME/.local/gnome-3.10/lib/pkgconfig:$HOME/.local/qt-5.2.0/lib/pkgconfig:$HOME/.local/llvm-3.3/lib/pkgconfig:/usr/local/lib/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig"
 
 # Aliases
 alias ct=cleartool
