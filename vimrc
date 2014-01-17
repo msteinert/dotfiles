@@ -152,9 +152,8 @@ map <leader>kw :%s/\s\+$//<CR>
 
 " Gvim settings
 if has("gui_running")
-	set guifont=Mensch\ for\ Powerline\ 15
+	set guifont=Mensch\ for\ Powerline\ 12
 	set guicursor=a:blinkon0
-	set guioptions-=m
 	set guioptions-=T
 	set guioptions-=r
 	set guioptions-=L

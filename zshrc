@@ -96,7 +96,7 @@ fi
 
 # Setup paths
 PATH="$HOME/.local/bin:/opt/local/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:$PATH"
-MANPATH="$HOME/.local/man:$MANPATH"
+MANPATH="$HOME/.local/man:$HOME/.local/share/man:$MANPATH"
 
 # Setup variables
 CSCOPE_EDITOR="vim"
