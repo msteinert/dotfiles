@@ -115,3 +115,6 @@
 [submodule "vim/bundle/vim-togglelist"]
 	path = vim/bundle/vim-togglelist
 	url = https://github.com/milkypostman/vim-togglelist.git
+[submodule "vim/bundle/vim-qmake"]
+	path = vim/bundle/vim-qmake
+	url = git@github.com:artoj/qmake-syntax-vim.git
