@@ -30,8 +30,9 @@ PS1='%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}${PS1_HOSTNAME}${PS1_CLEARC
 GNOME=3.10
 QT=5.2.0
 LLVM=3.3
-PATH="$HOME/.local/bin:$HOME/.local/gnome-$GNOME/bin:$HOME/.local/qt-$QT/bin:$HOME/.local/llvm-$LLVM/bin:$HOME/src/hg/go/bin:$PATH:/usr/sbin"
-PKG_CONFIG_PATH="$HOME/.local/lib/pkgconfig:$HOME/.local/gnome-$GNOME/lib/pkgconfig:$HOME/.local/qt-$QT/lib/pkgconfig:$HOME/.local/llvm-$LLVM/lib/pkgconfig:/usr/local/lib/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig"
+DIRECTFB=1.7.1
+PATH="$HOME/.local/bin:$HOME/.local/gnome-$GNOME/bin:$HOME/.local/qt-$QT/bin:$HOME/.local/llvm-$LLVM/bin:$HOME/.local/directfb-$DIRECTFB/bin:$HOME/src/hg/go/bin:$HOME/.local/rust/bin:$PATH:/usr/sbin"
+PKG_CONFIG_PATH="$HOME/.local/lib/pkgconfig:$HOME/.local/gnome-$GNOME/lib/pkgconfig:$HOME/.local/qt-$QT/lib/pkgconfig:$HOME/.local/llvm-$LLVM/lib/pkgconfig:$HOME/.local/directfb-$DIRECTFB/lib/pkgconfig:/usr/local/lib/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig"
 
 # Aliases
-alias ct=cleartool
+alias ct="LD_LIBRARY_PATH=/lib:/usr/lib cleartool"
