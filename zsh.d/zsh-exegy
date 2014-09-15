@@ -1,0 +1,3 @@
+#!zsh
+
+PATH="$HOME/local/bin:/nfs/svn/git/migration/gitewf:$PATH"

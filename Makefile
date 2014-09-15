@@ -21,6 +21,10 @@ SOURCES += zsh.d/zsh-clearcase
 SOURCES += zsh.d/zsh-echostar
 endif
 
+ifeq ($(EXEGY),y)
+SOURCES += zsh.d/zsh-exegy
+endif
+
 DIRS += bash.d
 DIRS += zsh.d
 
