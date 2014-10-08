@@ -1,3 +1,9 @@
 #!zsh
 
 PATH="$HOME/local/bin:/nfs/svn/git/migration/gitewf:$PATH"
+
+HOME2=/home2/msteinert
+
+export HOME2
+
+alias cd2="cd $HOME2"

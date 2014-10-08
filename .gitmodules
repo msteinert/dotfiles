@@ -108,3 +108,6 @@
 [submodule "vim/bundle/vim-togglelist"]
 	path = vim/bundle/vim-togglelist
 	url = https://github.com/milkypostman/vim-togglelist.git
+[submodule "vim/bundle/vim-gyp"]
+	path = vim/bundle/vim-gyp
+	url = git@github.com:kelan/gyp.vim.git
