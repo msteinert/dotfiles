@@ -2,8 +2,9 @@
 
 PATH="$HOME/local/bin:/nfs/svn/git/migration/gitewf:$PATH"
 
-HOME2=/home2/msteinert
+HOME2=/export0/msteinert
+XDG_CACHE_DIR=$HOME2/.cache
 
-export HOME2
+export HOME2 XDG_CACHE_DIR
 
 alias cd2="cd $HOME2"

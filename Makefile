@@ -1,7 +1,8 @@
-SOURCES += bashrc
+SOURCES += Xresources
 SOURCES += bash.d/bash-aliases
 SOURCES += bash.d/bash-git
 SOURCES += bash.d/bash-git-prompt
+SOURCES += bashrc
 SOURCES += cvsignore
 SOURCES += dircolors
 SOURCES += gitconfig
@@ -9,16 +10,15 @@ SOURCES += inputrc
 SOURCES += tmux.conf
 SOURCES += vim
 SOURCES += vimrc
-SOURCES += Xresources
-SOURCES += zshrc
 SOURCES += zsh.d/zsh-aliases
-SOURCES += zsh.d/zsh-ssh
+SOURCES += zshrc
 
 ifeq ($(ECHOSTAR),y)
 SOURCES += bash.d/bash-clearcase
 SOURCES += bash.d/bash-echostar
 SOURCES += zsh.d/zsh-clearcase
 SOURCES += zsh.d/zsh-echostar
+SOURCES += zsh.d/zsh-ssh
 endif
 
 ifeq ($(EXEGY),y)
