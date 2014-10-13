@@ -110,4 +110,4 @@
 	url = https://github.com/milkypostman/vim-togglelist.git
 [submodule "vim/bundle/vim-gyp"]
 	path = vim/bundle/vim-gyp
-	url = git@github.com:kelan/gyp.vim.git
+	url = https://github.com/channing/gyp.vim.git
