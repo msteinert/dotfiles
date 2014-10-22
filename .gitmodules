@@ -104,7 +104,7 @@
 	url = git://github.com/tpope/vim-rvm.git
 [submodule "vim/bundle/vim-go"]
 	path = vim/bundle/vim-go
-	url = git://github.com/fsouza/go.vim.git
+	url = https://github.com/fatih/vim-go.git
 [submodule "vim/bundle/vim-togglelist"]
 	path = vim/bundle/vim-togglelist
 	url = https://github.com/milkypostman/vim-togglelist.git
