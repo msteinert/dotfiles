@@ -1,10 +1,11 @@
 #!zsh
 
-PATH="$HOME/local/bin:/nfs/svn/git/migration/gitewf:$PATH"
-
 HOME2=/export0/msteinert
+GOPATH=$HOME2/src/go
 XDG_CACHE_DIR=$HOME2/.cache
 
-export HOME2 XDG_CACHE_DIR
+export HOME2 GOPATH XDG_CACHE_DIR
+
+PATH="$GOPATH/bin:$HOME/local/bin:/nfs/svn/git/migration/gitewf:$PATH"
 
 alias cd2="cd $HOME2"
