@@ -128,6 +128,20 @@ let &errorformat="%f:%l:%c: %t%*[^:]:%m,%f:%l: %t%*[^:]:%m," . &errorformat
 " Lusty Juggler
 let g:LustyJugglerSuppressRubyWarning = 1
 
+" vim-go
+augroup filetype_go
+	au!
+	au FileType go nmap <Leader>s <Plug>(go-implements)
+	au FileType go nmap <Leader>i <Plug>(go-info)
+	au FileType go nmap <Leader>gd <Plug>(go-doc)
+	au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+	au FileType go nmap <leader>r <Plug>(go-run)
+	au FileType go nmap <leader>b <Plug>(go-build)
+	au FileType go nmap <leader>t <Plug>(go-test)
+	au FileType go nmap <leader>c <Plug>(go-coverage)
+	au FileType go nmap gd <Plug>(go-def)
+augroup END
+
 " Powerline
 set laststatus=2
 let g:Powerline_symbols="fancy"
