@@ -14,7 +14,9 @@
 	excludesfile = ~/.cvsignore
 	pager = less -r
 [diff]
-	tool = meld
+	tool = vimdiff
+[merge]
+	tool = vimdiff
 [gui]
 	fontui = -family Ubuntu -size 11 -weight normal -slant roman -underline 0 -overstrike 0
 	fontdiff = -family Consolas -size 12 -weight normal -slant roman -underline 0 -overstrike 0

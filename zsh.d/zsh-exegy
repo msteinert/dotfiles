@@ -6,6 +6,6 @@ XDG_CACHE_DIR=$HOME2/.cache
 
 export HOME2 GOPATH XDG_CACHE_DIR
 
-PATH="$GOPATH/bin:$HOME/local/bin:/nfs/svn/git/migration/gitewf:$PATH"
+PATH="$GOPATH/bin:$HOME2/.local/bin:/nfs/svn/git/migration/gitewf:$PATH"
 
 alias cd2="cd $HOME2"

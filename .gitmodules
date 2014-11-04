@@ -111,3 +111,6 @@
 [submodule "vim/bundle/vim-gyp"]
 	path = vim/bundle/vim-gyp
 	url = https://github.com/channing/gyp.vim.git
+[submodule "vim/bundle/vim-dispatch"]
+	path = vim/bundle/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch.git
