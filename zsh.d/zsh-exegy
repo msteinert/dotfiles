@@ -1,11 +1,12 @@
 #!zsh
 
 HOME2=/export0/msteinert
-GOPATH=$HOME2/src/go
+GOPATH=$HOME2/go
+GOROOT=$HOME2/src/hg/go
 XDG_CACHE_DIR=$HOME2/.cache
 
-export HOME2 GOPATH XDG_CACHE_DIR
+export HOME2 GOPATH GOROOT XDG_CACHE_DIR
 
-PATH="$GOPATH/bin:$HOME2/.local/bin:/nfs/svn/git/migration/gitewf:$PATH"
+PATH="$GOROOT/bin:$GOPATH/bin:$HOME2/.local/bin:$PATH"
 
 alias cd2="cd $HOME2"
