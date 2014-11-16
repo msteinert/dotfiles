@@ -21,7 +21,7 @@
 	</entry>
 	<entry name="use_custom_default_size" mtime="1327773382" type="bool" value="false"/>
 	<entry name="font" mtime="1327773382" type="string">
-		<stringvalue>Consolas 12</stringvalue>
+		<stringvalue>Mensch for Powerline 14</stringvalue>
 	</entry>
 	<entry name="backspace_binding" mtime="1327773382" type="string">
 		<stringvalue>ascii-del</stringvalue>

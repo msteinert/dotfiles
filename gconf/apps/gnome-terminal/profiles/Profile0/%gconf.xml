@@ -6,7 +6,7 @@
 	<entry name="alternate_screen_scroll" mtime="1327725397" type="bool" value="true"/>
 	<entry name="use_custom_command" mtime="1327725397" type="bool" value="false"/>
 	<entry name="font" mtime="1327725397" type="string">
-		<stringvalue>Consolas 12</stringvalue>
+		<stringvalue>Mensch for Powerline 14</stringvalue>
 	</entry>
 	<entry name="scrollbar_position" mtime="1327725397" type="string">
 		<stringvalue>hidden</stringvalue>

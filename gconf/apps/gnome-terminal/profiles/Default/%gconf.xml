@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <gconf>
 	<entry name="font" mtime="1327639410" type="string">
-		<stringvalue>Consolas 12</stringvalue>
+		<stringvalue>Mensch for Powerline 14</stringvalue>
 	</entry>
 	<entry name="bold_color_same_as_fg" mtime="1325975824" type="bool" value="true"/>
 	<entry name="cursor_blink_mode" mtime="1327639410" type="string">
