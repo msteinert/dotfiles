@@ -95,7 +95,12 @@ else
 fi
 
 # Setup paths
-PATH="$HOME/.local/bin:/opt/local/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:$PATH"
+GOPATH=$HOME/go
+GOROOT=$HOME/src/hg/go
+
+export GOPATH GOROOT
+
+PATH="$GOROOT/bin:$GOPATH/bin:$HOME/.local/bin:/opt/local/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:$PATH"
 MANPATH="$HOME/.local/man:$HOME/.local/share/man:$MANPATH"
 
 # Setup variables
