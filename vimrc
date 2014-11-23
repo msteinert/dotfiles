@@ -29,6 +29,7 @@ set cf			" enable error files and error jumping
 set tags=./tags;$HOME	" search for tag files up to $HOME
 set exrc		" enable per-directory .vimrc files
 set secure		" disable unsafe commands in local .vimrc files
+set noshowmode          " disable mode messages in status line
 
 augroup vimrc
   au BufReadPre * setlocal foldmethod=syntax
@@ -96,7 +97,6 @@ endif
 " Paste annoyance
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
-set showmode
 
 " Buffer navigation
 map <F5> :bprevious!<CR>
@@ -142,16 +142,62 @@ augroup filetype_go
 	au FileType go nmap gd <Plug>(go-def)
 augroup END
 
-" Powerline
+" Light
 set laststatus=2
-let g:Powerline_symbols="fancy"
-let g:Powerline_mode_n='N'
-let g:Powerline_mode_i='I'
-let g:Powerline_mode_R='R'
-let g:Powerline_mode_v='V'
-let g:Powerline_mode_s='S'
-let g:Powerline_theme="steinert"
-let g:Powerline_colorscheme="solarized16"
+let g:lightline = {
+	\ 'colorscheme': 'solarized',
+	\ 'mode_map': {
+	\   'n': 'N',
+	\   'c': 'N',
+	\   'i': 'I',
+	\ },
+	\ 'active': {
+	\   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ],
+	\   'right': [ [ 'lineinfo' ], [ 'percent' ] ],
+	\ },
+	\ 'component_function': {
+	\   'filename': 'LightFilename',
+	\   'fugitive': 'LightFugitive',
+	\   'mode': 'LightMode',
+	\   'readonly': 'LightReadonly',
+	\ },
+	\ 'separator': { 'left': '⮀', 'right': '⮂' },
+	\ 'subseparator': { 'left': '⮁', 'right': '⮃' },
+\ }
+
+function! LightModified()
+	return &ft =~ 'help' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+endfunction
+
+function! LightReadonly()
+	return &ft !~? 'help' && &readonly ? '⭤' : ''
+endfunction
+
+function! LightFilename()
+	let fname = expand('%:t')
+	return fname =~ 'NERD_tree' ? '' :
+		\ ('' != LightReadonly() ? LightReadonly() . ' ' : '') .
+		\ ('' != fname ? fname : '[No Name]') .
+		\ ('' != LightModified() ? ' ' . LightModified() : '')
+endfunction
+
+function! LightFugitive()
+	try
+		if expand('%:t') !~? 'NERD' && exists('*fugitive#head')
+			let mark = '⭠ '
+			let _ = fugitive#head()
+			return strlen(_) ? mark._ : ''
+		endif
+	catch
+	endtry
+	return ''
+endfunction
+
+function! LightMode()
+	let fname = expand('%:t')
+	return fname =~ 'NERD_tree' ? 'NERDTree' :
+		\ winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
 
 " Highlight trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red

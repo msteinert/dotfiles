@@ -95,10 +95,6 @@
 [submodule "vim/bundle/vim-haskell"]
 	path = vim/bundle/vim-haskell
 	url = git://github.com/wlangstroth/vim-haskell.git
-[submodule "vim/bundle/vim-powerline"]
-	path = vim/bundle/vim-powerline
-	url = git://github.com/Lokaltog/vim-powerline.git
-	ignore = all
 [submodule "vim/bundle/vim-rvm"]
 	path = vim/bundle/vim-rvm
 	url = git://github.com/tpope/vim-rvm.git
@@ -114,3 +110,6 @@
 [submodule "vim/bundle/vim-dispatch"]
 	path = vim/bundle/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch.git
+[submodule "vim/bundle/vim-lightline"]
+	path = vim/bundle/vim-lightline
+	url = https://github.com/itchyny/lightline.vim.git
