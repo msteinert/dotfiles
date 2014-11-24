@@ -6,7 +6,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 # Common aliases
 alias c="clear"
-alias h="history"
+alias h="history 1"
 alias tumx="tmux -u"
 
 # Parallel build aliases
