@@ -153,7 +153,7 @@ let g:lightline = {
   \ },
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ],
-  \   'right': [ [ 'lineinfo' ], [ 'percent'] ],
+  \   'right': [ [ 'lineinfo' ], [ 'percent' ], [ 'filetype' ] ],
   \ },
   \ 'component_function': {
   \   'filename': 'LightFilename',
