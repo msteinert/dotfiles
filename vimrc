@@ -15,21 +15,21 @@ set wildignore=*.o,*.lo
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
-set history=50    " keep 50 lines of command line history
-set ruler    " show the cursor position all the time
-set showcmd    " display incomplete commands
-set incsearch    " do incremental searching
-set nowrap    " don't wrap long lines
-set encoding=utf-8  " set the encoding
-set nobackup    " don't create backups
-set title    " set the terminal title
-set lazyredraw    " don't redraw while replaying macros
-set hidden    " hide buffer on change (allows undo)
-set cf      " enable error files and error jumping
+set history=50         " keep 50 lines of command line history
+set ruler              " show the cursor position all the time
+set showcmd            " display incomplete commands
+set incsearch          " do incremental searching
+set nowrap             " don't wrap long lines
+set encoding=utf-8     " set the encoding
+set nobackup           " don't create backups
+set title              " set the terminal title
+set lazyredraw         " don't redraw while replaying macros
+set hidden             " hide buffer on change (allows undo)
+set cf                 " enable error files and error jumping
 set tags=./tags;$HOME  " search for tag files up to $HOME
-set exrc    " enable per-directory .vimrc files
-set secure    " disable unsafe commands in local .vimrc files
-set noshowmode          " disable mode messages in status line
+set exrc               " enable per-directory .vimrc files
+set secure             " disable unsafe commands in local .vimrc files
+set noshowmode         " disable mode messages in status line
 
 augroup vimrc
   au BufReadPre * setlocal foldmethod=syntax
