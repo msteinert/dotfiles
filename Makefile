@@ -6,6 +6,8 @@ SOURCES += bashrc
 SOURCES += cvsignore
 SOURCES += dircolors
 SOURCES += gitconfig
+SOURCES += i3/config
+SOURCES += i3status.conf
 SOURCES += inputrc
 SOURCES += tmux.conf
 SOURCES += vim
@@ -26,6 +28,7 @@ SOURCES += zsh.d/zsh-exegy
 endif
 
 DIRS += bash.d
+DIRS += i3
 DIRS += zsh.d
 
 all:
