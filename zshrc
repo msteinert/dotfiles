@@ -75,7 +75,7 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-hook
 
 # Configure the prompt
 setopt prompt_subst
-PS1='%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}${vcs_info_msg_0_}%{$reset_color%}> '
+PS1='%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}%(1j.[%j].)${vcs_info_msg_0_}%{$reset_color%}> '
 
 # Enable color support of ls and also add handy aliases
 if [[ -x /usr/bin/dircolors ]]; then
