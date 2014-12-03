@@ -128,3 +128,9 @@ bindsym $mod+r mode "resize"
 bar {
        status_command i3status
 }
+
+bindsym $mod+Ctrl+l exec i3lock -c 000000
+
+# Window preferences
+for_window [window_role="Preferences"] floating enable
+for_window [window_role="pop-up"] floating enable
