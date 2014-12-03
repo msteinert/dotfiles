@@ -88,6 +88,7 @@ URxvt*depth:            32
 !! font settings
 *faceName:              Consolas
 *faceSize:              14
+*utf8:                  1
 
 !! other setup
 *geometry:              80x24
