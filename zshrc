@@ -97,10 +97,11 @@ fi
 # Setup paths
 GOPATH=$HOME/go
 GOROOT=$HOME/src/hg/go
+SCALA_HOME=/usr/local/share/scala
 
 export GOPATH GOROOT
 
-PATH="$GOROOT/bin:$GOPATH/bin:$HOME/.local/bin:/opt/local/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:$PATH"
+PATH="$GOROOT/bin:$GOPATH/bin:$SCALA_HOME/bin:$HOME/.local/bin:/opt/local/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:$PATH"
 MANPATH="$HOME/.local/man:$HOME/.local/share/man:$MANPATH"
 
 # Setup variables

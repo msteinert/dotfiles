@@ -29,7 +29,7 @@ SOURCES += zsh.d/zsh-exegy
 endif
 
 DIRS += bash.d
-DIRS += i3
+DIRS += config
 DIRS += zsh.d
 
 all:

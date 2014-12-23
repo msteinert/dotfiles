@@ -2,11 +2,12 @@
 
 HOME2=/export0/msteinert
 GOPATH=$HOME2/go
-GOROOT=$HOME2/src/hg/go
+GOROOT=$HOME2/src/git/go
 XDG_CACHE_DIR=$HOME2/.cache
 
 export HOME2 GOPATH GOROOT XDG_CACHE_DIR
 
 PATH="$GOROOT/bin:$GOPATH/bin:$HOME2/.local/bin:$PATH"
+PKG_CONFIG_PATH="$HOME2/.local/lib/pkgconfig:$PKG_CONFIG_PATH"
 
 alias cd2="cd $HOME2"
