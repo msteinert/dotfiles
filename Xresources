@@ -78,7 +78,7 @@
 
 !! URxvt settings
 URxvt*background:       [95]S_base03
-URxvt*font:             xft:Consolas:style=regular:size=14:antialias=true:hinting=true
+URxvt*font:             xft:Mensch for Powerline:style=regular:size=14:antialias=true:hinting=true
 URxvt*boldFont:         xft:Consolas:style=bold:size=14:antialias=true:hinting=true
 URxvt*italicFont:       xft:Consolas:style=italic:size=14:antialias=true:hinting=true
 URxvt*boldItalicFont:   xft:Consolas:style=bolditalic:size=14:antialias=true:hinting=true

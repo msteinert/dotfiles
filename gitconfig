@@ -16,7 +16,7 @@
 [diff]
 	tool = p4merge
 [merge]
-	tool = p4merge
+	tool = meld
 [gui]
 	fontui = -family Ubuntu -size 11 -weight normal -slant roman -underline 0 -overstrike 0
 	fontdiff = -family Consolas -size 12 -weight normal -slant roman -underline 0 -overstrike 0

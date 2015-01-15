@@ -210,6 +210,9 @@ autocmd BufWinLeave * call clearmatches()
 " Kill trailing whitespace
 map <leader>kw :%s/\s\+$//<CR>
 
+" Python
+au FileType python setlocal formatprg=autopep8\ -
+
 " Gvim settings
 if has("gui_running")
   set guifont=Mensch\ for\ Powerline\ 14
