@@ -1,13 +1,18 @@
 #!zsh
 
 HOME2=/export0/msteinert
-GOPATH=$HOME2/go
-GOROOT=$HOME2/src/git/go
-XDG_CACHE_DIR=$HOME2/.cache
+GOPATH=/code/msteinert/go/$(lsb_release -is)-$(lsb_release -rs)
+GOROOT=/code/msteinert/src/$(lsb_release -is)-$(lsb_release -rs)/git/go
+PLATFORM=$HOME/.local/$(lsb_release -is)-$(lsb_release -rs)
 
 export HOME2 GOPATH GOROOT XDG_CACHE_DIR
 
-PATH="$GOROOT/bin:$GOPATH/bin:$HOME2/.local/bin:$PATH"
-PKG_CONFIG_PATH="$HOME2/.local/lib/pkgconfig:$PKG_CONFIG_PATH"
+LD_LIBRARY_PATH=$PLATFORM/lib:$LD_LIBRARY_PATH
+PATH=$GOROOT/bin:$GOPATH/bin:$PLATFORM/bin:$PLATFORM/usr/bin:$PATH
+PKG_CONFIG_PATH=$PLATFORM/lib/pkgconfig:$PKG_CONFIG_PATH
+PYTHONPATH=$PLATFORM/usr/lib/python2.6/site-packages
+
+export LD_LIBRARY_PATH PATH PKG_CONFIG_PATH PYTHONPATH
 
 alias cd2="cd $HOME2"
+alias cdc="cd /code/msteinert"

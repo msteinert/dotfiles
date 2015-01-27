@@ -1,8 +1,9 @@
 *.swo
 *.swp
+.nfs*
 .tup
 .vimrc
+/out
 _build
 cscope.out
 tags
-/out

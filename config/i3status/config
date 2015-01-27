@@ -11,7 +11,7 @@ order += "ethernet eth0"
 order += "tztime local"
 
 volume master {
-	format = " ♪ %volume  "
+	format = " ♪ %volume "
 	device = "default"
 	mixer = "Master"
 	mixer_idx = 0
@@ -26,7 +26,7 @@ cpu_usage {
 }
 
 disk "/" {
-	format = " %avail:/ "
+	format = " %avail "
 }
 
 ethernet eth0 {

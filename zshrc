@@ -63,12 +63,14 @@ zstyle ':vcs_info:*' actionformats ":%b|%a%c%u"
 # git: Show marker if there are untracked files in repository
 zstyle ':vcs_info:git*+set-message:*' hooks git-hook
 +vi-git-hook () {
-    if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]]; then
-        if [[ -n $(git rev-parse --verify refs/stash 2> /dev/null) ]]; then
-            hook_com[staged]+="%{$fg[magenta]%}⋆"
-        fi
-        if [[ -n $(git status --porcelain | grep '??' 2> /dev/null) ]]; then
-            hook_com[staged]+="%{$fg[yellow]%}•"
+    if [[ $(/usr/bin/stat -L --file-system --format="%T" "$(pwd)") != "nfs" ]]; then
+        if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]]; then
+            if [[ -n $(git rev-parse --verify refs/stash 2> /dev/null) ]]; then
+                hook_com[staged]+="%{$fg[magenta]%}⋆"
+            fi
+            if [[ -n $(git status --porcelain | grep '??' 2> /dev/null) ]]; then
+                hook_com[staged]+="%{$fg[yellow]%}•"
+            fi
         fi
     fi
 }
