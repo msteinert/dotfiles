@@ -116,3 +116,12 @@
 [submodule "vim/bundle/vim-flake8"]
 	path = vim/bundle/vim-flake8
 	url = git@github.com:nvie/vim-flake8.git
+[submodule "vim/bundle/vim-rust"]
+	path = vim/bundle/vim-rust
+	url = git@github.com:wting/rust.vim.git
+[submodule "vim/bundle/vim-toml"]
+	path = vim/bundle/vim-toml
+	url = git@github.com:cespare/vim-toml.git
+[submodule "vim/bundle/vim-nerdcommenter"]
+	path = vim/bundle/vim-nerdcommenter
+	url = git@github.com:scrooloose/nerdcommenter.git
