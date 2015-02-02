@@ -33,7 +33,10 @@ set noshowmode         " disable mode messages in status line
 
 augroup vimrc
   au BufReadPre * setlocal foldmethod=syntax
-  au BufWinEnter * if &fdm == 'syntax' | setlocal foldmethod=manual | endif
+  au BufWinEnter *
+  \ if &fdm == 'syntax' |
+  \   setlocal foldmethod=manual |
+  \ endif
   au BufWinEnter * normal zR
 augroup END
 
@@ -49,47 +52,33 @@ if has("autocmd")
   " Enable file type detection.
   " Use the default filetype settings, so that mail gets 'tw' set to 72,
   " 'cindent' is on in C files, etc.
-  " Also load indent files, to automatically do language-dependent
-  " indenting.
+  " Also load indent files, to automatically do language-dependent indenting.
   filetype plugin indent on
-
-  " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
-  au!
-
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
-
-  " Wrap lines in the QuickFix window
-  autocmd FileType qf setlocal wrap linebreak
-
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event
-  " handler (happens when dropping a file on gvim). Also don't do it
-  " when the mark is in the first line, that is the default position
-  " when opening a file.
-  autocmd BufReadPost *
-  \ if line("'\"") > 1 && line("'\"") <= line("$") |
-  \   exe "normal! g`\"" |
-  \ endif
-
-  " Don't add extra indent after switch
-  setlocal cinoptions=:0
-
+    au!
+    " For all text files set 'textwidth' to 78 characters.
+    au FileType text setlocal textwidth=78
+    " Wrap lines in the QuickFix window
+    au FileType qf setlocal wrap linebreak
+    " When editing a file, always jump to the last known cursor position.
+    au BufReadPost *
+    \ if line("'\"") > 1 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
+    " Don't add extra indent after switch
+    setlocal cinoptions=:0
   augroup END
 else
   " always set autoindenting on
   set autoindent
 endif " has("autocmd")
 
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
+" Switch syntax highlighting on, when the terminal has colors.
 if &t_Co > 2 || has("gui_running")
   syntax on
   set hlsearch
   let g:load_doxygen_syntax=1
   let g:js_indent_log=0
-  " Solarized color scheme settings
   colorscheme solarized
   set background=dark
 endif
@@ -115,10 +104,17 @@ endif
 
 " NERD Tree
 map <leader>n :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeIgnore=['\.o$', '\.lo$', '\.la$', '\~$', '\.cache$']
+augroup nerd_tree
+  au!
+  au BufEnter *
+  \ if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") |
+  \   q |
+  \ endif
+augroup END
 
 " JSHint
+let g:jshintprg="jsxhint"
 map <leader>js :JSHint<CR>
 map <leader>cs :CoffeeLint<CR>
 
@@ -127,6 +123,12 @@ let &errorformat="%f:%l:%c: %t%*[^:]:%m,%f:%l: %t%*[^:]:%m," . &errorformat
 
 " Lusty Juggler
 let g:LustyJugglerSuppressRubyWarning = 1
+
+" Python
+augroup filetype_python
+  au!
+  au FileType python setlocal formatprg=autopep8\ -
+augroup END
 
 " vim-go
 augroup filetype_go
@@ -140,6 +142,12 @@ augroup filetype_go
   au FileType go nmap <leader>t <Plug>(go-test)
   au FileType go nmap <leader>c <Plug>(go-coverage)
   au FileType go nmap gd <Plug>(go-def)
+augroup END
+
+" vim-rust
+augroup filetype_rust
+  au!
+  au BufRead,BufNewFile *.rs runtime compiler/cargo.vim
 augroup END
 
 " Lightline
@@ -176,9 +184,9 @@ endfunction
 function! LightFilename()
   let fname = expand('%:t')
   return fname =~ 'NERD_tree' ? '' :
-    \ ('' != LightReadonly() ? LightReadonly() . ' ' : '') .
-    \ ('' != fname ? fname : '[No Name]') .
-    \ ('' != LightModified() ? ' ' . LightModified() : '')
+  \ ('' != LightReadonly() ? LightReadonly() . ' ' : '') .
+  \ ('' != fname ? fname : '[No Name]') .
+  \ ('' != LightModified() ? ' ' . LightModified() : '')
 endfunction
 
 function! LightFugitive()
@@ -196,22 +204,22 @@ endfunction
 function! LightMode()
   let fname = expand('%:t')
   return fname =~ 'NERD_tree' ? 'NERDTree' :
-    \ winwidth(0) > 60 ? lightline#mode() : ''
+  \ winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
 
 " Highlight trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
+augroup extra_whitespace
+  au!
+  autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+  autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+  autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+  autocmd BufWinLeave * call clearmatches()
+augroup END
 
 " Kill trailing whitespace
 map <leader>kw :%s/\s\+$//<CR>
-
-" Python
-au FileType python setlocal formatprg=autopep8\ -
 
 " Gvim settings
 if has("gui_running")
