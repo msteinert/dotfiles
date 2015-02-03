@@ -44,8 +44,8 @@ augroup END
 set whichwrap+=<,>,h,l
 
 " set up leader
-let mapleader = ","
-let g:mapleader = ","
+let mapleader=","
+let g:mapleader=","
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
@@ -122,12 +122,14 @@ map <leader>cs :CoffeeLint<CR>
 let &errorformat="%f:%l:%c: %t%*[^:]:%m,%f:%l: %t%*[^:]:%m," . &errorformat
 
 " Lusty Juggler
-let g:LustyJugglerSuppressRubyWarning = 1
+let g:LustyJugglerSuppressRubyWarning=1
 
 " Python
+let g:no_flake8_maps=1
 augroup filetype_python
   au!
   au FileType python setlocal formatprg=autopep8\ -
+  autocmd FileType python map <buffer> <F8> :call Flake8()<CR>
 augroup END
 
 " vim-go
@@ -147,12 +149,12 @@ augroup END
 " vim-rust
 augroup filetype_rust
   au!
-  au BufRead,BufNewFile *.rs runtime compiler/cargo.vim
+  au FileType rust compiler cargo
 augroup END
 
 " Lightline
 set laststatus=2
-let g:lightline = {
+let g:lightline={
   \ 'colorscheme': 'solarized',
   \ 'mode_map': {
   \   'n': 'N',
@@ -182,7 +184,7 @@ function! LightReadonly()
 endfunction
 
 function! LightFilename()
-  let fname = expand('%:t')
+  let fname=expand('%:t')
   return fname =~ 'NERD_tree' ? '' :
   \ ('' != LightReadonly() ? LightReadonly() . ' ' : '') .
   \ ('' != fname ? fname : '[No Name]') .
@@ -192,8 +194,8 @@ endfunction
 function! LightFugitive()
   try
     if expand('%:t') !~? 'NERD' && exists('*fugitive#head')
-      let mark = '⭠ '
-      let _ = fugitive#head()
+      let mark='⭠ '
+      let _=fugitive#head()
       return strlen(_) ? mark._ : ''
     endif
   catch
@@ -202,7 +204,7 @@ function! LightFugitive()
 endfunction
 
 function! LightMode()
-  let fname = expand('%:t')
+  let fname=expand('%:t')
   return fname =~ 'NERD_tree' ? 'NERDTree' :
   \ winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
