@@ -30,8 +30,10 @@ set tags=./tags;$HOME  " search for tag files up to $HOME
 set exrc               " enable per-directory .vimrc files
 set secure             " disable unsafe commands in local .vimrc files
 set noshowmode         " disable mode messages in status line
+set cinoptions=:0      " don't indent after a switch
 
 augroup vimrc
+  au!
   au BufReadPre * setlocal foldmethod=syntax
   au BufWinEnter *
   \ if &fdm == 'syntax' |
@@ -40,36 +42,29 @@ augroup vimrc
   au BufWinEnter * normal zR
 augroup END
 
-" add backspace and cursor keys to wrap
+" Add backspace and cursor keys to wrap
 set whichwrap+=<,>,h,l
 
-" set up leader
+" Set up leader
 let mapleader=","
 let g:mapleader=","
 
-" Only do this part when compiled with support for autocommands.
+" Only do this part when compiled with support for autocommands
 if has("autocmd")
-  " Enable file type detection.
-  " Use the default filetype settings, so that mail gets 'tw' set to 72,
-  " 'cindent' is on in C files, etc.
-  " Also load indent files, to automatically do language-dependent indenting.
+  " Load indent files
   filetype plugin indent on
   augroup vimrcEx
     au!
-    " For all text files set 'textwidth' to 78 characters.
     au FileType text setlocal textwidth=78
-    " Wrap lines in the QuickFix window
     au FileType qf setlocal wrap linebreak
-    " When editing a file, always jump to the last known cursor position.
+    " Jump to the last known cursor position
     au BufReadPost *
     \ if line("'\"") > 1 && line("'\"") <= line("$") |
     \   exe "normal! g`\"" |
     \ endif
-    " Don't add extra indent after switch
-    setlocal cinoptions=:0
   augroup END
 else
-  " always set autoindenting on
+  " Always set autoindenting on
   set autoindent
 endif " has("autocmd")
 
@@ -100,6 +95,8 @@ nmap <silent> <C-l> :wincmd l<CR>
 if bufwinnr(1)
   map <S-Up> :resize +1<CR>
   map <S-Down> :resize -1<CR>
+  map <S-Right> :vertical resize +1<CR>
+  map <S-Left> :vertical resize -1<CR>
 endif
 
 " NERD Tree
@@ -129,10 +126,10 @@ let g:no_flake8_maps=1
 augroup filetype_python
   au!
   au FileType python setlocal formatprg=autopep8\ -
-  autocmd FileType python map <buffer> <F8> :call Flake8()<CR>
+  au FileType python map <buffer> <F8> :call Flake8()<CR>
 augroup END
 
-" vim-go
+" Go
 augroup filetype_go
   au!
   au FileType go nmap <Leader>s <Plug>(go-implements)
@@ -146,10 +143,14 @@ augroup filetype_go
   au FileType go nmap gd <Plug>(go-def)
 augroup END
 
-" vim-rust
+" Rust
 augroup filetype_rust
   au!
   au FileType rust compiler cargo
+  au FileType rust nmap <leader>r :make run<CR>
+  au FileType rust nmap <leader>b :make build<CR>
+  au FileType rust nmap <leader>t :make test<CR>
+  au FileType rust nmap <leader>tb :make bench<CR>
 augroup END
 
 " Lightline
