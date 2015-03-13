@@ -110,11 +110,6 @@ augroup nerd_tree
   \ endif
 augroup END
 
-" JSHint
-let g:jshintprg="jsxhint"
-map <leader>js :JSHint<CR>
-map <leader>cs :CoffeeLint<CR>
-
 " Errormarker
 let &errorformat="%f:%l:%c: %t%*[^:]:%m,%f:%l: %t%*[^:]:%m," . &errorformat
 
@@ -136,21 +131,35 @@ augroup filetype_go
   au FileType go nmap <Leader>i <Plug>(go-info)
   au FileType go nmap <Leader>gd <Plug>(go-doc)
   au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-  au FileType go nmap <leader>r <Plug>(go-run)
-  au FileType go nmap <leader>b <Plug>(go-build)
-  au FileType go nmap <leader>t <Plug>(go-test)
-  au FileType go nmap <leader>c <Plug>(go-coverage)
+  au FileType go nmap <Leader>r <Plug>(go-run)
+  au FileType go nmap <Leader>b <Plug>(go-build)
+  au FileType go nmap <Leader>t <Plug>(go-test)
+  au FileType go nmap <Leader>c <Plug>(go-coverage)
+  au FileType go nmap <Leader>v <Plug>(go-vet)
   au FileType go nmap gd <Plug>(go-def)
+augroup END
+
+" Javascript
+let g:jshintprg="jsxhint"
+augroup filetype_javascript
+  au!
+  au FileType javascript <Leader>l :JSHint<CR>
+augroup END
+
+" Coffeescript
+augroup filetype_coffee
+  au!
+  au FileType coffee nmap <Leader>l :CoffeeLint! \| cwindow<CR>
 augroup END
 
 " Rust
 augroup filetype_rust
   au!
   au FileType rust compiler cargo
-  au FileType rust nmap <leader>r :make run<CR>
-  au FileType rust nmap <leader>b :make build<CR>
-  au FileType rust nmap <leader>t :make test<CR>
-  au FileType rust nmap <leader>tb :make bench<CR>
+  au FileType rust nmap <Leader>r :make run<CR>
+  au FileType rust nmap <Leader>b :make build<CR>
+  au FileType rust nmap <Leader>t :make test<CR>
+  au FileType rust nmap <Leader>tb :make bench<CR>
 augroup END
 
 " Lightline
@@ -222,7 +231,7 @@ augroup extra_whitespace
 augroup END
 
 " Kill trailing whitespace
-map <leader>kw :%s/\s\+$//<CR>
+map <Leader>kw :%s/\s\+$//<CR>
 
 " Gvim settings
 if has("gui_running")
