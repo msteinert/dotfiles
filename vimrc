@@ -88,10 +88,10 @@ map <F6> :bnext!<CR>
 map <F7> :bdelete!<CR>
 
 " Window navigation
-nmap <silent> <C-h> :wincmd h<CR>
-nmap <silent> <C-j> :wincmd j<CR>
-nmap <silent> <C-k> :wincmd k<CR>
-nmap <silent> <C-l> :wincmd l<CR>
+nmap <silent> <S-h> :wincmd h<CR>
+nmap <silent> <S-j> :wincmd j<CR>
+nmap <silent> <S-k> :wincmd k<CR>
+nmap <silent> <S-l> :wincmd l<CR>
 if bufwinnr(1)
   map <S-Up> :resize +1<CR>
   map <S-Down> :resize -1<CR>
@@ -143,7 +143,7 @@ augroup END
 let g:jshintprg="jsxhint"
 augroup filetype_javascript
   au!
-  au FileType javascript <Leader>l :JSHint<CR>
+  au FileType javascript nmap <Leader>l :JSHint<CR>
 augroup END
 
 " Coffeescript
