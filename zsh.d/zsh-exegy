@@ -1,9 +1,13 @@
 #!zsh
 
+if command -v lsb_release &>/dev/null; then
+    platform=/$(lsb_release -is)-$(lsb_release -rs)
+fi
+
 HOME2=/export0/msteinert
-GOPATH=/code/msteinert/go/$(lsb_release -is)-$(lsb_release -rs)
-GOROOT=/code/msteinert/src/$(lsb_release -is)-$(lsb_release -rs)/git/go
-PLATFORM=$HOME/.local/$(lsb_release -is)-$(lsb_release -rs)
+GOPATH=/code/msteinert/go$platform
+GOROOT=/code/msteinert/src$platform/git/go
+PLATFORM=$HOME/.local$platform
 
 export HOME2 GOPATH GOROOT XDG_CACHE_DIR
 

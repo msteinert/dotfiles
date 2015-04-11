@@ -2,8 +2,10 @@
 [ -z "$PS1" ] && return
 
 # Prefer Zsh
-ZSH=$HOME/.local/$(lsb_release -is)-$(lsb_release -rs)/bin/zsh
-[ -f $ZSH ] && exec $ZSH
+if command -v lsb_release &>/dev/null; then
+    ZSH=$HOME/.local/$(lsb_release -is)-$(lsb_release -rs)/bin/zsh
+    [ -f $ZSH ] && exec $ZSH
+fi
 [ -f /bin/zsh ] && exec /bin/zsh
 
 # Don't put duplicate lines in the history

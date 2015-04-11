@@ -125,6 +125,7 @@ augroup filetype_python
 augroup END
 
 " Go
+let g:go_fmt_command = "goimports"
 augroup filetype_go
   au!
   au FileType go nmap <Leader>s <Plug>(go-implements)
@@ -136,6 +137,7 @@ augroup filetype_go
   au FileType go nmap <Leader>t <Plug>(go-test)
   au FileType go nmap <Leader>c <Plug>(go-coverage)
   au FileType go nmap <Leader>v <Plug>(go-vet)
+  au FileType go nmap <Leader>l :GoLint<CR>
   au FileType go nmap gd <Plug>(go-def)
 augroup END
 

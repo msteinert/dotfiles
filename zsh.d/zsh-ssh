@@ -1,4 +1,4 @@
-SSH_DIR=$HOME/.ssh/$(lsb_release -is)-$(lsb_release -rs)
+SSH_DIR=$HOME/.ssh/$HOSTNAME
 SSH_ENV=$SSH_DIR/environment
 
 start_agent()
@@ -8,6 +8,15 @@ start_agent()
     /usr/bin/ssh-agent | sed 's/^echo/#echo/' > $SSH_ENV
     chmod 600 $SSH_ENV
     . $SSH_ENV > /dev/null
+}
+
+maybe_start_agent()
+{
+    if [ -f $SSH_ENV ]; then
+        . $SSH_ENV > /dev/null
+    else
+        start_agent
+    fi
 }
 
 [ -f $SSH_ENV ] && . $SSH_ENV > /dev/null
