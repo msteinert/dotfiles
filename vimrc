@@ -74,8 +74,8 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
   let g:load_doxygen_syntax=1
   let g:js_indent_log=0
-  colorscheme solarized
-  set background=dark
+  colorscheme zenburn
+  "set background=dark
 endif
 
 " Paste annoyance
@@ -167,7 +167,7 @@ augroup END
 " Lightline
 set laststatus=2
 let g:lightline={
-  \ 'colorscheme': 'solarized',
+  \ 'colorscheme': 'zenburn',
   \ 'mode_map': {
   \   'n': 'N',
   \   'c': 'N',
