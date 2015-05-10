@@ -98,7 +98,7 @@ fi
 
 # Setup paths
 GOPATH=$HOME/go
-GOROOT=$HOME/src/hg/go
+GOROOT=$HOME/src/git/go
 SCALA_HOME=/usr/local/share/scala
 
 export GOPATH GOROOT
