@@ -136,6 +136,9 @@ client.urgent               #dca3a3 #dca3a3 #DCDCCC #3f3f3f
 
 # Start i3bar to display a workspace bar
 bar {
+	mode hide
+	hidden_state hide
+	modifier Mod1
 	output DisplayPort-2
 	status_command i3status
 	tray_output DisplayPort-3
@@ -150,6 +153,9 @@ bar {
 }
 
 bar {
+	mode hide
+	hidden_state hide
+	modifier Mod1
 	output DisplayPort-3
 	colors {
 		background #3f3f3f
