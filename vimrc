@@ -74,8 +74,8 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
   let g:load_doxygen_syntax=1
   let g:js_indent_log=0
-  colorscheme zenburn
   let g:zenburn_disable_Label_underline=1
+  colorscheme zenburn
   set fillchars=""
 endif
 
