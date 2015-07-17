@@ -4,6 +4,10 @@
 
 set $mod Mod1
 workspace_layout stacking
+new_window 1pixel
+bindsym $mod+t border normal
+bindsym $mod+y border 1pixel
+bindsym $mod+u border none
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
@@ -20,7 +24,7 @@ bindsym $mod+Return exec gnome-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+m exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+m exec --no-startup-id j4-dmenu-desktop
 
 # change focus
 bindsym $mod+h focus left
@@ -139,9 +143,9 @@ bar {
 	mode hide
 	hidden_state hide
 	modifier Mod1
-	output DisplayPort-2
+	output DFP9
 	status_command i3status
-	tray_output DisplayPort-3
+	tray_output DFP13
 	colors {
 		background #3f3f3f
 		statusline #dcdccc
@@ -156,7 +160,7 @@ bar {
 	mode hide
 	hidden_state hide
 	modifier Mod1
-	output DisplayPort-3
+	output DFP13
 	colors {
 		background #3f3f3f
 		statusline #dcdccc

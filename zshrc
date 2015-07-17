@@ -99,11 +99,12 @@ fi
 # Setup paths
 GOPATH=$HOME/go
 GOROOT=$HOME/src/git/go
+PYENV_ROOT=$HOME/.pyenv
 SCALA_HOME=/usr/local/share/scala
 
-export GOPATH GOROOT
+export GOPATH GOROOT PYENV_ROOT
 
-PATH="$GOROOT/bin:$GOPATH/bin:$SCALA_HOME/bin:$HOME/.local/bin:/opt/local/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:$PATH"
+PATH="$PYENV_ROOT/bin:$GOROOT/bin:$GOPATH/bin:$SCALA_HOME/bin:$HOME/.local/bin:/opt/local/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:$PATH"
 MANPATH="$HOME/.local/man:$HOME/.local/share/man:$MANPATH"
 
 # Setup variables
@@ -144,6 +145,9 @@ if [[ -f /usr/local/bin/virtualenvwrapper.sh ]]; then
     export PROJECT_HOME=$HOME/src
     . /usr/local/bin/virtualenvwrapper.sh
 fi
+
+# Add pyenv
+eval "$(pyenv init -)"
 
 # If this is an xterm set the title
 case "$TERM" in

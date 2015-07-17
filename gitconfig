@@ -1,9 +1,9 @@
 [user]
 	name = Michael Steinert
 	email = mike.steinert@gmail.com
-	signingkey = BDAD7D8E
 [alias]
 	co = checkout
+	st = status -s
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 [color]
@@ -16,9 +16,9 @@
 [diff]
 	tool = p4merge
 [merge]
-	tool = meld
+	tool = p4merge
 [gui]
-	fontui = -family Ubuntu -size 11 -weight normal -slant roman -underline 0 -overstrike 0
+	fontui = -family Cantrell -size 11 -weight normal -slant roman -underline 0 -overstrike 0
 	fontdiff = -family Consolas -size 12 -weight normal -slant roman -underline 0 -overstrike 0
 [push]
 	default = matching
