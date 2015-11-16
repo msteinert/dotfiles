@@ -140,3 +140,6 @@
 [submodule "vim/bundle/vim-capnp"]
 	path = vim/bundle/vim-capnp
 	url = https://github.com/cstrahan/vim-capnp.git
+[submodule "vim/bundle/vim-less"]
+	path = vim/bundle/vim-less
+	url = https://github.com/groenewege/vim-less.git

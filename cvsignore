@@ -6,4 +6,5 @@
 /out
 _build
 cscope.out
+env
 tags

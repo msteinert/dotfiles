@@ -143,7 +143,6 @@ augroup filetype_go
 augroup END
 
 " Javascript
-let g:jshintprg="jsxhint"
 augroup filetype_javascript
   au!
   au FileType javascript nmap <Leader>l :JSHint<CR>
