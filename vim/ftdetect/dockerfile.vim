@@ -1,1 +1,1 @@
-au BufRead,BufNewFile Dockerfile*	set filetype=dockerfile
+au BufRead,BufNewFile [Dd]ockerfile,Dockerfile.*	set filetype=dockerfile
