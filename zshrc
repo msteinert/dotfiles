@@ -147,7 +147,9 @@ if [[ -f /usr/local/bin/virtualenvwrapper.sh ]]; then
 fi
 
 # Add pyenv
-eval "$(pyenv init -)"
+if [[ -f $HOME/.pyenv/pyenv ]]; then
+    eval "$($HOME/.pyenv/pyenv init -)"
+fi
 
 # If this is an xterm set the title
 case "$TERM" in
