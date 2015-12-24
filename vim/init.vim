@@ -1,1 +1,1 @@
-/opt/home/mike/.vimrc
+../vimrc
