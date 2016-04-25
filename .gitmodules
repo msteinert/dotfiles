@@ -143,3 +143,6 @@
 [submodule "vim/bundle/vim-less"]
 	path = vim/bundle/vim-less
 	url = https://github.com/groenewege/vim-less.git
+[submodule "vim/bundle/vim-raml"]
+	path = vim/bundle/vim-raml
+	url = https://github.com/IN3D/vim-raml.git

@@ -22,7 +22,3 @@
 	fontdiff = -family Consolas -size 12 -weight normal -slant roman -underline 0 -overstrike 0
 [push]
 	default = matching
-[url "git@gitrepo.exegy.net:"]
-	insteadOf = https://gitrepo.exegy.net/
-[url "https://"]
-	insteadOf = git://
