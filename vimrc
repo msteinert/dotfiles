@@ -31,6 +31,7 @@ set exrc               " enable per-directory .vimrc files
 set secure             " disable unsafe commands in local .vimrc files
 set noshowmode         " disable mode messages in status line
 set cinoptions=:0      " don't indent after a switch
+set backupcopy=yes
 
 augroup vimrc
   au!
@@ -146,7 +147,7 @@ augroup END
 " Javascript
 augroup filetype_javascript
   au!
-  au FileType javascript nmap <Leader>l :JSHint<CR>
+  au FileType javascript nmap <buffer> <F8> :call eslint#ESLint()<CR>
 augroup END
 
 " Coffeescript

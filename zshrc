@@ -101,10 +101,11 @@ GOPATH=$HOME/go
 GOROOT=$HOME/src/git/go
 PYENV_ROOT=$HOME/.pyenv
 SCALA_HOME=/usr/local/share/scala
+SWIFT_ROOT=$HOME/.local/swift
 
 export GOPATH GOROOT PYENV_ROOT
 
-PATH="$PYENV_ROOT/bin:$GOROOT/bin:$GOPATH/bin:$SCALA_HOME/bin:$HOME/.local/bin:/opt/local/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:$PATH"
+PATH="$PYENV_ROOT/bin:$GOROOT/bin:$GOPATH/bin:$SWIFT_ROOT/usr/bin:$SCALA_HOME/bin:$HOME/.local/bin:/opt/local/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:$PATH"
 MANPATH="$HOME/.local/man:$HOME/.local/share/man:$MANPATH"
 
 # Setup variables
