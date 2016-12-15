@@ -86,35 +86,54 @@ if [[ -x /usr/bin/dircolors ]]; then
     alias grep="grep --color=auto"
     alias fgrep="fgrep --color=auto"
     alias egrep="egrep --color=auto"
-    alias cgrep="coccigrep --color"
 else
     # Assume BSD (good enough for now)
     alias ls="ls -FG"
     alias grep="grep --color=auto"
     alias fgrep="fgrep --color=auto"
     alias egrep="egrep --color=auto"
-    alias cgrep="coccigrep"
 fi
 
-# Setup paths
+# Python
+PYENV_ROOT=$HOME/.pyenv
+PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
+
+export PYENV_ROOT
+
+# Go
 GOPATH=$HOME/go
 GOROOT=$HOME/src/git/go
-PYENV_ROOT=$HOME/.pyenv
-SCALA_HOME=/usr/local/share/scala
-SWIFT_ROOT=$HOME/.local/swift
 
-export GOPATH GOROOT PYENV_ROOT
+export GOPATH GOROOT
 
-PATH="$PYENV_ROOT/bin:$GOROOT/bin:$GOPATH/bin:$SWIFT_ROOT/usr/bin:$SCALA_HOME/bin:$HOME/.local/bin:/opt/local/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:$PATH"
-MANPATH="$HOME/.local/man:$HOME/.local/share/man:$MANPATH"
+# Path
+PATH="$GOPATH/bin:$PATH"
+PATH="$GOROOT/bin:$PATH"
+PATH="$HOME/.cargo/bin:$PATH"
+PATH="$HOME/.local/swift/usr/bin:$PATH"
+PATH="$PYENV_ROOT/bin:$PATH"
+PATH="/opt/local/bin:$PATH"
+PATH="/usr/local/bin:$PATH"
+PATH="/usr/local/sbin:$PATH"
+PATH="/usr/local/share/scala/bin:$PATH"
 
-# Setup variables
+MANPATH="$HOME/.local/man:$MANPATH"
+MANPATH="$HOME/.local/share/man:$MANPATH"
+
+# Editor settings
 CSCOPE_EDITOR="vim"
-DYLD_FALLBACK_LIBRARY_PATH="$HOME/.local/lib"
 EDITOR="vim"
 INPUTRC="$HOME/.inputrc"
-PKG_CONFIG_PATH="$HOME/.local/lib/pkgconfig:/opt/local/lib/pkgconfig:/usr/local/lib/pkgconfig:/usr/lib/pkgconfig"
-PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
+
+# Pkg-config
+PKG_CONFIG_PATH=
+PKG_CONFIG_PATH="$HOME/.local/lib/pkgconfig:$PKG_CONFIG_PATH"
+PKG_CONFIG_PATH="/opt/local/lib/pkgconfig:$PKG_CONFIG_PATH"
+PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH"
+PKG_CONFIG_PATH="/usr/lib/pkgconfig:$PKG_CONFIG_PATH"
+
+# MacOS
+DYLD_FALLBACK_LIBRARY_PATH="$HOME/.local/lib"
 
 export CSCOPE_EDITOR DYLD_FALLBACK_LIBRARY_PATH EDITOR INPUTRC \
        PKG_CONFIG_PATH PYTHONPATH
@@ -150,6 +169,11 @@ fi
 # Add pyenv
 if [[ -f $HOME/.pyenv/pyenv ]]; then
     eval "$($HOME/.pyenv/pyenv init -)"
+fi
+
+# Ocaml
+if [[ -f $HOME/.opam/opam-init/init.zsh ]]; then
+    . $HOME/.opam/opam-init/init.zsh
 fi
 
 # If this is an xterm set the title

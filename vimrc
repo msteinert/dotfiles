@@ -32,6 +32,7 @@ set secure             " disable unsafe commands in local .vimrc files
 set noshowmode         " disable mode messages in status line
 set cinoptions=:0      " don't indent after a switch
 set backupcopy=yes
+set clipboard=unnamed
 
 augroup vimrc
   au!
