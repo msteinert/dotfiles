@@ -4,6 +4,8 @@ SOURCES += bash.d/bash-git
 SOURCES += bash.d/bash-git-prompt
 SOURCES += bashrc
 SOURCES += config/dunst
+SOURCES += config/fish/config.fish
+SOURCES += config/fish/functions
 SOURCES += config/i3
 SOURCES += config/i3status
 SOURCES += cvsignore
@@ -32,6 +34,7 @@ endif
 
 DIRS += bash.d
 DIRS += config
+DIRS += config/fish
 DIRS += zsh.d
 
 all:
