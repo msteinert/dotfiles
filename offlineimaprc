@@ -1,0 +1,27 @@
+[general]
+accounts = Work
+maxsyncaccounts = 1
+
+[Account Work]
+autorefresh = 0.5
+quick = 10
+localrepository = Local
+remoterepository = Remote
+
+[Repository Local]
+type = Maildir
+localfolders = /export0/mike/Maildir/work
+
+[Repository Remote]
+type = IMAP
+remotehost = mail.exegy.com
+ssl = yes
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+keepalive = 60
+holdconnectionopen = yes
+folderfilter = lambda folder: folder in [
+    'Archives',
+    'Drafts',
+    'INBOX',
+    'Sent',
+    ]
