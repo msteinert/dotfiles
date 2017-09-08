@@ -34,6 +34,9 @@ set cinoptions=:0      " don't indent after a switch
 set backupcopy=yes
 set clipboard=unnamed
 
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=0
+let g:fugitive_gitlab_domains = ['https://gitrepo.exegy.net']
+
 augroup vimrc
   au!
   au BufReadPre * setlocal foldmethod=syntax
@@ -90,6 +93,10 @@ set pastetoggle=<F2>
 map <F5> :bprevious!<CR>
 map <F6> :bnext!<CR>
 map <F7> :bdelete!<CR>
+
+" Quickfix window
+map <F9> :cprev!<CR>
+map <F10> :cnext!<CR>
 
 " Window navigation
 nmap <silent> <S-h> :wincmd h<CR>

@@ -1,19 +1,29 @@
 #!zsh
 
+#if test -e /opt/rh/devtoolset-4/enable; then
+#    . /opt/rh/devtoolset-4/enable
+#fi
+
+if test -e /opt/rh/python27/enable; then
+    . /opt/rh/python27/enable
+fi
+
 if command -v lsb_release &>/dev/null; then
-    platform=/$(lsb_release -is)-$(lsb_release -rs)
+    vendor=$(lsb_release -is)
+    platform=${vendor%% *}-$(lsb_release -rs)
 fi
 
 HOME2=/export0/msteinert
-GOPATH=/code/msteinert/go$platform
-GOROOT=/code/msteinert/src$platform/git/go
-PLATFORM=$HOME/.local$platform
+GOPATH=$HOME/go/$platform
+GOROOT=$HOME/src/$platform/git/go
+PLATFORM=$HOME/.local/$platform
+SRC=$HOME/src/$platform
 
 export HOME2 GOPATH GOROOT XDG_CACHE_DIR
 
 LD_LIBRARY_PATH=$PLATFORM/lib:$LD_LIBRARY_PATH
 MANPATH=$PLATFORM/share/man:$MANPATH
-PATH=$GOROOT/bin:$GOPATH/bin:$PLATFORM/bin:$PLATFORM/usr/bin:$PATH
+PATH=$GOROOT/bin:$GOPATH/bin:$PLATFORM/bin:$PLATFORM/usr/bin:$PLATFORM/node/bin:$PATH
 PKG_CONFIG_PATH=$PLATFORM/lib/pkgconfig:$PKG_CONFIG_PATH
 PYTHONPATH=$PLATFORM/usr/lib/python2.6/site-packages
 
@@ -21,3 +31,4 @@ export LD_LIBRARY_PATH MANPATH PATH PKG_CONFIG_PATH PYTHONPATH
 
 alias cd2="cd $HOME2"
 alias cdc="cd /code/msteinert"
+alias tree="tree -A"
