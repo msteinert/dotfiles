@@ -160,10 +160,10 @@ if [[ -f $HOME/.rvm/scripts/rvm ]]; then
 fi
 
 # Add Virtualenv
-if [[ -f /usr/local/bin/virtualenvwrapper.sh ]]; then
+if [[ -f /usr/bin/virtualenvwrapper.sh ]]; then
     export WORKON_HOME=$HOME/.virtualenvs
     export PROJECT_HOME=$HOME/src
-    . /usr/local/bin/virtualenvwrapper.sh
+    . /usr/bin/virtualenvwrapper.sh
 fi
 
 # Add pyenv

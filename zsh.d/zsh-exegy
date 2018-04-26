@@ -14,17 +14,17 @@ if command -v lsb_release &>/dev/null; then
 fi
 
 HOME2=/export0/msteinert
-GOPATH=$HOME/go/$platform
-GOROOT=$HOME/src/$platform/git/go
+GOPATH=/s0/msteinert/go
+GOROOT=$HOME/.local/go
 PLATFORM=$HOME/.local/$platform
 SRC=$HOME/src/$platform
 
 export HOME2 GOPATH GOROOT XDG_CACHE_DIR
 
-LD_LIBRARY_PATH=$PLATFORM/lib:$LD_LIBRARY_PATH
+LD_LIBRARY_PATH=$PLATFORM/lib:$PLATFORM/lib64:$LD_LIBRARY_PATH
 MANPATH=$PLATFORM/share/man:$MANPATH
-PATH=$GOROOT/bin:$GOPATH/bin:$PLATFORM/bin:$PLATFORM/usr/bin:$PLATFORM/node/bin:$PATH
-PKG_CONFIG_PATH=$PLATFORM/lib/pkgconfig:$PKG_CONFIG_PATH
+PATH=$GOROOT/bin:$GOPATH/bin:$PLATFORM/bin:$PLATFORM/usr/bin:$PLATFORM/node/bin:$HOME/.local/bin:$PATH
+PKG_CONFIG_PATH=$PLATFORM/lib64/pkgconfig:$PLATFORM/lib/pkgconfig:/usr/lib64/pkgconfig:$PKG_CONFIG_PATH
 PYTHONPATH=$PLATFORM/usr/lib/python2.6/site-packages
 
 export LD_LIBRARY_PATH MANPATH PATH PKG_CONFIG_PATH PYTHONPATH

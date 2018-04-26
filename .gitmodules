@@ -152,3 +152,9 @@
 [submodule "vim/bundle/vim-fugitive-gitlab"]
 	path = vim/bundle/vim-fugitive-gitlab
 	url = https://github.com/shumphrey/fugitive-gitlab.vim.git
+[submodule "vim/bundle/vim-perl"]
+	path = vim/bundle/vim-perl
+	url = https://github.com/vim-perl/vim-perl.git
+[submodule "vim/bundle/vim-makeshift"]
+	path = vim/bundle/vim-makeshift
+	url = https://github.com/johnsyweb/vim-makeshift.git

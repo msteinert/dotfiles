@@ -136,6 +136,7 @@ augroup filetype_python
 augroup END
 
 " Go
+" go get golang.org/x/tools/cmd/goimports
 let g:go_fmt_command = "goimports"
 augroup filetype_go
   au!
@@ -193,8 +194,6 @@ let g:lightline={
   \   'mode': 'LightMode',
   \   'readonly': 'LightReadonly',
   \ },
-  \ 'separator': { 'left': '⮀', 'right': '⮂' },
-  \ 'subseparator': { 'left': '⮁', 'right': '⮃' },
 \ }
 
 function! LightModified()

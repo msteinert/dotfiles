@@ -143,6 +143,23 @@ bar {
 	mode hide
 	hidden_state hide
 	modifier Mod1
+	output DisplayPort-1
+	status_command i3status
+	tray_output DisplayPort-3
+	colors {
+		background #3f3f3f
+		statusline #dcdccc
+		focused_workspace  #93b3a3 #3f3f3f #93b3a3
+		active_workspace   #ffcfaf #3f3f3f #ffcfaf
+		inactive_workspace #636363 #3f3f3f #dcdccc
+		urgent_workspace   #dca3a3 #3f3f3f #dca3a3
+	}
+}
+
+bar {
+	mode hide
+	hidden_state hide
+	modifier Mod1
 	output DisplayPort-2
 	status_command i3status
 	tray_output DisplayPort-3
