@@ -22,3 +22,9 @@
 	fontdiff = -family Consolas -size 12 -weight normal -slant roman -underline 0 -overstrike 0
 [push]
 	default = matching
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

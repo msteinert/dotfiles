@@ -1,6 +1,9 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+# Set locale
+export LANG=en_US.UTF-8
+
 # Configure history length
 HISTFILE=~/.histfile
 HISTSIZE=1000

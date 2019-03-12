@@ -23,7 +23,7 @@ export HOME2 GOPATH GOROOT XDG_CACHE_DIR
 
 LD_LIBRARY_PATH=$PLATFORM/lib:$PLATFORM/lib64:$LD_LIBRARY_PATH
 MANPATH=$PLATFORM/share/man:$MANPATH
-PATH=$GOROOT/bin:$GOPATH/bin:$PLATFORM/bin:$PLATFORM/usr/bin:$PLATFORM/node/bin:$HOME/.local/bin:$PATH
+PATH=$HOME/.local/zapcc:$GOROOT/bin:$GOPATH/bin:$PLATFORM/bin:$PLATFORM/usr/bin:$PLATFORM/node/bin:$HOME/.local/bin:$PATH
 PKG_CONFIG_PATH=$PLATFORM/lib64/pkgconfig:$PLATFORM/lib/pkgconfig:/usr/lib64/pkgconfig:$PKG_CONFIG_PATH
 PYTHONPATH=$PLATFORM/usr/lib/python2.6/site-packages
 

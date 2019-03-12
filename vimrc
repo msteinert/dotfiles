@@ -121,6 +121,9 @@ augroup nerd_tree
   \ endif
 augroup END
 
+" Makeshift
+let g:makeshift_use_pwd_first = 1
+
 " Errormarker
 let &errorformat="%f:%l:%c: %t%*[^:]:%m,%f:%l: %t%*[^:]:%m," . &errorformat
 

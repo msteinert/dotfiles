@@ -457,8 +457,12 @@ function! s:pushd(dict)
     let cwd = s:fzf_getcwd()
     let w:fzf_pushd = {
     \   'command': haslocaldir() ? 'lcd' : (exists(':tcd') && haslocaldir(-1) ? 'tcd' : 'cd'),
+<<<<<<< HEAD
     \   'origin': cwd,
     \   'bufname': bufname('')
+=======
+    \   'origin': cwd
+>>>>>>> Add incremental updates
     \ }
     execute 'lcd' s:escape(a:dict.dir)
     let cwd = s:fzf_getcwd()
@@ -494,19 +498,31 @@ function! s:dopopd()
   " matches 'dir' entry. However, it is possible that the sink function did
   " change the directory to 'dir'. In that case, the user will have an
   " unexpected result.
+<<<<<<< HEAD
   if s:fzf_getcwd() ==# w:fzf_pushd.dir && (!&autochdir || w:fzf_pushd.bufname ==# bufname(''))
+=======
+  if s:fzf_getcwd() ==# w:fzf_pushd.dir
+>>>>>>> Add incremental updates
     execute w:fzf_pushd.command s:escape(w:fzf_pushd.origin)
   endif
   unlet w:fzf_pushd
 endfunction
 
 function! s:xterm_launcher()
+<<<<<<< HEAD
   let fmt = 'xterm -T "[fzf]" -bg "%s" -fg "%s" -geometry %dx%d+%d+%d -e bash -ic %%s'
+=======
+  let fmt = 'xterm -T "[fzf]" -bg "\%s" -fg "\%s" -geometry %dx%d+%d+%d -e bash -ic %%s'
+>>>>>>> Add incremental updates
   if has('gui_macvim')
     let fmt .= '&& osascript -e "tell application \"MacVim\" to activate"'
   endif
   return printf(fmt,
+<<<<<<< HEAD
     \ escape(synIDattr(hlID("Normal"), "bg"), '#'), escape(synIDattr(hlID("Normal"), "fg"), '#'),
+=======
+    \ synIDattr(hlID("Normal"), "bg"), synIDattr(hlID("Normal"), "fg"),
+>>>>>>> Add incremental updates
     \ &columns, &lines/2, getwinposx(), getwinposy())
 endfunction
 unlet! s:launcher
@@ -607,9 +623,14 @@ function! s:calc_size(max, val, dict)
     let srcsz = len(a:dict.source)
   endif
 
+<<<<<<< HEAD
   let opts = $FZF_DEFAULT_OPTS.' '.s:evaluate_opts(get(a:dict, 'options', ''))
   let margin = stridx(opts, '--inline-info') > stridx(opts, '--no-inline-info') ? 1 : 2
   let margin += stridx(opts, '--border') > stridx(opts, '--no-border') ? 2 : 0
+=======
+  let opts = s:evaluate_opts(get(a:dict, 'options', '')).$FZF_DEFAULT_OPTS
+  let margin = stridx(opts, '--inline-info') > stridx(opts, '--no-inline-info') ? 1 : 2
+>>>>>>> Add incremental updates
   let margin += stridx(opts, '--header') > stridx(opts, '--no-header')
   return srcsz >= 0 ? min([srcsz + margin, size]) : size
 endfunction

@@ -6,6 +6,7 @@ build/
 .vimrc
 /out
 _build
+build
 cscope.out
 env
 tags
