@@ -16,7 +16,7 @@ source ~/.mutt/colors-zenburn
 set mbox_type = Maildir
 set folder = /export0/mike/Maildir/work
 set spoolfile = "+INBOX"
-unset record
+set record = "+Sent"
 mailboxes +INBOX
 
 # Sorting

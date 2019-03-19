@@ -273,7 +273,7 @@ let g:fzf_colors =
 
 " Gvim settings
 if has("gui_running")
-  set guifont=Mensch\ for\ Powerline\ 14
+  set guifont=Consolas\ 14
   set guicursor=a:blinkon0
   set guioptions-=T
   set guioptions-=r

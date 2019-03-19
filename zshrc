@@ -104,7 +104,7 @@ PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
 export PYENV_ROOT
 
 # Go
-GOPATH=$HOME/go
+GOROOT=$HOME/.local/go
 
 export GOPATH
 

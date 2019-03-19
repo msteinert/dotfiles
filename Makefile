@@ -18,6 +18,7 @@ SOURCES += tmux.conf
 SOURCES += vim
 SOURCES += vimrc
 SOURCES += zsh.d/zsh-aliases
+SOURCES += zsh.d/zsh-fzf
 SOURCES += zshrc
 
 ifeq ($(ECHOSTAR),y)

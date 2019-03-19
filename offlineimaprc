@@ -14,7 +14,7 @@ localfolders = /export0/mike/Maildir/work
 
 [Repository Remote]
 type = IMAP
-remotehost = mail.exegy.com
+remotehost = mail.exegy.net
 ssl = yes
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 keepalive = 60
