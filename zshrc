@@ -102,20 +102,17 @@ export PYENV_ROOT
 
 # Go
 GOPATH=$HOME/go
-GOROOT=$HOME/src/git/go
 
-export GOPATH GOROOT
+export GOPATH
 
 # Path
+PATH="$HOME/.local/bin:$PATH"
 PATH="$GOPATH/bin:$PATH"
-PATH="$GOROOT/bin:$PATH"
 PATH="$HOME/.cargo/bin:$PATH"
-PATH="$HOME/.local/swift/usr/bin:$PATH"
 PATH="$PYENV_ROOT/bin:$PATH"
 PATH="/opt/local/bin:$PATH"
 PATH="/usr/local/bin:$PATH"
 PATH="/usr/local/sbin:$PATH"
-PATH="/usr/local/share/scala/bin:$PATH"
 
 MANPATH="$HOME/.local/man:$MANPATH"
 MANPATH="$HOME/.local/share/man:$MANPATH"
@@ -175,6 +172,10 @@ fi
 if [[ -f $HOME/.opam/opam-init/init.zsh ]]; then
     . $HOME/.opam/opam-init/init.zsh
 fi
+
+# fzf
+export FZF_DEFAULT_COMMAND="fd --type file"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # If this is an xterm set the title
 case "$TERM" in
