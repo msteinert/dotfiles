@@ -34,10 +34,6 @@
 	path = vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
 	ignore = dirty
-[submodule "vim/bundle/vim-coffee-script"]
-	path = vim/bundle/vim-coffee-script
-	url = https://github.com/kchmck/vim-coffee-script.git
-	ignore = dirty
 [submodule "vim/bundle/vim-autoclose"]
 	path = vim/bundle/vim-autoclose
 	url = https://github.com/Townk/vim-autoclose.git
@@ -53,10 +49,6 @@
 [submodule "vim/bundle/vim-nerdtree"]
 	path = vim/bundle/vim-nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-	ignore = dirty
-[submodule "vim/bundle/vim-lusty"]
-	path = vim/bundle/vim-lusty
-	url = https://github.com/sjbach/lusty.git
 	ignore = dirty
 [submodule "vim/bundle/vim-jshint"]
 	path = vim/bundle/vim-jshint
@@ -102,10 +94,6 @@
 	path = vim/bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
 	ignore = dirty
-[submodule "vim/bundle/vim-bufexplorer"]
-	path = vim/bundle/vim-bufexplorer
-	url = https://github.com/jlanzarotta/bufexplorer.git
-	ignore = dirty
 [submodule "vim/bundle/vim-capnp"]
 	path = vim/bundle/vim-capnp
 	url = https://github.com/cstrahan/vim-capnp.git
@@ -132,4 +120,20 @@
 [submodule "vim/bundle/vim-fzf"]
 	path = vim/bundle/vim-fzf
 	url = https://github.com/junegunn/fzf.vim.git
+	ignore = dirty
+[submodule "vim/bundle/vim-clang-format"]
+	path = vim/bundle/vim-clang-format
+	url = https://github.com/rhysd/vim-clang-format.git
+	ignore = dirty
+[submodule "vim/bundle/vim-dart"]
+	path = vim/bundle/vim-dart
+	url = https://github.com/dart-lang/dart-vim-plugin.git
+	ignore = dirty
+[submodule "vim/bundle/vim-swift"]
+	path = vim/bundle/vim-swift
+	url = https://github.com/keith/swift.vim.git
+	ignore = dirty
+[submodule "vim/bundle/vim-zig"]
+	path = vim/bundle/vim-zig
+	url = https://github.com/ziglang/zig.vim.git
 	ignore = dirty
