@@ -9,10 +9,6 @@
 	path = vim/bundle/vim-ragtag
 	url = https://github.com/tpope/vim-ragtag.git
 	ignore = dirty
-[submodule "vim/bundle/vim-rails"]
-	path = vim/bundle/vim-rails
-	url = https://github.com/tpope/vim-rails.git
-	ignore = dirty
 [submodule "vim/bundle/vim-repeat"]
 	path = vim/bundle/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
@@ -29,10 +25,6 @@
 	path = vim/bundle/vim-markdown
 	url = https://github.com/tpope/vim-markdown.git
 	ignore = dirty
-[submodule "vim/bundle/vim-haml"]
-	path = vim/bundle/vim-haml
-	url = https://github.com/tpope/vim-haml.git
-	ignore = dirty
 [submodule "vim/bundle/vim-git"]
 	path = vim/bundle/vim-git
 	url = https://github.com/tpope/vim-git.git
@@ -44,10 +36,6 @@
 [submodule "vim/bundle/vim-coffee-script"]
 	path = vim/bundle/vim-coffee-script
 	url = https://github.com/kchmck/vim-coffee-script.git
-	ignore = dirty
-[submodule "vim/bundle/vim-clojure"]
-	path = vim/bundle/vim-clojure
-	url = https://github.com/vim-scripts/VimClojure.git
 	ignore = dirty
 [submodule "vim/bundle/vim-autoclose"]
 	path = vim/bundle/vim-autoclose
@@ -77,33 +65,12 @@
 	path = vim/bundle/vim-errormarker
 	url = https://github.com/vim-scripts/errormarker.vim.git
 	ignore = dirty
-[submodule "vim/bundle/vim-mustache"]
-	path = vim/bundle/vim-mustache
-	url = https://github.com/juvenn/mustache.vim.git
-[submodule "vim/bundle/vim-prolog"]
-	path = vim/bundle/vim-prolog
-	url = https://github.com/msteinert/vim-prolog.git
-[submodule "vim/bundle/vim-scala"]
-	path = vim/bundle/vim-scala
-	url = https://github.com/derekwyatt/vim-scala.git
-[submodule "vim/bundle/vim-erlang"]
-	path = vim/bundle/vim-erlang
-	url = https://github.com/oscarh/vimerl.git
-[submodule "vim/bundle/vim-haskell"]
-	path = vim/bundle/vim-haskell
-	url = https://github.com/wlangstroth/vim-haskell.git
-[submodule "vim/bundle/vim-rvm"]
-	path = vim/bundle/vim-rvm
-	url = https://github.com/tpope/vim-rvm.git
 [submodule "vim/bundle/vim-go"]
 	path = vim/bundle/vim-go
 	url = https://github.com/fatih/vim-go.git
 [submodule "vim/bundle/vim-togglelist"]
 	path = vim/bundle/vim-togglelist
 	url = https://github.com/milkypostman/vim-togglelist.git
-[submodule "vim/bundle/vim-gyp"]
-	path = vim/bundle/vim-gyp
-	url = https://github.com/channing/gyp.vim.git
 [submodule "vim/bundle/vim-dispatch"]
 	path = vim/bundle/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch.git
@@ -119,33 +86,18 @@
 [submodule "vim/bundle/vim-toml"]
 	path = vim/bundle/vim-toml
 	url = https://github.com/cespare/vim-toml.git
-[submodule "vim/bundle/vim-nerdcommenter"]
-	path = vim/bundle/vim-nerdcommenter
-	url = https://github.com/scrooloose/nerdcommenter.git
 [submodule "vim/bundle/vim-jsx"]
 	path = vim/bundle/vim-jsx
 	url = https://github.com/mxw/vim-jsx.git
 [submodule "vim/bundle/vim-javascript"]
 	path = vim/bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
-[submodule "vim/bundle/vim-nimrod"]
-	path = vim/bundle/vim-nimrod
-	url = https://github.com/zah/nimrod.vim.git
 [submodule "vim/bundle/vim-bufexplorer"]
 	path = vim/bundle/vim-bufexplorer
 	url = https://github.com/jlanzarotta/bufexplorer.git
 [submodule "vim/bundle/vim-capnp"]
 	path = vim/bundle/vim-capnp
 	url = https://github.com/cstrahan/vim-capnp.git
-[submodule "vim/bundle/vim-less"]
-	path = vim/bundle/vim-less
-	url = https://github.com/groenewege/vim-less.git
-[submodule "vim/bundle/vim-raml"]
-	path = vim/bundle/vim-raml
-	url = https://github.com/IN3D/vim-raml.git
-[submodule "vim/bundle/vim-csv"]
-	path = vim/bundle/vim-csv
-	url = https://github.com/chrisbra/csv.vim.git
 [submodule "vim/bundle/vim-fugitive-gitlab"]
 	path = vim/bundle/vim-fugitive-gitlab
 	url = https://github.com/shumphrey/fugitive-gitlab.vim.git
