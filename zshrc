@@ -146,36 +146,6 @@ if [[ -d $HOME/.zsh.d ]]; then
     unset i
 fi
 
-# Node Completion
-if [[ -d $HOME/.node-completion ]]; then
-    for i in $HOME/.node-completion/*; do
-        test -r $i && . $i
-    done
-    unset i
-fi
-
-# Add RVM
-if [[ -f $HOME/.rvm/scripts/rvm ]]; then
-    . $HOME/.rvm/scripts/rvm
-fi
-
-# Add Virtualenv
-if [[ -f /usr/bin/virtualenvwrapper.sh ]]; then
-    export WORKON_HOME=$HOME/.virtualenvs
-    export PROJECT_HOME=$HOME/src
-    . /usr/bin/virtualenvwrapper.sh
-fi
-
-# Add pyenv
-if [[ -f $HOME/.pyenv/pyenv ]]; then
-    eval "$($HOME/.pyenv/pyenv init -)"
-fi
-
-# Ocaml
-if [[ -f $HOME/.opam/opam-init/init.zsh ]]; then
-    . $HOME/.opam/opam-init/init.zsh
-fi
-
 # fzf
 export FZF_DEFAULT_COMMAND="fd --type file"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"

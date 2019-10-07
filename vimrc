@@ -111,6 +111,7 @@ if bufwinnr(1)
 endif
 
 " NERD Tree
+let g:NERDTreeWinSize=39
 map <leader>n :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.o$', '\.lo$', '\.la$', '\~$', '\.cache$']
 augroup nerd_tree
@@ -270,6 +271,19 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
+
+" Clang Format
+let g:clang_format#style_options =
+\ { "ColumnLimit": 120,
+  \ "ConstructorInitializerAllOnOneLineOrOnePerLine": "false",
+  \ "DerivePointerAlignment": "false",
+  \ "IndentCaseLabels": "false",
+  \ "PointerAlignment": "Left",
+  \ "Standard": "C++11" }
+
+" map to <Leader>cf in C++ code
+autocmd FileType c,cpp,objc nnoremap <buffer><Leader>f :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp,objc vnoremap <buffer><Leader>f :ClangFormat<CR>
 
 " Gvim settings
 if has("gui_running")

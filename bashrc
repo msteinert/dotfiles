@@ -101,19 +101,6 @@ if [ -d $HOME/.bash.d ]; then
     unset i
 fi
 
-# Node Completion
-if [ -d $HOME/.node-completion ]; then
-    for i in $HOME/.node-completion/*; do
-        test -r $i && . $i
-    done
-    unset i
-fi
-
-# Add RVM
-if [ -f $HOME/.rvm/scripts/rvm ]; then
-    . $HOME/.rvm/scripts/rvm
-fi
-
 # If this is an xterm set the title
 case "$TERM" in
 xterm*|rxvt*|screen*)
@@ -128,3 +115,7 @@ unset intensity black red green yellow blue magenta cyan white reset
 unset command_not_found_handle
 
 ulimit -c unlimited
+
+export NVM_DIR="$HOME/.zsh.d"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
