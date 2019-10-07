@@ -5,6 +5,7 @@
 [submodule "vim/bundle/vim-ragel"]
 	path = vim/bundle/vim-ragel
 	url = https://github.com/msteinert/vim-ragel.git
+	ignore = dirty
 [submodule "vim/bundle/vim-ragtag"]
 	path = vim/bundle/vim-ragtag
 	url = https://github.com/tpope/vim-ragtag.git
@@ -68,51 +69,67 @@
 [submodule "vim/bundle/vim-go"]
 	path = vim/bundle/vim-go
 	url = https://github.com/fatih/vim-go.git
+	ignore = dirty
 [submodule "vim/bundle/vim-togglelist"]
 	path = vim/bundle/vim-togglelist
 	url = https://github.com/milkypostman/vim-togglelist.git
+	ignore = dirty
 [submodule "vim/bundle/vim-dispatch"]
 	path = vim/bundle/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch.git
+	ignore = dirty
 [submodule "vim/bundle/vim-lightline"]
 	path = vim/bundle/vim-lightline
 	url = https://github.com/itchyny/lightline.vim.git
+	ignore = dirty
 [submodule "vim/bundle/vim-flake8"]
 	path = vim/bundle/vim-flake8
 	url = https://github.com/nvie/vim-flake8.git
+	ignore = dirty
 [submodule "vim/bundle/vim-rust"]
 	path = vim/bundle/vim-rust
 	url = https://github.com/wting/rust.vim.git
+	ignore = dirty
 [submodule "vim/bundle/vim-toml"]
 	path = vim/bundle/vim-toml
 	url = https://github.com/cespare/vim-toml.git
+	ignore = dirty
 [submodule "vim/bundle/vim-jsx"]
 	path = vim/bundle/vim-jsx
 	url = https://github.com/mxw/vim-jsx.git
+	ignore = dirty
 [submodule "vim/bundle/vim-javascript"]
 	path = vim/bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
+	ignore = dirty
 [submodule "vim/bundle/vim-bufexplorer"]
 	path = vim/bundle/vim-bufexplorer
 	url = https://github.com/jlanzarotta/bufexplorer.git
+	ignore = dirty
 [submodule "vim/bundle/vim-capnp"]
 	path = vim/bundle/vim-capnp
 	url = https://github.com/cstrahan/vim-capnp.git
+	ignore = dirty
 [submodule "vim/bundle/vim-fugitive-gitlab"]
 	path = vim/bundle/vim-fugitive-gitlab
 	url = https://github.com/shumphrey/fugitive-gitlab.vim.git
+	ignore = dirty
 [submodule "vim/bundle/vim-perl"]
 	path = vim/bundle/vim-perl
 	url = https://github.com/vim-perl/vim-perl.git
+	ignore = dirty
 [submodule "vim/bundle/vim-makeshift"]
 	path = vim/bundle/vim-makeshift
 	url = https://github.com/johnsyweb/vim-makeshift.git
 [submodule "vim/bundle/vim-dart"]
 	path = vim/bundle/vim-dart
 	url = https://github.com/dart-lang/dart-vim-plugin.git
+	ignore = dirty
 [submodule "vim/bundle/vim-rtags"]
 	path = vim/bundle/vim-rtags
 	url = https://github.com/lyuts/vim-rtags.git
+	ignore = dirty
 [submodule "vim/bundle/vim-fzf"]
 	path = vim/bundle/vim-fzf
 	url = https://github.com/junegunn/fzf.vim.git
+	ignore = dirty
