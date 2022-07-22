@@ -137,3 +137,10 @@
 	path = vim/bundle/vim-zig
 	url = https://github.com/ziglang/zig.vim.git
 	ignore = dirty
+[submodule "vim/bundle/vim-bufexplorer"]
+	path = vim/bundle/vim-bufexplorer
+	url = https://github.com/jlanzarotta/bufexplorer.git
+	ignore = dirty
+[submodule "vim/bundle/vim-flatbuffers"]
+	path = vim/bundle/vim-flatbuffers
+	url = https://github.com/zchee/vim-flatbuffers.git

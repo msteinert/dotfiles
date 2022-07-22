@@ -115,7 +115,3 @@ unset intensity black red green yellow blue magenta cyan white reset
 unset command_not_found_handle
 
 ulimit -c unlimited
-
-export NVM_DIR="$HOME/.zsh.d"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

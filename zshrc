@@ -80,7 +80,7 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-hook
 
 # Configure the prompt
 setopt prompt_subst
-PS1='%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}%(1j.[%j].)${vcs_info_msg_0_}%{$reset_color%}> '
+PS1='%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}%(1j.[%j].)${vcs_info_msg_0_}%{$reset_color%} '
 
 # Enable color support of ls and also add handy aliases
 if [[ -x /usr/bin/dircolors ]]; then
@@ -97,28 +97,53 @@ else
     alias egrep="egrep --color=auto"
 fi
 
+# Source definitions
+if [[ -d $HOME/.zsh.d ]]; then
+    for i in $HOME/.zsh.d/zsh-*; do
+        test -r $i && . $i
+    done
+    unset i
+fi
+
 # Python
 PYENV_ROOT=$HOME/.pyenv
 PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
 
-export PYENV_ROOT
+export PYENV_ROOT PYTHONPATH
 
 # Go
+GOPATH=/s1/msteinert/go
 GOROOT=$HOME/.local/go
 
-export GOPATH
+export GOPATH GOROOT
+
+# Misc
+SAMUFLAGS=-j16
+
+export SAMUFLAGS
 
 # Path
-PATH="$HOME/.local/bin:$PATH"
-PATH="$GOPATH/bin:$PATH"
-PATH="$HOME/.cargo/bin:$PATH"
-PATH="$PYENV_ROOT/bin:$PATH"
-PATH="/opt/local/bin:$PATH"
-PATH="/usr/local/bin:$PATH"
-PATH="/usr/local/sbin:$PATH"
+path=(
+    $HOME/.local/bin
+    $PLATFORM/bin
+    $GOROOT/bin
+    $HOME/.cargo/bin
+    $HOME/.local/dotnet
+    $PYENV_ROOT/bin
+    $path
+)
+
+typeset -U path
+
+LD_LIBRARY_PATH="$PLATFORM/lib64:$LD_LIBRARY_PATH"
+LD_LIBRARY_PATH="$PLATFORM/lib:$LD_LIBRARY_PATH"
 
 MANPATH="$HOME/.local/man:$MANPATH"
 MANPATH="$HOME/.local/share/man:$MANPATH"
+
+PATH="$GOPATH/bin:$PATH"
+
+export PATH LD_LIBRARY_PATH MANPATH
 
 # Editor settings
 CSCOPE_EDITOR="vim"
@@ -132,23 +157,18 @@ PKG_CONFIG_PATH="/opt/local/lib/pkgconfig:$PKG_CONFIG_PATH"
 PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH"
 PKG_CONFIG_PATH="/usr/lib/pkgconfig:$PKG_CONFIG_PATH"
 
-# MacOS
-DYLD_FALLBACK_LIBRARY_PATH="$HOME/.local/lib"
-
-export CSCOPE_EDITOR DYLD_FALLBACK_LIBRARY_PATH EDITOR INPUTRC \
-       PKG_CONFIG_PATH PYTHONPATH
-
-# Source definitions
-if [[ -d $HOME/.zsh.d ]]; then
-    for i in $HOME/.zsh.d/zsh-*; do
-        test -r $i && . $i
-    done
-    unset i
-fi
+export CSCOPE_EDITOR \
+       DYLD_FALLBACK_LIBRARY_PATH \
+       EDITOR \
+       INPUTRC \
+       PKG_CONFIG_PATH
 
 # fzf
 export FZF_DEFAULT_COMMAND="fd --type file"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+# jq
+export JQ_COLORS="0;37:0;39:0;39:0;39:0;32:1;39:1;39"
 
 # If this is an xterm set the title
 case "$TERM" in
@@ -160,3 +180,6 @@ xterm*|rxvt*|screen*)
 esac
 
 ulimit -c unlimited
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

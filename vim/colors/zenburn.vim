@@ -75,12 +75,12 @@
 "
 "      let g:zenburn_color_also_Ignore = 1
 "
-" * To get more contrast to the Visual selection, use
+" * To increase the contrast/brightness of the Visual selection, use
 "
 "      let g:zenburn_alternate_Visual = 1
 "
-"   Note: this is enabled only if the old-style Visual
-"   if used, see g:zenburn_old_Visual
+"   Note: if the old-style Visual is used, this increases the contrast.
+"   Otherwise it chooses a brighter background; see g:zenburn_old_Visual
 "
 " * To use alternate colouring for Error message, use
 "
@@ -119,6 +119,18 @@
 "      let g:zenburn_old_Visual = 1
 "
 "   Default is to use the new Visual.
+"
+"  * Italic comments can be enabled with
+"
+"      let g:zenburn_italic_Comment=1
+"
+"   Note: This requires the terminal to support italics. Try this in your
+"   terminal:
+"
+"      echo -e "\e[3m test \e[23m"
+"
+"   and if the output is not italic, then you should not enable italic comments,
+"   as they will not render correctly.
 "
 "  * EXPERIMENTAL FEATURE: Zenburn would like to support TagHighlight
 "    (an evolved ctags-highlighter) by Al Budden (homepage:
@@ -197,6 +209,10 @@ if ! exists("g:zenburn_enable_TagHighlight")
     let g:zenburn_enable_TagHighlight = 0
 endif
 
+if ! exists("g:zenburn_italic_Comment")
+    let g:zenburn_italic_Comment = 0
+endif
+
 " -----------------------------------------------
 
 set background=dark
@@ -209,6 +225,11 @@ let g:colors_name="zenburn"
 
 hi Boolean         guifg=#dca3a3                              ctermfg=181
 hi Character       guifg=#dca3a3 gui=bold                     ctermfg=181 cterm=bold
+if exists("g:zenburn_italic_Comment") && g:zenburn_italic_Comment
+    hi Comment         guifg=#7f9f7f gui=italic                   ctermfg=108 cterm=italic
+else
+    hi Comment         guifg=#7f9f7f gui=italic                   ctermfg=108
+endif
 hi Comment         guifg=#7f9f7f gui=italic                   ctermfg=108
 hi Conditional     guifg=#f0dfaf gui=bold                     ctermfg=223 cterm=bold
 hi Constant        guifg=#dca3a3 gui=bold                     ctermfg=181 cterm=bold
@@ -273,6 +294,7 @@ hi SpellLocal guisp=#7cac7c guifg=#9ccc9c  ctermfg=151 ctermbg=237
 if exists("g:zenburn_high_Contrast") && g:zenburn_high_Contrast
     " use new darker background
     hi Normal        guifg=#dcdccc guibg=#1f1f1f           ctermfg=188 ctermbg=234
+    hi Conceal       guifg=#8f8f8f guibg=#333333           ctermfg=246 ctermbg=235
     hi ColorColumn   guibg=#33332f                         ctermbg=235
     hi CursorLine    guibg=#121212 gui=bold                ctermbg=233 cterm=none
     hi CursorLineNr  guifg=#f2f3bb guibg=#161616           ctermfg=229 ctermbg=233
@@ -296,6 +318,7 @@ if exists("g:zenburn_high_Contrast") && g:zenburn_high_Contrast
 else
     " Original, lighter background
     hi Normal        guifg=#dcdccc guibg=#3f3f3f           ctermfg=188 ctermbg=237
+    hi Conceal       guifg=#8f8f8f guibg=#484848           ctermfg=246 ctermbg=238
     hi ColorColumn   guibg=#484848                         ctermbg=238
     hi CursorLine    guibg=#434443                         ctermbg=238 cterm=none
     hi CursorLineNr  guifg=#d2d39b guibg=#262626           ctermfg=230 ctermbg=235
@@ -353,10 +376,12 @@ if exists("g:zenburn_old_Visual") && g:zenburn_old_Visual
     endif
 else
     " new Visual style
-    if exists("g:zenburn_high_Contrast") && g:zenburn_high_Contrast
+    if exists("g:zenburn_alternate_Visual") && g:zenburn_alternate_Visual
+        " brighter than the high/low contrast options below
+        hi Visual        guibg=#304a3d  ctermbg=23
+        hi VisualNos     guibg=#304a3d  ctermbg=23
+    elseif exists("g:zenburn_high_Contrast") && g:zenburn_high_Contrast
         " high contrast
-        "hi Visual        guibg=#304a3d
-        "hi VisualNos     guibg=#304a3d
         "TODO no nice greenish in console, 65 is closest. use full black instead,
         "although i like the green..!
         hi Visual        guibg=#0f0f0f  ctermbg=232
@@ -463,5 +488,9 @@ if exists("g:zenburn_enable_TagHighlight") && g:zenburn_enable_TagHighlight
         hi link Union             WarningMsg
 endif
 
-" TODO check for more obscure syntax groups that they're ok
+" Terminal support for Vim 8+
+if version >= 800
+    hi Terminal ctermbg=232 guibg=#0f0f0f ctermfg=248 guifg=#a8a8a8
+endif
 
+" TODO check for more obscure syntax groups that they're ok
