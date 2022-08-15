@@ -64,23 +64,22 @@ zstyle ':vcs_info:*' actionformats ":%b|%a%c%u"
 
 # git: Show marker if there are stashed changes
 # git: Show marker if there are untracked files in repository
-zstyle ':vcs_info:git*+set-message:*' hooks git-hook
-+vi-git-hook () {
-    if [[ $(/usr/bin/stat -L --file-system --format="%T" "$(pwd)") != "nfs" ]]; then
-        if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]]; then
-            if [[ -n $(git rev-parse --verify refs/stash 2> /dev/null) ]]; then
-                hook_com[staged]+="%{$fg[magenta]%}⋆"
-            fi
-            if [[ -n $(git status --porcelain | grep '??' 2> /dev/null) ]]; then
-                hook_com[staged]+="%{$fg[yellow]%}•"
-            fi
-        fi
-    fi
-}
+#zstyle ':vcs_info:git*+set-message:*' hooks git-hook
+#+vi-git-hook () {
+#    if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]]; then
+#        if [[ -n $(git rev-parse --verify refs/stash 2> /dev/null) ]]; then
+#            hook_com[staged]+="%{$fg[magenta]%}⋆"
+#        fi
+#        if [[ -n $(git status --porcelain | grep '??' 2> /dev/null) ]]; then
+#            hook_com[staged]+="%{$fg[yellow]%}•"
+#        fi
+#    fi
+#}
 
 # Configure the prompt
 setopt prompt_subst
-PS1='%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}%(1j.[%j].)${vcs_info_msg_0_}%{$reset_color%} '
+#PS1='%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}%(1j.[%j].)${vcs_info_msg_0_}%{$reset_color%} '
+PS1='%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%} '
 
 # Enable color support of ls and also add handy aliases
 if [[ -x /usr/bin/dircolors ]]; then
@@ -105,38 +104,15 @@ if [[ -d $HOME/.zsh.d ]]; then
     unset i
 fi
 
-# Python
-PYENV_ROOT=$HOME/.pyenv
-PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
-
-export PYENV_ROOT PYTHONPATH
-
-# Go
-GOPATH=/s1/msteinert/go
-GOROOT=$HOME/.local/go
-
-export GOPATH GOROOT
-
-# Misc
-SAMUFLAGS=-j16
-
-export SAMUFLAGS
-
 # Path
 path=(
     $HOME/.local/bin
-    $PLATFORM/bin
-    $GOROOT/bin
+    $HOME/go/bin
     $HOME/.cargo/bin
-    $HOME/.local/dotnet
-    $PYENV_ROOT/bin
     $path
 )
 
 typeset -U path
-
-LD_LIBRARY_PATH="$PLATFORM/lib64:$LD_LIBRARY_PATH"
-LD_LIBRARY_PATH="$PLATFORM/lib:$LD_LIBRARY_PATH"
 
 MANPATH="$HOME/.local/man:$MANPATH"
 MANPATH="$HOME/.local/share/man:$MANPATH"
@@ -183,3 +159,4 @@ ulimit -c unlimited
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

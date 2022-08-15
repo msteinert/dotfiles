@@ -1,0 +1,49 @@
+window:
+  dimensions:
+    columns: 80
+    lines: 40
+  padding:
+    x: 5
+    y: 0
+
+scrolling:
+  history: 0
+
+font:
+  normal:
+    family: SF Mono
+    style: Regular
+  bold:
+    style: Bold
+  italic:
+    style: Italic
+  bold_italic:
+    style: Bold Italic
+  size: 24.0
+
+colors:
+  primary:
+    background: '0x3f3f3f'
+    foreground: '0xdcdcdc'
+  normal:
+    black:   '0x1e2320'
+    red:     '0xd78787'
+    green:   '0x60b48a'
+    yellow:  '0xdfaf8f'
+    blue:    '0x506070'
+    magenta: '0xdc8cc3'
+    cyan:    '0x8cd0d3'
+    white:   '0xdcdcdc'
+  bright:
+    black:   '0x709080'
+    red:     '0xdca3a3'
+    green:   '0xc3bf9f'
+    yellow:  '0xf0dfaf'
+    blue:    '0x94bff3'
+    magenta: '0xec93d3'
+    cyan:    '0x93e0e3'
+    white:   '0xffffff'
+
+draw_bold_text_with_bright_colors: true
+save_to_clipboard: true
+dynamic_title: true
