@@ -29,7 +29,6 @@ endif
 
 DIRS += bash.d
 DIRS += config
-DIRS += config/fish
 DIRS += zsh.d
 
 all:

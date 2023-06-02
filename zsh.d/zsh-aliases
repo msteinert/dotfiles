@@ -1,22 +1,9 @@
 #!zsh
 
-# Add an "alert" alias for long running commands. Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 # Common aliases
 alias c="clear"
-alias h="history 1"
+alias h="history"
 alias info="info --vi-keys"
-alias tumx="tmux -u"
-
-# Parallel build aliases
-if [[ -d /proc ]]; then
-    jobs=$(expr `cat /proc/cpuinfo | grep processor | wc -l` \* 2)
-    alias make="make -j$jobs"
-    alias scons="scons -j$jobs"
-    unset jobs
-fi
 
 if [[ $(uname -s) = "Darwin" ]]; then
     alias display="qlmanage -t"

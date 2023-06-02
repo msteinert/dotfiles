@@ -21,7 +21,6 @@
 	default = matching
 [pull]
 	ff = only
-
 [url "git@engrepo.exegy.net:"]
 	insteadOf = https://engrepo.exegy.net/
 [filter "lfs"]

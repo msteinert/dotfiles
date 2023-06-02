@@ -33,6 +33,7 @@ set noshowmode         " disable mode messages in status line
 set cinoptions=:0      " don't indent after a switch
 set backupcopy=yes
 set clipboard=unnamed
+set nojoinspaces
 
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=0
 let g:fugitive_gitlab_domains = ['https://gitrepo.exegy.net']
@@ -82,6 +83,9 @@ if &t_Co > 2 || has("gui_running")
   let g:zenburn_disable_Label_underline=1
   colorscheme zenburn
   set fillchars=""
+
+  " Toggle hlsearch
+  nnoremap <silent> <Space> :set hlsearch!<CR>
 endif
 
 " Paste annoyance
@@ -281,8 +285,12 @@ let g:clang_format#style_options =
   \ "Standard": "C++11" }
 
 " map to <Leader>cf in C++ code
-autocmd FileType c,cpp,objc nnoremap <buffer><Leader>f :<C-u>ClangFormat<CR>
-autocmd FileType c,cpp,objc vnoremap <buffer><Leader>f :ClangFormat<CR>
+autocmd FileType c,cpp nnoremap <buffer><Leader>f :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp vnoremap <buffer><Leader>f :ClangFormat<CR>
+autocmd FileType c ClangFormatAutoEnable
+autocmd BufNewFile *.c 0r ~/.vim/templates/copyright.c
+autocmd BufNewFile *.h 0r ~/.vim/templates/copyright.h
+nnoremap <F3> :ClangFormatAutoToggle<CR>
 
 " Gvim settings
 if has("gui_running")
