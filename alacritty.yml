@@ -19,7 +19,7 @@ font:
     style: Italic
   bold_italic:
     style: Bold Italic
-  size: 24.0
+  size: 18.0
 
 colors:
   primary:

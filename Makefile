@@ -1,35 +1,31 @@
-SOURCES += Xresources
 SOURCES += alacritty.yml
-SOURCES += bash.d/bash-aliases
-SOURCES += bash.d/bash-git
-SOURCES += bash.d/bash-git-prompt
-SOURCES += bashrc
 SOURCES += cvsignore
 SOURCES += dircolors
 SOURCES += gitconfig
 SOURCES += inputrc
 SOURCES += tmux.conf
+
 SOURCES += vim
 SOURCES += vimrc
+
+DIRS += zsh.d
 SOURCES += zsh.d/zsh-aliases
 SOURCES += zsh.d/zsh-fzf
 SOURCES += zshrc
 
-ifeq ($(ECHOSTAR),y)
-SOURCES += bash.d/bash-clearcase
-SOURCES += bash.d/bash-echostar
-SOURCES += zsh.d/zsh-clearcase
-SOURCES += zsh.d/zsh-echostar
-SOURCES += zsh.d/zsh-ssh
-endif
-
-ifeq ($(EXEGY),y)
-SOURCES += zsh.d/zsh-exegy
-endif
-
+BASH ?= n
+ifeq ($(BASH),y)
 DIRS += bash.d
+SOURCES += bash.d/bash-aliases
+SOURCES += bash.d/bash-git
+SOURCES += bash.d/bash-git-prompt
+SOURCES += bashrc
+endif
+
+LINUX ?= n
+ifeq ($(LINUX),y)
 DIRS += config
-DIRS += zsh.d
+endif
 
 all:
 	$(foreach d,$(DIRS),\

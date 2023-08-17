@@ -14,20 +14,10 @@
 	excludesfile = ~/.cvsignore
 	pager = less -r
 	autocrlf = input
-[gui]
-	fontui = -family Cantrell -size 11 -weight normal -slant roman -underline 0 -overstrike 0
-	fontdiff = -family Consolas -size 12 -weight normal -slant roman -underline 0 -overstrike 0
 [push]
 	default = matching
 [pull]
 	ff = only
-[url "git@engrepo.exegy.net:"]
-	insteadOf = https://engrepo.exegy.net/
-[filter "lfs"]
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
 [credential]
 	helper = cache --timeout=86400
 [fetch]

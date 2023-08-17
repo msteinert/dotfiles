@@ -9,8 +9,16 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=2000
 
-setopt appendhistory extendedglob no_case_glob
+setopt appendhistory extendedglob histignorealldups no_case_glob
 unsetopt beep nomatch
+
+# Homebrew completions
+if type brew &>/dev/null; then
+    FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+    autoload -Uz compinit
+    compinit
+fi
 
 # Case insensitive completion for cd etc *N*
 zstyle ':completion:*' completer _expand _complete _match

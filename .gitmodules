@@ -109,10 +109,6 @@
 	path = vim/bundle/vim-dart
 	url = https://github.com/dart-lang/dart-vim-plugin.git
 	ignore = dirty
-[submodule "vim/bundle/vim-rtags"]
-	path = vim/bundle/vim-rtags
-	url = https://github.com/lyuts/vim-rtags.git
-	ignore = dirty
 [submodule "vim/bundle/vim-fzf"]
 	path = vim/bundle/vim-fzf
 	url = https://github.com/junegunn/fzf.vim.git

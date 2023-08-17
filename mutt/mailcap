@@ -1,2 +1,0 @@
-text/html; w3 -I %{charset} -T text/html; copiousoutput;
-text/calendar; mutt-ics; copiousoutput;
