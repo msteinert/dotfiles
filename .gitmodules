@@ -136,3 +136,6 @@
 [submodule "vim/bundle/vim-flatbuffers"]
 	path = vim/bundle/vim-flatbuffers
 	url = https://github.com/zchee/vim-flatbuffers.git
+[submodule "vim/bundle/vim-typescript"]
+	path = vim/bundle/vim-typescript
+	url = https://github.com/leafgarland/typescript-vim.git
