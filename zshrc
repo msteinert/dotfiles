@@ -154,6 +154,9 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # jq
 export JQ_COLORS="0;37:0;39:0;39:0;39:0;32:1;39:1;39"
 
+# rg
+export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
+
 # If this is an xterm set the title
 case "$TERM" in
 xterm*|rxvt*|screen*)
