@@ -139,3 +139,9 @@
 [submodule "vim/bundle/vim-typescript"]
 	path = vim/bundle/vim-typescript
 	url = https://github.com/leafgarland/typescript-vim.git
+[submodule "vim/bundle/vim-graphql"]
+	path = vim/bundle/vim-graphql
+	url = https://github.com/jparise/vim-graphql.git
+[submodule "vim/bundle/vim-terraform"]
+	path = vim/bundle/vim-terraform
+	url = https://github.com/hashivim/vim-terraform.git

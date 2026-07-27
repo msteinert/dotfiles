@@ -81,6 +81,7 @@ if &t_Co > 2 || has("gui_running")
   let g:load_doxygen_syntax=1
   let g:js_indent_log=0
   let g:zenburn_disable_Label_underline=1
+  let g:zenburn_alternate_Visual=1
   colorscheme zenburn
   set fillchars=""
 
@@ -114,9 +115,10 @@ if bufwinnr(1)
 endif
 
 " NERD Tree
+let g:NERDTreeShowHidden=1
 let g:NERDTreeWinSize=39
 map <leader>n :NERDTreeToggle<CR>
-let NERDTreeIgnore=['\.o$', '\.lo$', '\.la$', '\~$', '\.cache$']
+let NERDTreeIgnore=['\.o$', '\.lo$', '\.la$', '\~$', '\.cache$', '\.swp', '\.swo']
 augroup nerd_tree
   au!
   au BufEnter *
@@ -300,3 +302,25 @@ if has("gui_running")
   set guioptions-=r
   set guioptions-=L
 endif
+
+" Gitmoji print function:
+function! InsertFirstCharAtCursor(text)
+  let rmTxt = split(a:text, ' ')
+  let firstChar = get(rmTxt, 0)
+  execute "normal! a" . firstChar . "\<Esc>"
+endfunction
+" var used by :Emoji
+let emoji = {
+  \ 'source': 'cat "$HOME/.local/share/emojidb/gitmoji"',
+  \ 'sink': function('InsertFirstCharAtCursor'),
+  \ 'options': '--prompt "search: " --no-preview -i -e --info=default --layout=reverse',
+  \ }
+" var used by :Gitmoji
+let gitmoji = copy(emoji)
+let gitmoji['source'] = 'cat "$HOME/.local/share/emojidb/gitmoji"'
+"ex-command fzf window:
+command! Emoji call fzf#run(fzf#wrap(emoji))
+command! Gitmoji call fzf#run(fzf#wrap(gitmoji))
+"leader-command: (adjust to what you like)
+nnoremap <silent> <leader><leader>g :Gitmoji<CR>
+nnoremap <silent> <leader><leader>e :Emoji<CR>

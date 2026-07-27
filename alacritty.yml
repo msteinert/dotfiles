@@ -1,4 +1,5 @@
 window:
+  opacity: 1.0
   dimensions:
     columns: 80
     lines: 40
@@ -19,21 +20,21 @@ font:
     style: Italic
   bold_italic:
     style: Bold Italic
-  size: 18.0
+  size: 20.0
 
 colors:
   primary:
-    background: '0x3f3f3f'
+    background: '0x3a3a3a'
     foreground: '0xdcdcdc'
   normal:
     black:   '0x1e2320'
     red:     '0xd78787'
-    green:   '0x60b48a'
+    green:   '0x87ae87'
     yellow:  '0xdfaf8f'
     blue:    '0x506070'
     magenta: '0xdc8cc3'
     cyan:    '0x8cd0d3'
-    white:   '0xdcdcdc'
+    white:   '0xdcdccc'
   bright:
     black:   '0x709080'
     red:     '0xdca3a3'
