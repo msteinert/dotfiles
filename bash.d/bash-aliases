@@ -1,7 +1,0 @@
-#!bash
-
-# Common aliases
-alias c="clear"
-alias ct="cleartool"
-alias h="history"
-alias where="which -a"

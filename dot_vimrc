@@ -36,7 +36,6 @@ set clipboard=unnamed
 set nojoinspaces
 
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=0
-let g:fugitive_gitlab_domains = ['https://gitrepo.exegy.net']
 
 augroup vimrc
   au!
@@ -133,9 +132,6 @@ let g:makeshift_use_pwd_first = 1
 " Errormarker
 let &errorformat="%f:%l:%c: %t%*[^:]:%m,%f:%l: %t%*[^:]:%m," . &errorformat
 
-" Lusty Juggler
-let g:LustyJugglerSuppressRubyWarning=1
-
 " Python
 let g:no_flake8_maps=1
 augroup filetype_python
@@ -160,18 +156,6 @@ augroup filetype_go
   au FileType go nmap <Leader>v <Plug>(go-vet)
   au FileType go nmap <Leader>l :GoLint<CR>
   au FileType go nmap gd <Plug>(go-def)
-augroup END
-
-" Javascript
-augroup filetype_javascript
-  au!
-  au FileType javascript nmap <buffer> <F8> :call eslint#ESLint()<CR>
-augroup END
-
-" Coffeescript
-augroup filetype_coffee
-  au!
-  au FileType coffee nmap <Leader>l :CoffeeLint! \| cwindow<CR>
 augroup END
 
 " Rust
