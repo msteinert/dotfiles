@@ -5,15 +5,14 @@ Managed with [chezmoi](https://www.chezmoi.io/).
 ## Setup on a new machine
 
 ```sh
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply msteinert
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install chezmoi
+chezmoi init --apply msteinert
 ```
 
-Or, if this repo is already cloned somewhere (e.g. `~/src/git/dotfiles`):
-
-```sh
-ln -s ~/src/git/dotfiles ~/.local/share/chezmoi
-chezmoi apply
-```
+`chezmoi init` clones this repo (with submodules) straight into
+`~/.local/share/chezmoi` and `--apply` writes everything out to `$HOME`
+in one step.
 
 ## Day-to-day
 
@@ -33,5 +32,7 @@ run `chezmoi apply` to push the changes out to `$HOME`.
   stays a plain manual symlink (`~/.vim -> dot_vim`) — revisit once/if a
   full nvim migration happens.
 - Vim plugins are git submodules under `dot_vim/pack/dotfiles/start/`,
-  using vim8/nvim's native package loading (no plugin manager). Run
-  `git submodule update --init --recursive` after cloning.
+  using vim8/nvim's native package loading (no plugin manager).
+  `chezmoi init` recurses submodules automatically; if you ever clone
+  this repo manually instead, run
+  `git submodule update --init --recursive` afterward.
