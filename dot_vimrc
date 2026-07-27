@@ -203,9 +203,9 @@ endfunction
 
 function! LightFugitive()
   try
-    if expand('%:t') !~? 'NERD' && exists('*fugitive#head')
+    if expand('%:t') !~? 'NERD' && exists('*fugitive#Head')
       let mark='⭠ '
-      let _=fugitive#head()
+      let _=fugitive#Head()
       return strlen(_) ? mark._ : ''
     endif
   catch
