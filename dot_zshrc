@@ -104,10 +104,10 @@ export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 # Zoxide
 eval "$(zoxide init zsh)"
 
-# Cirrus
+# direnv
 eval "$(direnv hook zsh)"
 
-export AWS_CONFIG_FILE=/Users/$USER/.drw_cca/aws.config
+export AWS_CONFIG_FILE=$HOME/.drw_cca/aws.config
 export cred_proc_CERT_PASSPHRASE="$(<"$HOME/.drw_cca/cert-passphrase.txt")"
 export cred_proc_CERT_BUNDLE=$HOME/.drw_cca/$USER.pfx
 export cred_proc_CACHE=True
@@ -122,5 +122,5 @@ if [[ -d $HOME/.ai ]]; then
 fi
 
 # Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/msteinert/.lmstudio/bin"
+export PATH="$PATH:$HOME/.lmstudio/bin"
 # End of LM Studio CLI section
