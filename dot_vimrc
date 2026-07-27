@@ -18,20 +18,14 @@ set incsearch          " do incremental searching
 set nowrap             " don't wrap long lines
 set encoding=utf-8     " set the encoding
 set nobackup           " don't create backups
-set title              " set the terminal title
 set lazyredraw         " don't redraw while replaying macros
 set hidden             " hide buffer on change (allows undo)
-set cf                 " enable error files and error jumping
-set tags=./tags;$HOME  " search for tag files up to $HOME
-set exrc               " enable per-directory .vimrc files
-set secure             " disable unsafe commands in local .vimrc files
+set confirm            " prompt to save changes instead of failing :q/:e
 set noshowmode         " disable mode messages in status line
 set cinoptions=:0      " don't indent after a switch
 set backupcopy=yes
 set clipboard=unnamed
 set nojoinspaces
-
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=0
 
 augroup vimrc
   au!
@@ -48,7 +42,6 @@ set whichwrap+=<,>,h,l
 
 " Set up leader
 let mapleader=","
-let g:mapleader=","
 
 " Only do this part when compiled with support for autocommands
 if has("autocmd")
@@ -69,20 +62,17 @@ else
   set autoindent
 endif " has("autocmd")
 
-" Switch syntax highlighting on, when the terminal has colors.
-if &t_Co > 2 || has("gui_running")
-  syntax on
-  set hlsearch
-  let g:load_doxygen_syntax=1
-  let g:js_indent_log=0
-  let g:zenburn_disable_Label_underline=1
-  let g:zenburn_alternate_Visual=1
-  colorscheme zenburn
-  set fillchars=""
+syntax on
+set hlsearch
+let g:load_doxygen_syntax=1
+let g:js_indent_log=0
+let g:zenburn_disable_Label_underline=1
+let g:zenburn_alternate_Visual=1
+colorscheme zenburn
+set fillchars=""
 
-  " Toggle hlsearch
-  nnoremap <silent> <Space> :set hlsearch!<CR>
-endif
+" Toggle hlsearch
+nnoremap <silent> <Space> :set hlsearch!<CR>
 
 " Paste annoyance
 nnoremap <F2> :set invpaste paste?<CR>
@@ -129,11 +119,9 @@ let g:makeshift_use_pwd_first = 1
 let &errorformat="%f:%l:%c: %t%*[^:]:%m,%f:%l: %t%*[^:]:%m," . &errorformat
 
 " Python
-let g:no_flake8_maps=1
 augroup filetype_python
   au!
   au FileType python setlocal formatprg=autopep8\ -
-  au FileType python map <buffer> <F8> :call Flake8()<CR>
 augroup END
 
 " Go
@@ -264,7 +252,7 @@ let g:clang_format#style_options =
   \ "DerivePointerAlignment": "false",
   \ "IndentCaseLabels": "false",
   \ "PointerAlignment": "Left",
-  \ "Standard": "C++11" }
+  \ "Standard": "C++20" }
 
 " map to <Leader>cf in C++ code
 autocmd FileType c,cpp nnoremap <buffer><Leader>f :<C-u>ClangFormat<CR>
@@ -273,34 +261,3 @@ autocmd FileType c ClangFormatAutoEnable
 autocmd BufNewFile *.c 0r ~/.vim/templates/copyright.c
 autocmd BufNewFile *.h 0r ~/.vim/templates/copyright.h
 nnoremap <F3> :ClangFormatAutoToggle<CR>
-
-" Gvim settings
-if has("gui_running")
-  set guifont=Consolas\ 14
-  set guicursor=a:blinkon0
-  set guioptions-=T
-  set guioptions-=r
-  set guioptions-=L
-endif
-
-" Gitmoji print function:
-function! InsertFirstCharAtCursor(text)
-  let rmTxt = split(a:text, ' ')
-  let firstChar = get(rmTxt, 0)
-  execute "normal! a" . firstChar . "\<Esc>"
-endfunction
-" var used by :Emoji
-let emoji = {
-  \ 'source': 'cat "$HOME/.local/share/emojidb/gitmoji"',
-  \ 'sink': function('InsertFirstCharAtCursor'),
-  \ 'options': '--prompt "search: " --no-preview -i -e --info=default --layout=reverse',
-  \ }
-" var used by :Gitmoji
-let gitmoji = copy(emoji)
-let gitmoji['source'] = 'cat "$HOME/.local/share/emojidb/gitmoji"'
-"ex-command fzf window:
-command! Emoji call fzf#run(fzf#wrap(emoji))
-command! Gitmoji call fzf#run(fzf#wrap(gitmoji))
-"leader-command: (adjust to what you like)
-nnoremap <silent> <leader><leader>g :Gitmoji<CR>
-nnoremap <silent> <leader><leader>e :Emoji<CR>
