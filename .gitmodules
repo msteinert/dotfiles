@@ -22,10 +22,6 @@
 	path = dot_vim/pack/dotfiles/start/vim-nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
 	ignore = dirty
-[submodule "vim/bundle/vim-errormarker"]
-	path = dot_vim/pack/dotfiles/start/vim-errormarker
-	url = https://github.com/vim-scripts/errormarker.vim.git
-	ignore = dirty
 [submodule "vim/bundle/vim-go"]
 	path = dot_vim/pack/dotfiles/start/vim-go
 	url = https://github.com/fatih/vim-go.git

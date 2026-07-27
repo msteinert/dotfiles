@@ -112,11 +112,23 @@ augroup nerd_tree
   \ endif
 augroup END
 
+" Per-language indent conventions
+augroup filetype_indent
+  au!
+  au FileType cmake,cpp,css,javascript,ruby,typescript
+  \ setlocal tabstop=8 shiftwidth=2 softtabstop=2 expandtab
+  au FileType html,python,sh,zsh
+  \ setlocal tabstop=8 shiftwidth=4 softtabstop=4 expandtab
+  au FileType toml
+  \ setlocal tabstop=8 shiftwidth=2 softtabstop=2 expandtab cindent
+  au FileType sql
+  \ setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+  au FileType markdown
+  \ setlocal tabstop=8 shiftwidth=4 softtabstop=4 expandtab formatoptions+=t textwidth=76
+augroup END
+
 " Makeshift
 let g:makeshift_use_pwd_first = 1
-
-" Errormarker
-let &errorformat="%f:%l:%c: %t%*[^:]:%m,%f:%l: %t%*[^:]:%m," . &errorformat
 
 " Python
 augroup filetype_python
@@ -258,6 +270,4 @@ let g:clang_format#style_options =
 autocmd FileType c,cpp nnoremap <buffer><Leader>f :<C-u>ClangFormat<CR>
 autocmd FileType c,cpp vnoremap <buffer><Leader>f :ClangFormat<CR>
 autocmd FileType c ClangFormatAutoEnable
-autocmd BufNewFile *.c 0r ~/.vim/templates/copyright.c
-autocmd BufNewFile *.h 0r ~/.vim/templates/copyright.h
 nnoremap <F3> :ClangFormatAutoToggle<CR>
