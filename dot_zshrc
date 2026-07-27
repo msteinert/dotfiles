@@ -113,13 +113,19 @@ export cred_proc_CERT_BUNDLE=$HOME/.drw_cca/$USER.pfx
 export cred_proc_CACHE=True
 export cred_proc_TTL=3600
 
-# AI keys
+# AI config (non-secret; project/region/paths, no keys)
 if [[ -d $HOME/.ai ]]; then
     for i in $HOME/.ai/*.sh; do
         test -r $i && . $i
     done
     unset i
 fi
+
+# AI keys (1Password, DRW vault)
+export AZURE_OPENAI_API_KEY="$(op read 'op://DRW/Azure OpenAI/credential' 2>/dev/null)"
+export AZURE_OPENAI_API_ENDPOINT="$(op read 'op://DRW/Azure OpenAI/endpoint' 2>/dev/null)"
+export AZURE_OPENAI_API_VERSION="$(op read 'op://DRW/Azure OpenAI/version' 2>/dev/null)"
+export PORTKEY_API_KEY="$(op read 'op://DRW/Portkey/credential' 2>/dev/null)"
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:$HOME/.lmstudio/bin"
