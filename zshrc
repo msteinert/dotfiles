@@ -101,6 +101,9 @@ export JQ_COLORS="0;37:0;39:0;39:0;39:0;32:1;39:1;39"
 # rg
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 
+# Zoxide
+eval "$(zoxide init zsh)"
+
 # Cirrus
 eval "$(direnv hook zsh)"
 
