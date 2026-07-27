@@ -30,8 +30,8 @@ run `chezmoi apply` to push the changes out to `$HOME`.
 ## Notes
 
 - `dot_vim/` is excluded from chezmoi management (see `.chezmoiignore`) and
-  stays a plain manual symlink (`~/.vim -> dot_vim`) until the pathogen ->
-  native-packages plugin manager migration is done.
-- Vim plugins are git submodules under `dot_vim/bundle/`. Run
-  `git submodule update --init --recursive` after cloning if `~/.vim` is
-  still wired up the old way.
+  stays a plain manual symlink (`~/.vim -> dot_vim`) — revisit once/if a
+  full nvim migration happens.
+- Vim plugins are git submodules under `dot_vim/pack/dotfiles/start/`,
+  using vim8/nvim's native package loading (no plugin manager). Run
+  `git submodule update --init --recursive` after cloning.

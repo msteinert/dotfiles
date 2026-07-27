@@ -1,143 +1,75 @@
-[submodule "vim/bundle/vim-pathogen"]
-	path = dot_vim/bundle/vim-pathogen
-	url = https://github.com/tpope/vim-pathogen.git
-	ignore = dirty
-[submodule "vim/bundle/vim-ragtag"]
-	path = dot_vim/bundle/vim-ragtag
-	url = https://github.com/tpope/vim-ragtag.git
-	ignore = dirty
 [submodule "vim/bundle/vim-repeat"]
-	path = dot_vim/bundle/vim-repeat
+	path = dot_vim/pack/dotfiles/start/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
 	ignore = dirty
 [submodule "vim/bundle/vim-ruby"]
-	path = dot_vim/bundle/vim-ruby
+	path = dot_vim/pack/dotfiles/start/vim-ruby
 	url = https://github.com/vim-ruby/vim-ruby.git
 	ignore = dirty
 [submodule "vim/bundle/vim-surround"]
-	path = dot_vim/bundle/vim-surround
+	path = dot_vim/pack/dotfiles/start/vim-surround
 	url = https://github.com/tpope/vim-surround.git
 	ignore = dirty
 [submodule "vim/bundle/vim-markdown"]
-	path = dot_vim/bundle/vim-markdown
+	path = dot_vim/pack/dotfiles/start/vim-markdown
 	url = https://github.com/tpope/vim-markdown.git
 	ignore = dirty
-[submodule "vim/bundle/vim-git"]
-	path = dot_vim/bundle/vim-git
-	url = https://github.com/tpope/vim-git.git
-	ignore = dirty
 [submodule "vim/bundle/vim-fugitive"]
-	path = dot_vim/bundle/vim-fugitive
+	path = dot_vim/pack/dotfiles/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
 	ignore = dirty
-[submodule "vim/bundle/vim-autoclose"]
-	path = dot_vim/bundle/vim-autoclose
-	url = https://github.com/Townk/vim-autoclose.git
-	ignore = dirty
-[submodule "vim/bundle/vim-addon-mw-utils"]
-	path = dot_vim/bundle/vim-addon-mw-utils
-	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
-	ignore = dirty
-[submodule "vim/bundle/vim-tlib"]
-	path = dot_vim/bundle/vim-tlib
-	url = https://github.com/tomtom/tlib_vim.git
-	ignore = dirty
 [submodule "vim/bundle/vim-nerdtree"]
-	path = dot_vim/bundle/vim-nerdtree
+	path = dot_vim/pack/dotfiles/start/vim-nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
 	ignore = dirty
-[submodule "vim/bundle/vim-jshint"]
-	path = dot_vim/bundle/vim-jshint
-	url = https://github.com/walm/jshint.vim.git
-	ignore = dirty
 [submodule "vim/bundle/vim-errormarker"]
-	path = dot_vim/bundle/vim-errormarker
+	path = dot_vim/pack/dotfiles/start/vim-errormarker
 	url = https://github.com/vim-scripts/errormarker.vim.git
 	ignore = dirty
 [submodule "vim/bundle/vim-go"]
-	path = dot_vim/bundle/vim-go
+	path = dot_vim/pack/dotfiles/start/vim-go
 	url = https://github.com/fatih/vim-go.git
 	ignore = dirty
 [submodule "vim/bundle/vim-togglelist"]
-	path = dot_vim/bundle/vim-togglelist
+	path = dot_vim/pack/dotfiles/start/vim-togglelist
 	url = https://github.com/milkypostman/vim-togglelist.git
 	ignore = dirty
-[submodule "vim/bundle/vim-dispatch"]
-	path = dot_vim/bundle/vim-dispatch
-	url = https://github.com/tpope/vim-dispatch.git
-	ignore = dirty
 [submodule "vim/bundle/vim-lightline"]
-	path = dot_vim/bundle/vim-lightline
+	path = dot_vim/pack/dotfiles/start/vim-lightline
 	url = https://github.com/itchyny/lightline.vim.git
 	ignore = dirty
-[submodule "vim/bundle/vim-flake8"]
-	path = dot_vim/bundle/vim-flake8
-	url = https://github.com/nvie/vim-flake8.git
-	ignore = dirty
-[submodule "vim/bundle/vim-rust"]
-	path = dot_vim/bundle/vim-rust
-	url = https://github.com/wting/rust.vim.git
-	ignore = dirty
 [submodule "vim/bundle/vim-toml"]
-	path = dot_vim/bundle/vim-toml
+	path = dot_vim/pack/dotfiles/start/vim-toml
 	url = https://github.com/cespare/vim-toml.git
 	ignore = dirty
-[submodule "vim/bundle/vim-jsx"]
-	path = dot_vim/bundle/vim-jsx
-	url = https://github.com/mxw/vim-jsx.git
-	ignore = dirty
 [submodule "vim/bundle/vim-javascript"]
-	path = dot_vim/bundle/vim-javascript
+	path = dot_vim/pack/dotfiles/start/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
 	ignore = dirty
-[submodule "vim/bundle/vim-capnp"]
-	path = dot_vim/bundle/vim-capnp
-	url = https://github.com/cstrahan/vim-capnp.git
-	ignore = dirty
-[submodule "vim/bundle/vim-fugitive-gitlab"]
-	path = dot_vim/bundle/vim-fugitive-gitlab
-	url = https://github.com/shumphrey/fugitive-gitlab.vim.git
-	ignore = dirty
-[submodule "vim/bundle/vim-perl"]
-	path = dot_vim/bundle/vim-perl
-	url = https://github.com/vim-perl/vim-perl.git
-	ignore = dirty
 [submodule "vim/bundle/vim-makeshift"]
-	path = dot_vim/bundle/vim-makeshift
+	path = dot_vim/pack/dotfiles/start/vim-makeshift
 	url = https://github.com/johnsyweb/vim-makeshift.git
-[submodule "vim/bundle/vim-dart"]
-	path = dot_vim/bundle/vim-dart
-	url = https://github.com/dart-lang/dart-vim-plugin.git
-	ignore = dirty
 [submodule "vim/bundle/vim-fzf"]
-	path = dot_vim/bundle/vim-fzf
+	path = dot_vim/pack/dotfiles/start/vim-fzf
 	url = https://github.com/junegunn/fzf.vim.git
 	ignore = dirty
 [submodule "vim/bundle/vim-clang-format"]
-	path = dot_vim/bundle/vim-clang-format
+	path = dot_vim/pack/dotfiles/start/vim-clang-format
 	url = https://github.com/rhysd/vim-clang-format.git
 	ignore = dirty
-[submodule "vim/bundle/vim-swift"]
-	path = dot_vim/bundle/vim-swift
-	url = https://github.com/keith/swift.vim.git
-	ignore = dirty
 [submodule "vim/bundle/vim-zig"]
-	path = dot_vim/bundle/vim-zig
+	path = dot_vim/pack/dotfiles/start/vim-zig
 	url = https://github.com/ziglang/zig.vim.git
 	ignore = dirty
-[submodule "vim/bundle/vim-bufexplorer"]
-	path = dot_vim/bundle/vim-bufexplorer
-	url = https://github.com/jlanzarotta/bufexplorer.git
-	ignore = dirty
-[submodule "vim/bundle/vim-flatbuffers"]
-	path = dot_vim/bundle/vim-flatbuffers
-	url = https://github.com/zchee/vim-flatbuffers.git
 [submodule "vim/bundle/vim-typescript"]
-	path = dot_vim/bundle/vim-typescript
+	path = dot_vim/pack/dotfiles/start/vim-typescript
 	url = https://github.com/leafgarland/typescript-vim.git
 [submodule "vim/bundle/vim-graphql"]
-	path = dot_vim/bundle/vim-graphql
+	path = dot_vim/pack/dotfiles/start/vim-graphql
 	url = https://github.com/jparise/vim-graphql.git
 [submodule "vim/bundle/vim-terraform"]
-	path = dot_vim/bundle/vim-terraform
+	path = dot_vim/pack/dotfiles/start/vim-terraform
 	url = https://github.com/hashivim/vim-terraform.git
+[submodule "dot_vim/pack/dotfiles/start/vim-rust"]
+	path = dot_vim/pack/dotfiles/start/vim-rust
+	url = https://github.com/rust-lang/rust.vim.git
