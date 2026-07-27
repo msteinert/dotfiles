@@ -121,11 +121,6 @@ if [[ -d $HOME/.ai ]]; then
     unset i
 fi
 
-# AI keys (1Password, DRW vault)
-export AZURE_OPENAI_API_KEY="$(op read 'op://DRW/Azure OpenAI/credential' 2>/dev/null)"
-export AZURE_OPENAI_API_ENDPOINT="$(op read 'op://DRW/Azure OpenAI/endpoint' 2>/dev/null)"
-export AZURE_OPENAI_API_VERSION="$(op read 'op://DRW/Azure OpenAI/version' 2>/dev/null)"
-export PORTKEY_API_KEY="$(op read 'op://DRW/Portkey/credential' 2>/dev/null)"
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:$HOME/.lmstudio/bin"
