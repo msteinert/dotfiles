@@ -49,7 +49,6 @@ The script retrieves the DRW service account token from your personal 1Password
 vault, stores it in Keychain, then uses it to pull all DRW secrets:
 - `op-service-account-token`
 - `drwcca-cert-passphrase`
-- `azure-openai-api-key` / `azure-openai-endpoint` / `azure-openai-version`
 - `portkey-api-key`
 
 Note: the path `op://Personal/DRW Service Account/credential` assumes the service

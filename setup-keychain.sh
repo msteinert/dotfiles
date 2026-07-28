@@ -28,15 +28,6 @@ export OP_SERVICE_ACCOUNT_TOKEN="$(security find-generic-password -a "$USER" -s 
 _store "drwcca-cert-passphrase" \
   "$(op read 'op://DRW/DRW Cert Passphrase/credential')"
 
-_store "azure-openai-api-key" \
-  "$(op read 'op://DRW/Azure OpenAI/credential')"
-
-_store "azure-openai-endpoint" \
-  "$(op read 'op://DRW/Azure OpenAI/endpoint')"
-
-_store "azure-openai-version" \
-  "$(op read 'op://DRW/Azure OpenAI/version')"
-
 _store "portkey-api-key" \
   "$(op read 'op://DRW/Portkey API Key/credential')"
 
