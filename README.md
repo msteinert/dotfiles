@@ -28,32 +28,34 @@ run `chezmoi apply` to push the changes out to `$HOME`.
 
 ## Secrets setup (manual, per machine)
 
-After `chezmoi init --apply`, a few secrets need to be wired up manually.
+Shell startup reads all secrets from the macOS Keychain (fast, local, offline).
+1Password is the source of truth — `setup-keychain.sh` pulls from it to populate
+the Keychain. Run this once after `chezmoi init --apply`, and again whenever
+secrets rotate.
 
-### 1Password service account
+### Step 1: 1Password service account
 
 Create a service account at `start.1password.com` → Developer Tools → Service Accounts:
 - Name it after the machine hostname (`hostname`)
 - Grant read/write access to the DRW vault only
 - Store the token in 1Password (personal vault) as a backup
 
-Then add it to the macOS Keychain:
+Add it to Keychain:
 ```sh
 security add-generic-password -a "$USER" -s "op-service-account-token" -w "ops_..."
 ```
 
-### DRW cert passphrase
+### Step 2: populate Keychain from 1Password
 
 ```sh
-security add-generic-password -a "$USER" -s "drwcca-cert-passphrase" -w "..."
+~/setup-keychain.sh
 ```
 
-### Portkey API key
-
-Retrieve from 1Password DRW vault, then:
-```sh
-security add-generic-password -a "$USER" -s "portkey-api-key" -w "..."
-```
+This reads the service account token from Keychain, then pulls all other secrets
+from the 1Password DRW vault and writes them to Keychain:
+- `drwcca-cert-passphrase`
+- `azure-openai-api-key` / `azure-openai-endpoint` / `azure-openai-version`
+- `portkey-api-key`
 
 ### Claude Code
 
