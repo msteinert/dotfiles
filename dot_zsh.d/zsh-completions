@@ -1,0 +1,9 @@
+_ensure_completion() {
+  local tool=$1
+  local comp="$HOME/.zsh.d/site-functions/_$tool"
+  if command -v "$tool" &>/dev/null && [[ ! -f "$comp" || "$(command -v $tool)" -nt "$comp" ]]; then
+    "$tool" completion zsh > "$comp" 2>/dev/null
+  fi
+}
+
+_ensure_completion docker

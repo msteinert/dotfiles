@@ -20,4 +20,8 @@ codex() {
   [[ -z "$PORTKEY_API_KEY" ]] && _load_ai_keys
   command codex "$@"
 }
+
+_ensure_completion cirrus
+_ensure_completion ml
+_ensure_completion slater
 {{- end }}
