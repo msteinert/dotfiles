@@ -1,14 +1,9 @@
 [user]
 	name = Michael Steinert
 	email = msteinert@drwholdings.com
-
 [alias]
 	co = checkout
-	st = status -s
-	lol = log --graph --decorate --pretty=oneline --abbrev-commit
-	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	root = rev-parse --show-toplevel
-	difft = -c diff.external=difft diff
 [core]
 	excludesfile = ~/.cvsignore
 	pager = less -r
@@ -28,6 +23,5 @@
 	binary = true
 [init]
 	defaultBranch = main
-
 [includeIf "gitdir:~/"]
 	path = ~/.gitconfig.local

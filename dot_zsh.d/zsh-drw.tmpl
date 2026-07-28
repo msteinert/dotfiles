@@ -1,3 +1,4 @@
+{{- if .isWork -}}
 export GOPRIVATE=git.drwholdings.com
 
 # DRW cloud credential config
@@ -24,3 +25,4 @@ codex() {
   [[ -z "$PORTKEY_API_KEY" ]] && _load_ai_keys
   command codex "$@"
 }
+{{- end }}
