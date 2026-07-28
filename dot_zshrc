@@ -111,3 +111,6 @@ eval "$(atuin ai init zsh)"
 
 # direnv
 eval "$(direnv hook zsh)"
+
+# mise
+eval "$(mise activate zsh)"
