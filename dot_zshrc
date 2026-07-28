@@ -9,12 +9,10 @@ HISTFILE=$HOME/.histfile
 HISTSIZE=10000
 SAVEHIST=20000
 
-setopt appendhistory
 setopt extendedglob
 setopt hist_reduce_blanks
 setopt hist_verify
 setopt histignorealldups
-setopt inc_append_history
 setopt no_case_glob
 setopt sharehistory
 
@@ -62,11 +60,6 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey -v
 bindkey '\e[3~' delete-char
-bindkey '^r' history-incremental-search-backward
-vi-cmd-mode() {
-    zle -K vicmd
-}
-zle -N vi-cmd-mode
 bindkey -M vicmd 'v' edit-command-line
 
 # Enable color
@@ -90,7 +83,6 @@ alias egrep="egrep --color=auto"
 
 # Editor settings
 export EDITOR="vim"
-export INPUTRC="$HOME/.inputrc"
 
 # fzf
 export FZF_DEFAULT_COMMAND="fd --type file"
@@ -108,6 +100,10 @@ eval "$(zoxide init zsh)"
 # Atuin
 eval "$(atuin init zsh)"
 eval "$(atuin ai init zsh)"
+# Restore vi command mode history navigation; atuin's vim_mode overrides these
+# to open its search UI, but we want <esc>k/<esc>j as single-step history nav
+bindkey -M vicmd 'k' up-line-or-history
+bindkey -M vicmd 'j' down-line-or-history
 
 # direnv
 eval "$(direnv hook zsh)"
