@@ -71,8 +71,7 @@ bindkey -M vicmd 'v' edit-command-line
 autoload -U colors && colors
 
 # Configure the prompt
-setopt prompt_subst
-PS1='%{$fg[green]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%} '
+eval "$(starship init zsh)"
 
 # Source definitions
 if [[ -d $HOME/.zsh.d ]]; then
