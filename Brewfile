@@ -3,22 +3,23 @@ brew "coreutils"
 brew "curl"
 brew "fd"
 brew "fzf"
-brew "grep"
 brew "ripgrep"
 brew "tree"
-brew "wget"
 brew "zoxide"
 
 # File/data processing
 brew "bat"
 brew "jq"
-brew "jo"
-brew "pv"
 brew "yq"
 
 # Git/VCS
 brew "gh"
 brew "gitmux"
+
+# Dev environment
+brew "chezmoi"
+brew "direnv"
+brew "mise"
 
 # Editors/TUI tools
 brew "neovim"
