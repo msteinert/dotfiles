@@ -31,7 +31,7 @@ do
   vim.o.scrolloff    = 10
   vim.o.confirm      = true
   vim.o.wrap         = false
-  vim.o.nojoinspaces = true
+  vim.o.joinspaces   = false
   vim.o.cinoptions   = ':0'
   vim.o.history      = 1000
   vim.o.list         = true
