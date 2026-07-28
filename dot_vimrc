@@ -2,6 +2,10 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+let &t_SI = "\e[5 q"
+let &t_SR = "\e[3 q"
+let &t_EI = "\e[2 q"
+
 " Allow backspacing over everything in insert mode.
 set backspace=indent,eol,start
 
