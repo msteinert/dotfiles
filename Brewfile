@@ -28,7 +28,7 @@ brew "mise"
 
 # Editors/TUI tools
 brew "neovim"
-brew "tree-sitter"
+brew "tree-sitter-cli"
 brew "vim"
 
 # Terminal/shell utilities
