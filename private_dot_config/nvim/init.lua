@@ -413,6 +413,7 @@ do
     rust_analyzer = {},
     clangd        = {},
     ts_ls         = {},
+    ruby_lsp      = {},
     lua_ls = {
       on_init = function(client)
         client.server_capabilities.documentFormattingProvider = false
