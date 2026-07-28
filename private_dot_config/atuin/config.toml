@@ -1,3 +1,5 @@
+vim_mode = true
+
 [search]
 search_mode = "fuzzy"
 
