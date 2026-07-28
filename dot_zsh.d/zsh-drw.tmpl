@@ -1,24 +1,18 @@
 {{- if .isWork -}}
 export GOPRIVATE=git.drwholdings.com
 
-# 1Password service account (no prompt, auto-unlocks with login keychain)
-export OP_SERVICE_ACCOUNT_TOKEN="$(security find-generic-password -a "$USER" -s "op-service-account-token" -w 2>/dev/null)"
-
 # DRW cloud credential config
 export AWS_CONFIG_FILE=$HOME/.drw_cca/aws.config
-export cred_proc_BUNDLE=$HOME/.drw_cca/$USER.pfx
+export cred_proc_CERT_PASSPHRASE="$(security find-generic-password -a "$USER" -s "drwcca-cert-passphrase" -w 2>/dev/null)"
+export cred_proc_CERT_BUNDLE=$HOME/.drw_cca/$USER.pfx
 export cred_proc_CACHE=True
 export cred_proc_TTL=3600
 
-# Resolve all 1Password secrets in one call
-eval "$(op inject 2>/dev/null << 'OP_SECRETS'
-export cred_proc_CERT_PASSPHRASE="op://DRW/DRW Cert Passphrase/credential"
-export AZURE_OPENAI_API_KEY="op://DRW/Azure OpenAI/credential"
-export AZURE_OPENAI_API_ENDPOINT="op://DRW/Azure OpenAI/endpoint"
-export AZURE_OPENAI_API_VERSION="op://DRW/Azure OpenAI/version"
-export PORTKEY_API_KEY="op://DRW/Portkey API Key/credential"
-OP_SECRETS
-)"
+# AI keys (from Keychain; populated by setup-keychain.sh)
+export AZURE_OPENAI_API_KEY="$(security find-generic-password -a "$USER" -s "azure-openai-api-key" -w 2>/dev/null)"
+export AZURE_OPENAI_API_ENDPOINT="$(security find-generic-password -a "$USER" -s "azure-openai-endpoint" -w 2>/dev/null)"
+export AZURE_OPENAI_API_VERSION="$(security find-generic-password -a "$USER" -s "azure-openai-version" -w 2>/dev/null)"
+export PORTKEY_API_KEY="$(security find-generic-password -a "$USER" -s "portkey-api-key" -w 2>/dev/null)"
 export ATUIN_AI_API_TOKEN="$PORTKEY_API_KEY"
 
 _ensure_completion cirrus
