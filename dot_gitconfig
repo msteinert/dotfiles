@@ -5,7 +5,7 @@
 	co = checkout
 	root = rev-parse --show-toplevel
 [core]
-	excludesfile = ~/.cvsignore
+	excludesfile = ~/.gitignore_global
 	autocrlf = input
 [push]
 	default = current
