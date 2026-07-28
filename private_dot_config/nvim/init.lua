@@ -409,11 +409,10 @@ do
 
   ---@type table<string, vim.lsp.Config>
   local servers = {
-    gopls        = {},
+    gopls         = {},
     rust_analyzer = {},
-    clangd       = {},
-    ts_ls        = {},
-    ruby_lsp     = {},
+    clangd        = {},
+    ts_ls         = {},
     lua_ls = {
       on_init = function(client)
         client.server_capabilities.documentFormattingProvider = false
