@@ -103,9 +103,8 @@ export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 # Zoxide
 eval "$(zoxide init zsh)"
 
-# Atuin (^E for full history UI; ^R stays with fzf)
-eval "$(atuin init zsh --disable-ctrl-r)"
-bindkey '^e' atuin-search
+# Atuin
+eval "$(atuin init zsh)"
 
 # direnv
 eval "$(direnv hook zsh)"
