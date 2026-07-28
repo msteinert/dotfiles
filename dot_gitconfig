@@ -1,7 +1,7 @@
 [user]
 	name = Michael Steinert
 	email = msteinert@drwholdings.com
-	#email = mike.steinert@gmail.com
+
 [alias]
 	co = checkout
 	st = status -s
@@ -9,10 +9,6 @@
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	root = rev-parse --show-toplevel
 	difft = -c diff.external=difft diff
-[color]
-	diff = auto
-	status = auto
-	branch = auto
 [core]
 	excludesfile = ~/.cvsignore
 	pager = less -r
@@ -22,13 +18,16 @@
 [pull]
 	ff = only
 [credential]
-	helper = cache --timeout=86400
+	helper = osxkeychain
 [fetch]
 	prune = true
 [http]
-	cookiefile = /Users/msteinert/.gitcookies
+	cookiefile = ~/.gitcookies
 [diff "lockb"]
 	textconv = bun
 	binary = true
 [init]
 	defaultBranch = main
+
+[includeIf "gitdir:~/"]
+	path = ~/.gitconfig.local
