@@ -1,0 +1,9 @@
+[search]
+search_mode = "fuzzy"
+
+[ui]
+style = "compact"
+
+[history]
+filter_mode = "global"
+filter_mode_shell_up_arrow = "directory"
