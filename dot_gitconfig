@@ -6,7 +6,6 @@
 	root = rev-parse --show-toplevel
 [core]
 	excludesfile = ~/.cvsignore
-	pager = less -r
 	autocrlf = input
 [push]
 	default = current
