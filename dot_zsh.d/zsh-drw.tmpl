@@ -8,11 +8,6 @@ export cred_proc_CERT_BUNDLE=$HOME/.drw_cca/$USER.pfx
 export cred_proc_CACHE=True
 export cred_proc_TTL=3600
 
-# GCP config (non-secret)
-export GOOGLE_CLOUD_PROJECT=x-p-x-shared-ai-services-988d
-export GOOGLE_CLOUD_LOCATION=us-central1
-export GOOGLE_APPLICATION_CREDENTIALS=$HOME/.config/gcloud/application_default_credentials.json
-
 # AI keys (1Password, DRW vault) -- lazy-loaded on first codex invocation
 _load_ai_keys() {
   export AZURE_OPENAI_API_KEY="$(op read 'op://DRW/Azure OpenAI/credential' 2>/dev/null)"
