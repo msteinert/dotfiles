@@ -1,4 +1,6 @@
 .vim
 README.md
+Brewfile
+setup-keychain.sh
 .config/kitty
 .config/helix

@@ -32,7 +32,9 @@ brew "tree-sitter-cli"
 brew "vim"
 
 # Terminal/shell utilities
+brew "aichat"
 brew "glow"
+brew "gum"
 brew "starship"
 brew "tmux"
 

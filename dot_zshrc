@@ -104,6 +104,9 @@ eval "$(atuin init zsh)"
 bindkey -M vicmd 'k' up-line-or-history
 bindkey -M vicmd 'j' down-line-or-history
 
+# cue
+[[ -f ~/.local/share/cue/cue.zsh ]] && source ~/.local/share/cue/cue.zsh
+
 # direnv
 eval "$(direnv hook zsh)"
 
