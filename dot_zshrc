@@ -99,7 +99,6 @@ eval "$(zoxide init zsh)"
 
 # Atuin
 eval "$(atuin init zsh)"
-eval "$(atuin ai init zsh)"
 # Restore vi command mode history navigation; atuin's vim_mode overrides these
 # to open its search UI, but we want <esc>k/<esc>j as single-step history nav
 bindkey -M vicmd 'k' up-line-or-history
