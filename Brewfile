@@ -1,4 +1,5 @@
 # Core shell tools
+brew "ncurses"
 brew "coreutils"
 brew "curl"
 brew "fd"

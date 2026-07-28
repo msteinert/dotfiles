@@ -31,6 +31,8 @@ compinit -u
 # Path
 BREW_PREFIX=/opt/homebrew
 
+export TERMINFO_DIRS="$BREW_PREFIX/opt/ncurses/share/terminfo:$TERMINFO_DIRS"
+
 path=(
     $HOME/.local/bin
     $HOME/go/bin
