@@ -26,6 +26,42 @@ chezmoi cd        # cd into the source directory (same as this repo)
 After editing files directly in this repo (instead of via `chezmoi edit`),
 run `chezmoi apply` to push the changes out to `$HOME`.
 
+## Secrets setup (manual, per machine)
+
+After `chezmoi init --apply`, a few secrets need to be wired up manually.
+
+### 1Password service account
+
+Create a service account at `start.1password.com` → Developer Tools → Service Accounts:
+- Name it after the machine hostname (`hostname`)
+- Grant read/write access to the DRW vault only
+- Store the token in 1Password (personal vault) as a backup
+
+Then add it to the macOS Keychain:
+```sh
+security add-generic-password -a "$USER" -s "op-service-account-token" -w "ops_..."
+```
+
+### DRW cert passphrase
+
+```sh
+security add-generic-password -a "$USER" -s "drwcca-cert-passphrase" -w "..."
+```
+
+### Portkey API key
+
+Retrieve from 1Password DRW vault, then:
+```sh
+security add-generic-password -a "$USER" -s "portkey-api-key" -w "..."
+```
+
+### Claude Code
+
+`~/.claude/settings.json` and `~/.claude/portkey-key-helper.sh` are not managed
+by chezmoi — copy them manually or recreate. The helper script reads the Portkey
+key from Keychain; `settings.json` sets `apiKeyHelper`, `ANTHROPIC_BASE_URL`, and
+Portkey routing headers.
+
 ## Notes
 
 - `dot_vim/` is excluded from chezmoi management (see `.chezmoiignore`) and
