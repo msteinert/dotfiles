@@ -8,13 +8,14 @@ export cred_proc_CERT_BUNDLE=$HOME/.drw_cca/$USER.pfx
 export cred_proc_CACHE=True
 export cred_proc_TTL=3600
 
+export ATUIN_AI_API_TOKEN="$(security find-generic-password -a "$USER" -s "portkey-api-key" -w 2>/dev/null)"
+
 # AI keys (1Password, DRW vault) -- lazy-loaded on first codex invocation
 _load_ai_keys() {
   export AZURE_OPENAI_API_KEY="$(op read 'op://DRW/Azure OpenAI/credential' 2>/dev/null)"
   export AZURE_OPENAI_API_ENDPOINT="$(op read 'op://DRW/Azure OpenAI/endpoint' 2>/dev/null)"
   export AZURE_OPENAI_API_VERSION="$(op read 'op://DRW/Azure OpenAI/version' 2>/dev/null)"
   export PORTKEY_API_KEY="$(security find-generic-password -a "$USER" -s "portkey-api-key" -w 2>/dev/null)"
-  export ATUIN_AI_API_TOKEN="$PORTKEY_API_KEY"
 }
 
 codex() {
