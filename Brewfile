@@ -2,6 +2,7 @@
 brew "coreutils"
 brew "curl"
 brew "fd"
+brew "atuin"
 brew "fzf"
 brew "ripgrep"
 brew "tree"
