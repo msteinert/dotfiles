@@ -4,9 +4,11 @@
 [alias]
 	co = checkout
 	root = rev-parse --show-toplevel
+	difft = "!GIT_EXTERNAL_DIFF=difft git diff"
 [core]
 	excludesfile = ~/.gitignore_global
 	autocrlf = input
+	pager = delta
 [push]
 	default = current
 [pull]
@@ -17,9 +19,19 @@
 	prune = true
 [http]
 	cookiefile = ~/.gitcookies
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	line-numbers = true
+	syntax-theme = zenburn
+[diff]
+	colorMoved = default
 [diff "lockb"]
 	textconv = bun
 	binary = true
+[merge]
+	conflictstyle = diff3
 [init]
 	defaultBranch = main
 [includeIf "gitdir:~/"]

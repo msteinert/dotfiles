@@ -5,14 +5,22 @@ Managed with [chezmoi](https://www.chezmoi.io/).
 ## Setup on a new machine
 
 ```sh
+# 1. Install Homebrew (also installs git via Xcode Command Line Tools)
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# 2. Install chezmoi
 brew install chezmoi
+
+# 3. Clone repo, apply dotfiles, install Brewfile packages
 chezmoi init --apply msteinert
+
+# 4. Wire up secrets (op is now installed via Brewfile)
+op signin && ~/setup-keychain.sh
 ```
 
-`chezmoi init` clones this repo (with submodules) straight into
-`~/.local/share/chezmoi` and `--apply` writes everything out to `$HOME`
-in one step.
+Step 3 clones this repo into `~/.local/share/chezmoi`, prompts once ("Is this
+a work machine?"), runs `brew bundle` to install all Brewfile packages, and
+applies all dotfiles in one shot.
 
 ## Day-to-day
 

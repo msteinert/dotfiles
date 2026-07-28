@@ -14,6 +14,9 @@ brew "jq"
 brew "yq"
 
 # Git/VCS
+brew "delta"
+brew "difftastic"
+brew "git"
 brew "gh"
 brew "gitmux"
 
