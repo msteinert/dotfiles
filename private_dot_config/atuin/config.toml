@@ -1,5 +1,9 @@
 vim_mode = true
 
+[ai]
+endpoint = "https://ai.drwcloud.com/v1"
+endpoint_protocol = "oss"
+
 [search]
 search_mode = "fuzzy"
 
