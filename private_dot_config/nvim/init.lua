@@ -125,10 +125,14 @@ do
     callback = function() vim.cmd 'normal! zR' end,
   })
 
-  -- Highlight trailing whitespace
+  -- Highlight trailing whitespace (skip special/non-file buffers)
   vim.api.nvim_create_autocmd({ 'BufWinEnter', 'InsertLeave' }, {
     group    = augroup('trailing-ws', { clear = true }),
-    callback = function() vim.fn.matchadd('ExtraWhitespace', '\\s\\+$') end,
+    callback = function()
+      if vim.bo.buftype == '' then
+        vim.fn.matchadd('ExtraWhitespace', '\\s\\+$')
+      end
+    end,
   })
   vim.api.nvim_create_autocmd('InsertEnter', {
     group    = augroup('trailing-ws-insert', { clear = true }),
