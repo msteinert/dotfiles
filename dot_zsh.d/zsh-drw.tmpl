@@ -10,7 +10,6 @@ export cred_proc_TTL=3600
 
 # AI keys (from Keychain; populated by setup-keychain.sh)
 export PORTKEY_API_KEY="$(security find-generic-password -a "$USER" -s "portkey-api-key" -w 2>/dev/null)"
-export ATUIN_AI_API_TOKEN="$PORTKEY_API_KEY"
 
 _ensure_completion cirrus
 _ensure_completion ml
