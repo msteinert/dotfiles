@@ -82,7 +82,7 @@ alias fgrep="fgrep --color=auto"
 alias egrep="egrep --color=auto"
 
 # Editor settings
-export EDITOR="vim"
+export EDITOR="nvim"
 
 # fzf
 export FZF_DEFAULT_COMMAND="fd --type file"
