@@ -6,6 +6,11 @@ let &t_SI = "\e[5 q"
 let &t_SR = "\e[3 q"
 let &t_EI = "\e[2 q"
 
+" Restore the terminal's default cursor shape on exit; vim doesn't do
+" this itself, so a blinking-bar left by t_SI would otherwise persist
+" in the shell after quitting.
+autocmd VimLeave * silent! !echo -e "\e[0 q"
+
 " Allow backspacing over everything in insert mode.
 set backspace=indent,eol,start
 
