@@ -33,10 +33,13 @@ brew "vim"
 
 # Terminal/shell utilities
 brew "aichat"
+brew "gifski"
 brew "glow"
 brew "gum"
+brew "sesh"
 brew "starship"
 brew "tmux"
+brew "tpm"
 
 # Casks
 cask "1password"
