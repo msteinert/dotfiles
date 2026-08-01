@@ -70,6 +70,7 @@ export EDITOR="nvim"
 # fzf
 export FZF_DEFAULT_COMMAND="fd --type file"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+eval "$(fzf --zsh)"
 
 # jq
 export JQ_COLORS="0;37:0;39:0;39:0;39:0;32:1;39:1;39"
@@ -94,6 +95,9 @@ zvm_after_init() {
 
   # cue
   [[ -f ~/.local/share/cue/cue.zsh ]] && source ~/.local/share/cue/cue.zsh
+
+  # yazi file picker
+  bindkey '^y' _yazi_pick
 }
 
 # direnv

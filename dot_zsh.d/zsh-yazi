@@ -1,3 +1,17 @@
+# Ctrl-y: open yazi as a file picker, insert selected file(s) into the command line
+_yazi_pick() {
+  local tmp
+  tmp=$(mktemp)
+  yazi --chooser-file "$tmp"
+  local files
+  files=$(cat "$tmp")
+  rm -f "$tmp"
+  [[ -z "$files" ]] && return
+  LBUFFER="${LBUFFER}${(q)files}"
+  zle redisplay
+}
+zle -N _yazi_pick
+
 # y: open yazi at a given directory (or zoxide match), cd to wherever you
 # navigate to on exit
 y() {
