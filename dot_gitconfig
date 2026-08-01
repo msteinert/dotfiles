@@ -6,7 +6,7 @@
 	root = rev-parse --show-toplevel
 	difft = "!GIT_EXTERNAL_DIFF=difft git diff"
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = ~/.config/gitignore_global
 	autocrlf = input
 	pager = delta
 [push]

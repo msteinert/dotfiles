@@ -42,7 +42,7 @@ path=(
 typeset -U path
 
 # Configure GNU ls colors
-eval $(dircolors -b $HOME/.dircolors)
+eval $(dircolors -b $HOME/.config/dircolors)
 
 # Completion
 zstyle ':completion:*' menu select
@@ -76,7 +76,7 @@ eval "$(fzf --zsh)"
 export JQ_COLORS="0;37:0;39:0;39:0;39:0;32:1;39:1;39"
 
 # rg
-export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
+export RIPGREP_CONFIG_PATH=$HOME/.config/ripgreprc
 
 # Zoxide
 eval "$(zoxide init zsh)"
@@ -84,24 +84,20 @@ eval "$(zoxide init zsh)"
 # zsh plugins
 source $(brew --prefix)/opt/zsh-autosuggestions/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/opt/zsh-syntax-highlighting/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 ZVM_SYSTEM_CLIPBOARD_ENABLED=true
 source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 zvm_after_init() {
-  # Atuin + restore k/j history nav after zvm reinitializes bindings
   eval "$(atuin init zsh)"
+
+  # Restore k/j history nav after zvm reinitializes bindings
   bindkey -M vicmd 'k' up-line-or-history
   bindkey -M vicmd 'j' down-line-or-history
 
-  # cue
   [[ -f ~/.local/share/cue/cue.zsh ]] && source ~/.local/share/cue/cue.zsh
-
-  # yazi file picker
   bindkey '^y' _yazi_pick
 }
 
-# direnv
 eval "$(direnv hook zsh)"
-
-# mise
 eval "$(mise activate zsh)"
