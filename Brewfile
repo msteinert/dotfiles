@@ -48,6 +48,7 @@ brew "zsh-vi-mode"
 # Casks
 cask "1password"
 cask "1password-cli"
-cask "alacritty"
+cask "font-sf-mono"
+cask "font-sf-mono-nerd-font-ligaturized"
 cask "ghostty"
 cask "handy"

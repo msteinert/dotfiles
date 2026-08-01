@@ -286,18 +286,11 @@ do
   ---@diagnostic disable-next-line: duplicate-set-field
   statusline.section_location = function() return '%2l:%-2v' end
 
-  -- File tree (replaces NERDTree)
-  vim.pack.add {
-    gh 'nvim-neo-tree/neo-tree.nvim',
-    gh 'MunifTanjim/nui.nvim',
-  }
-  require('neo-tree').setup {
-    filesystem = {
-      filtered_items = { visible = true }, -- show hidden files (like NERDTreeShowHidden)
-    },
-    window = { width = 39 },               -- match NERDTreeWinSize
-  }
-  vim.keymap.set('n', '<leader>n', '<cmd>Neotree toggle<CR>', { desc = 'Toggle file tree' })
+  -- File manager (replaces neo-tree/NERDTree)
+  vim.pack.add { gh 'mikavilpas/yazi.nvim' }
+  require('yazi').setup {}
+  vim.keymap.set('n', '<leader>n', '<cmd>Yazi<CR>',     { desc = 'Open yazi at current file' })
+  vim.keymap.set('n', '<leader>N', '<cmd>Yazi cwd<CR>', { desc = 'Open yazi in cwd' })
 
   -- Fugitive (git commands)
   vim.pack.add { gh 'tpope/vim-fugitive' }
