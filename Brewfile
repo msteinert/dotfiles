@@ -40,6 +40,10 @@ brew "sesh"
 brew "starship"
 brew "tmux"
 brew "tpm"
+brew "yazi"
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
+brew "zsh-vi-mode"
 
 # Casks
 cask "1password"

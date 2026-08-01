@@ -2,8 +2,12 @@
 
 # Common aliases
 alias c="clear"
+alias egrep="egrep --color=auto"
+alias fgrep="fgrep --color=auto"
+alias grep="grep --color=auto"
 alias h="history"
 alias info="info --vi-keys"
+alias ls="ls --color=auto -F"
 
 if [[ $(uname -s) = "Darwin" ]]; then
     alias display="qlmanage -t"
