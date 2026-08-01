@@ -86,15 +86,15 @@ source $(brew --prefix)/opt/zsh-syntax-highlighting/share/zsh-syntax-highlightin
 ZVM_SYSTEM_CLIPBOARD_ENABLED=true
 source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
-# Atuin + restore k/j history nav after zvm reinitializes bindings
 zvm_after_init() {
+  # Atuin + restore k/j history nav after zvm reinitializes bindings
   eval "$(atuin init zsh)"
   bindkey -M vicmd 'k' up-line-or-history
   bindkey -M vicmd 'j' down-line-or-history
-}
 
-# cue
-[[ -f ~/.local/share/cue/cue.zsh ]] && source ~/.local/share/cue/cue.zsh
+  # cue
+  [[ -f ~/.local/share/cue/cue.zsh ]] && source ~/.local/share/cue/cue.zsh
+}
 
 # direnv
 eval "$(direnv hook zsh)"

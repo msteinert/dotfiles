@@ -1,9 +1,17 @@
-# y: open yazi and cd to the directory you navigate to on exit
-function y() {
-    local tmp cwd
-    tmp=$(mktemp)
-    yazi --cwd-file "$tmp" "$@"
-    cwd=$(cat "$tmp")
-    [[ -n "$cwd" && "$cwd" != "$PWD" ]] && cd "$cwd"
-    rm -f "$tmp"
+# y: open yazi at a given directory (or zoxide match), cd to wherever you
+# navigate to on exit
+y() {
+  local tmp target cwd
+  tmp=$(mktemp)
+  if [[ -n "$1" ]]; then
+    if [[ -d "$1" ]]; then
+      target="$1"
+    else
+      target="$(zoxide query "$1")"
+    fi
+  fi
+  yazi --cwd-file "$tmp" ${target:+"$target"}
+  cwd=$(cat "$tmp")
+  [[ -n "$cwd" && "$cwd" != "$PWD" ]] && cd "$cwd"
+  rm -f "$tmp"
 }
