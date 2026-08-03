@@ -1,0 +1,24 @@
+[theme]
+name = "zenburn"
+
+[colors]
+# Alert states
+AlertInfo  = "#7f9f7f"
+AlertWarn  = "#f0dfaf"
+AlertError = "#cc9393"
+
+# Text hierarchy
+Base       = "#dcdccc"
+Annotation = "#656555"
+Guidance   = "#7f9f7f"
+Important  = "#f0dfaf"
+Title      = "#8cd0d3"
+Muted      = "#656555"
+
+# Syntax highlighting
+SyntaxCommand  = "#8cd0d3"
+SyntaxFlag     = "#dfaf8f"
+SyntaxString   = "#7f9f7f"
+SyntaxVariable = "#f0dfaf"
+SyntaxOperator = "#dcdccc"
+SyntaxComment  = "#656555"
