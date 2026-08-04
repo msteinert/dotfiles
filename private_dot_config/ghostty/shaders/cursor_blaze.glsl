@@ -1,3 +1,17 @@
+//const vec4 TRAIL_COLOR = vec4(1.000, 0.725, 0.161, 1.0);  // golden yellow
+//const vec4 TRAIL_COLOR = vec4(0.080, 0.780, 0.680, 1.0);  // medium turquoise
+//const vec4 TRAIL_COLOR = vec4(0.050, 0.700, 0.850, 1.0);  // vivid sky blue
+//const vec4 TRAIL_COLOR = vec4(0.600, 0.350, 1.000, 1.0);  // amethyst
+//const vec4 TRAIL_COLOR = vec4(0.180, 0.850, 0.420, 1.0);  // medium sea green
+//const vec4 TRAIL_COLOR = vec4(0.880, 0.780, 0.680, 1.0);  // light tan
+const vec4 TRAIL_COLOR = vec4(0.984, 0.012, 0.600, 1.0);  // sporty pink
+
+//const vec4 TRAIL_COLOR_ACCENT = vec4(1.0, 0.0, 0.0, 1.0);  // red
+//const vec4 TRAIL_COLOR_ACCENT = vec4(0.0, 0.0, 1.0, 1.0);  //blue
+const vec4 TRAIL_COLOR_ACCENT = vec4(1.0, 0.7, 0.0, 1.0); // citrus burst
+
+const float DURATION = 0.4;  // IN SECONDS
+
 float getSdfRectangle(in vec2 p, in vec2 xy, in vec2 b)
 {
     vec2 d = abs(p - xy) - b;
@@ -64,9 +78,6 @@ vec4 saturate(vec4 color, float factor) {
     float gray = dot(color, vec4(0.299, 0.587, 0.114, 0.)); // luminance
     return mix(vec4(gray), color, factor);
 }
-const vec4 TRAIL_COLOR = vec4(1.0, 0.725, 0.161, 1.0);
-const vec4 TRAIL_COLOR_ACCENT = vec4(1.0, 0., 0., 1.0);
-const float DURATION = 0.3; //IN SECONDS
 
 void mainImage(out vec4 fragColor, in vec2 fragCoord)
 {

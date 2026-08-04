@@ -5,7 +5,7 @@ custom-shader = shaders/cursor_blaze.glsl
 #custom-shader = shaders/cursor_smear.glsl
 #custom-shader = shaders/cursor_smear_gradient.glsl
 #custom-shader = shaders/cursor_smear_rainbow.glsl
-#custom-shader = shaders/cursor_synesthaxia(tweened).glsl
+#custom-shader = shaders/cursor_synesthaxia.glsl
 #custom-shader = shaders/cursor_warp.glsl
 
 scrollbar = never
