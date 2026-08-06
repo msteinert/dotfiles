@@ -3,10 +3,10 @@
 format = """
 [](color_blue)\
 $directory\
-[](fg:color_blue bg:color_aqua)\
+[](fg:color_blue bg:color_aqua)\
 $git_branch\
 $git_status\
-[](fg:color_aqua bg:color_bg2)\
+[](fg:color_aqua bg:color_bg2)\
 $time\
 [ ](fg:color_bg2)\
 $line_break$character"""
